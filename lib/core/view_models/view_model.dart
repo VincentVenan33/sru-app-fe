@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mjk_apps/core/view_models/base_view_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sru/core/view_models/base_view_model.dart';
 
 class ViewModel<T extends BaseViewModel> extends ConsumerStatefulWidget {
   const ViewModel({

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
 
 class UbahPasswordView extends ConsumerStatefulWidget {
   const UbahPasswordView({super.key});
@@ -26,9 +26,9 @@ class _UbahPasswordViewState extends ConsumerState<UbahPasswordView> with Ticker
     return UnfocusHelper(
       child: SafeArea(
         child: Scaffold(
-          backgroundColor: MjkColor.white,
+          backgroundColor: sruColor.white,
           appBar: AppBar(
-            backgroundColor: MjkColor.backgroundAtas,
+            backgroundColor: sruColor.backgroundAtas,
             leading: IconButton(
               onPressed: () {
                 Navigator.pushNamed(
@@ -68,7 +68,7 @@ class _UbahPasswordViewState extends ConsumerState<UbahPasswordView> with Ticker
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 12,
-                                  color: MjkColor.lightBlack014,
+                                  color: sruColor.lightBlack014,
                                 ),
                               ),
                             ],
@@ -82,13 +82,13 @@ class _UbahPasswordViewState extends ConsumerState<UbahPasswordView> with Ticker
                               decoration: InputDecoration(
                                 contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                 hintStyle: const TextStyle(
-                                  color: MjkColor.black,
+                                  color: sruColor.black,
                                   fontWeight: FontWeight.w300,
                                   fontSize: 14,
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(8.0),
-                                  borderSide: const BorderSide(color: MjkColor.lightBlack014, width: 1.0),
+                                  borderSide: const BorderSide(color: sruColor.lightBlack014, width: 1.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(8.0),
@@ -105,7 +105,7 @@ class _UbahPasswordViewState extends ConsumerState<UbahPasswordView> with Ticker
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 12,
-                                  color: MjkColor.lightBlack014,
+                                  color: sruColor.lightBlack014,
                                 ),
                               ),
                             ],
@@ -119,13 +119,13 @@ class _UbahPasswordViewState extends ConsumerState<UbahPasswordView> with Ticker
                               decoration: InputDecoration(
                                 contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                 hintStyle: const TextStyle(
-                                  color: MjkColor.black,
+                                  color: sruColor.black,
                                   fontWeight: FontWeight.w300,
                                   fontSize: 14,
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(8.0),
-                                  borderSide: const BorderSide(color: MjkColor.lightBlack014, width: 1.0),
+                                  borderSide: const BorderSide(color: sruColor.lightBlack014, width: 1.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(8.0),
@@ -142,7 +142,7 @@ class _UbahPasswordViewState extends ConsumerState<UbahPasswordView> with Ticker
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 8,
-                                  color: MjkColor.lightBlack014,
+                                  color: sruColor.lightBlack014,
                                 ),
                               ),
                             ],
@@ -163,7 +163,7 @@ class _UbahPasswordViewState extends ConsumerState<UbahPasswordView> with Ticker
                                   horizontal: 144,
                                   vertical: 16,
                                 ),
-                                backgroundColor: MjkColor.floatButtonSalesColor,
+                                backgroundColor: sruColor.floatButtonSalesColor,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),

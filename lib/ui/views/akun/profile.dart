@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/services/authentication_service.dart';
-import 'package:mjk_apps/core/services/shared_preferences_service.dart';
-import 'package:mjk_apps/core/view_models/profile_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
-import 'package:mjk_apps/ui/views/navbar/navbar_sales_view.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/services/authentication_service.dart';
+import 'package:sru/core/services/shared_preferences_service.dart';
+import 'package:sru/core/view_models/profile_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
+import 'package:sru/ui/views/navbar/navbar_sales_view.dart';
 
 class AkunView extends ConsumerStatefulWidget {
   const AkunView({Key? key}) : super(key: key);
@@ -42,9 +42,10 @@ class _AkunViewState extends ConsumerState<AkunView> {
       builder: (_, ProfileModel model, __) {
         return UnfocusHelper(
           child: SafeArea(
-            child: Scaffold(backgroundColor: MjkColor.white,
+            child: Scaffold(
+              backgroundColor: sruColor.white,
               appBar: AppBar(
-                backgroundColor: MjkColor.backgroundAtas,
+                backgroundColor: sruColor.backgroundAtas,
                 leading: IconButton(
                   icon: const Icon(Icons.arrow_back),
                   color: Colors.black,
@@ -100,7 +101,7 @@ class _AkunViewState extends ConsumerState<AkunView> {
                                     'Nama',
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: MjkColor.navbarUnselectedColor,
+                                      color: sruColor.navbarUnselectedColor,
                                     ),
                                   ),
                                   Spacings.verSpace(5),
@@ -108,7 +109,7 @@ class _AkunViewState extends ConsumerState<AkunView> {
                                     model.nama ?? '',
                                     style: const TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: MjkColor.black,
+                                      color: sruColor.black,
                                     ),
                                   ),
                                   Spacings.verSpace(15),
@@ -116,7 +117,7 @@ class _AkunViewState extends ConsumerState<AkunView> {
                                     'Pekerjaan',
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: MjkColor.navbarUnselectedColor,
+                                      color: sruColor.navbarUnselectedColor,
                                     ),
                                   ),
                                   Spacings.verSpace(5),
@@ -124,7 +125,7 @@ class _AkunViewState extends ConsumerState<AkunView> {
                                     model.admingrup ?? '',
                                     style: const TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: MjkColor.black,
+                                      color: sruColor.black,
                                     ),
                                   )
                                 ],
@@ -141,7 +142,7 @@ class _AkunViewState extends ConsumerState<AkunView> {
                           'Pengaturan',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: MjkColor.black,
+                            color: sruColor.black,
                           ),
                         ),
                       ],
@@ -155,7 +156,7 @@ class _AkunViewState extends ConsumerState<AkunView> {
                       },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.all(0),
-                        backgroundColor: Color(MjkColor.transparent.value),
+                        backgroundColor: Color(sruColor.transparent.value),
                         surfaceTintColor: Colors.white,
                         shadowColor: const Color(0x00000000),
                         shape: const RoundedRectangleBorder(
@@ -184,7 +185,7 @@ class _AkunViewState extends ConsumerState<AkunView> {
                                       AssetImage(
                                         'assets/icons/mdi_password.png',
                                       ),
-                                      color: MjkColor.black,
+                                      color: sruColor.black,
                                     )
                                   ],
                                 ),
@@ -197,7 +198,7 @@ class _AkunViewState extends ConsumerState<AkunView> {
                                     style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold,
-                                      color: MjkColor.black,
+                                      color: sruColor.black,
                                     ),
                                   ),
                                 ],
@@ -208,7 +209,7 @@ class _AkunViewState extends ConsumerState<AkunView> {
                             children: [
                               Divider(
                                 height: 1,
-                                color: MjkColor.black,
+                                color: sruColor.black,
                               ),
                             ],
                           ),
@@ -224,7 +225,7 @@ class _AkunViewState extends ConsumerState<AkunView> {
                       },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.all(0),
-                        backgroundColor: Color(MjkColor.transparent.value),
+                        backgroundColor: Color(sruColor.transparent.value),
                         surfaceTintColor: Colors.white,
                         shadowColor: const Color(0x00000000),
                         shape: const RoundedRectangleBorder(
@@ -253,7 +254,7 @@ class _AkunViewState extends ConsumerState<AkunView> {
                                       AssetImage(
                                         'assets/icons/bxs_video.png',
                                       ),
-                                      color: MjkColor.black,
+                                      color: sruColor.black,
                                     )
                                   ],
                                 ),
@@ -266,7 +267,7 @@ class _AkunViewState extends ConsumerState<AkunView> {
                                     style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold,
-                                      color: MjkColor.black,
+                                      color: sruColor.black,
                                     ),
                                   ),
                                 ],
@@ -277,7 +278,7 @@ class _AkunViewState extends ConsumerState<AkunView> {
                             children: [
                               Divider(
                                 height: 1,
-                                color: MjkColor.black,
+                                color: sruColor.black,
                               ),
                             ],
                           ),
@@ -288,7 +289,7 @@ class _AkunViewState extends ConsumerState<AkunView> {
                       onPressed: () => model.requestLogout(),
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.all(0),
-                        backgroundColor: Color(MjkColor.transparent.value),
+                        backgroundColor: Color(sruColor.transparent.value),
                         surfaceTintColor: Colors.white,
                         shadowColor: const Color(0x00000000),
                         shape: const RoundedRectangleBorder(
@@ -317,7 +318,7 @@ class _AkunViewState extends ConsumerState<AkunView> {
                                       AssetImage(
                                         'assets/icons/ci_log-out.png',
                                       ),
-                                      color: MjkColor.black,
+                                      color: sruColor.black,
                                     )
                                   ],
                                 ),
@@ -330,7 +331,7 @@ class _AkunViewState extends ConsumerState<AkunView> {
                                     style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold,
-                                      color: MjkColor.black,
+                                      color: sruColor.black,
                                     ),
                                   ),
                                 ],
@@ -341,7 +342,7 @@ class _AkunViewState extends ConsumerState<AkunView> {
                             children: [
                               Divider(
                                 height: 1,
-                                color: MjkColor.black,
+                                color: sruColor.black,
                               ),
                             ],
                           ),

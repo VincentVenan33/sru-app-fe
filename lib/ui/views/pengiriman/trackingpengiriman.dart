@@ -3,15 +3,15 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/networks/tracking_order_jual_get_data_dto_network.dart';
-import 'package:mjk_apps/core/view_models/pengiriman/trackingpengiriman_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
-import 'package:mjk_apps/ui/views/navbar/navbar_sales_view.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/networks/tracking_order_jual_get_data_dto_network.dart';
+import 'package:sru/core/view_models/pengiriman/trackingpengiriman_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
+import 'package:sru/ui/views/navbar/navbar_sales_view.dart';
 
 class TrackingPengirimanParam {
   const TrackingPengirimanParam({
@@ -61,9 +61,9 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
             child: UnfocusHelper(
               child: SafeArea(
                 child: Scaffold(
-                  backgroundColor: MjkColor.white,
+                  backgroundColor: sruColor.white,
                   appBar: AppBar(
-                    backgroundColor: MjkColor.backgroundAtas,
+                    backgroundColor: sruColor.backgroundAtas,
                     leading: IconButton(
                       onPressed: () {
                         Navigator.pushNamedAndRemoveUntil(
@@ -138,7 +138,7 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                   style: TextStyle(
                                                     fontSize: 12,
                                                     fontWeight: FontWeight.bold,
-                                                    color: MjkColor.lightBlack008,
+                                                    color: sruColor.lightBlack008,
                                                   ),
                                                 ),
                                               ],
@@ -146,7 +146,7 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                             Spacings.verSpace(12),
                                             const Divider(
                                               height: 1,
-                                              color: MjkColor.lightBlack009,
+                                              color: sruColor.lightBlack009,
                                             ),
                                             Spacings.verSpace(5),
                                             Row(
@@ -161,13 +161,13 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                           height: 42,
                                                           decoration: BoxDecoration(
                                                             color: model.trackingorderjual[0].statusoj == 1
-                                                                ? MjkColor.floatButtonSalesColor
-                                                                : MjkColor.navbarUnselectedColor,
+                                                                ? sruColor.floatButtonSalesColor
+                                                                : sruColor.navbarUnselectedColor,
                                                             borderRadius: const BorderRadius.all(Radius.circular(7)),
                                                           ),
                                                           child: const Icon(
                                                             Icons.location_on,
-                                                            color: MjkColor.white,
+                                                            color: sruColor.white,
                                                           ),
                                                         )
                                                       ],
@@ -178,8 +178,8 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                         border: Border(
                                                           right: BorderSide(
                                                             color: model.trackingorderjual[0].statusdo == 1
-                                                                ? MjkColor.floatButtonSalesColor
-                                                                : MjkColor.navbarUnselectedColor,
+                                                                ? sruColor.floatButtonSalesColor
+                                                                : sruColor.navbarUnselectedColor,
                                                           ),
                                                         ),
                                                       ),
@@ -192,8 +192,8 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                           decoration: BoxDecoration(
                                                             shape: BoxShape.circle,
                                                             color: model.trackingorderjual[0].statusdo == 1
-                                                                ? MjkColor.floatButtonSalesColor
-                                                                : MjkColor.navbarUnselectedColor,
+                                                                ? sruColor.floatButtonSalesColor
+                                                                : sruColor.navbarUnselectedColor,
                                                           ),
                                                         )
                                                       ],
@@ -204,8 +204,8 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                         border: Border(
                                                           right: BorderSide(
                                                             color: model.trackingorderjual[0].statussj == 1
-                                                                ? MjkColor.floatButtonSalesColor
-                                                                : MjkColor.navbarUnselectedColor,
+                                                                ? sruColor.floatButtonSalesColor
+                                                                : sruColor.navbarUnselectedColor,
                                                           ),
                                                         ),
                                                       ),
@@ -218,8 +218,8 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                           decoration: BoxDecoration(
                                                             shape: BoxShape.circle,
                                                             color: model.trackingorderjual[0].statussj == 1
-                                                                ? MjkColor.floatButtonSalesColor
-                                                                : MjkColor.navbarUnselectedColor,
+                                                                ? sruColor.floatButtonSalesColor
+                                                                : sruColor.navbarUnselectedColor,
                                                           ),
                                                         )
                                                       ],
@@ -230,8 +230,8 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                         border: Border(
                                                           right: BorderSide(
                                                             color: model.trackingorderjual[0].statusberangkat == 1
-                                                                ? MjkColor.floatButtonSalesColor
-                                                                : MjkColor.navbarUnselectedColor,
+                                                                ? sruColor.floatButtonSalesColor
+                                                                : sruColor.navbarUnselectedColor,
                                                           ),
                                                         ),
                                                       ),
@@ -244,8 +244,8 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                           decoration: BoxDecoration(
                                                             shape: BoxShape.circle,
                                                             color: model.trackingorderjual[0].statusberangkat == 1
-                                                                ? MjkColor.floatButtonSalesColor
-                                                                : MjkColor.navbarUnselectedColor,
+                                                                ? sruColor.floatButtonSalesColor
+                                                                : sruColor.navbarUnselectedColor,
                                                           ),
                                                         )
                                                       ],
@@ -256,8 +256,8 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                         border: Border(
                                                           right: BorderSide(
                                                             color: model.trackingorderjual[0].statussampai == 1
-                                                                ? MjkColor.floatButtonSalesColor
-                                                                : MjkColor.navbarUnselectedColor,
+                                                                ? sruColor.floatButtonSalesColor
+                                                                : sruColor.navbarUnselectedColor,
                                                           ),
                                                         ),
                                                       ),
@@ -270,8 +270,8 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                           decoration: BoxDecoration(
                                                             shape: BoxShape.circle,
                                                             color: model.trackingorderjual[0].statussampai == 1
-                                                                ? MjkColor.floatButtonSalesColor
-                                                                : MjkColor.navbarUnselectedColor,
+                                                                ? sruColor.floatButtonSalesColor
+                                                                : sruColor.navbarUnselectedColor,
                                                           ),
                                                         )
                                                       ],
@@ -282,8 +282,8 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                         border: Border(
                                                           right: BorderSide(
                                                             color: model.trackingorderjual[0].statusdatang == 1
-                                                                ? MjkColor.floatButtonSalesColor
-                                                                : MjkColor.navbarUnselectedColor,
+                                                                ? sruColor.floatButtonSalesColor
+                                                                : sruColor.navbarUnselectedColor,
                                                           ),
                                                         ),
                                                       ),
@@ -295,13 +295,13 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                           height: 42,
                                                           decoration: BoxDecoration(
                                                             color: model.trackingorderjual[0].statusdatang == 1
-                                                                ? MjkColor.floatButtonSalesColor
-                                                                : MjkColor.navbarUnselectedColor,
+                                                                ? sruColor.floatButtonSalesColor
+                                                                : sruColor.navbarUnselectedColor,
                                                             borderRadius: const BorderRadius.all(Radius.circular(7)),
                                                           ),
                                                           child: const Icon(
                                                             Icons.check,
-                                                            color: MjkColor.white,
+                                                            color: sruColor.white,
                                                           ),
                                                         )
                                                       ],
@@ -336,7 +336,7 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                               style: const TextStyle(
                                                                 fontWeight: FontWeight.w400,
                                                                 fontSize: 12,
-                                                                color: MjkColor.black,
+                                                                color: sruColor.black,
                                                               ),
                                                             ),
                                                           ],
@@ -364,7 +364,7 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                               style: const TextStyle(
                                                                 fontWeight: FontWeight.w300,
                                                                 fontSize: 10,
-                                                                color: MjkColor.lightBlack018,
+                                                                color: sruColor.lightBlack018,
                                                               ),
                                                             ),
                                                           ],
@@ -392,7 +392,7 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                               style: const TextStyle(
                                                                 fontWeight: FontWeight.w300,
                                                                 fontSize: 10,
-                                                                color: MjkColor.lightBlack018,
+                                                                color: sruColor.lightBlack018,
                                                               ),
                                                             ),
                                                           ],
@@ -420,7 +420,7 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                               style: const TextStyle(
                                                                 fontWeight: FontWeight.w300,
                                                                 fontSize: 10,
-                                                                color: MjkColor.lightBlack018,
+                                                                color: sruColor.lightBlack018,
                                                               ),
                                                             ),
                                                             Spacings.horSpace(4),
@@ -431,7 +431,7 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                               style: const TextStyle(
                                                                 fontWeight: FontWeight.bold,
                                                                 fontSize: 10,
-                                                                color: MjkColor.black,
+                                                                color: sruColor.black,
                                                               ),
                                                             ),
                                                           ],
@@ -460,7 +460,7 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                                 style: const TextStyle(
                                                                   fontWeight: FontWeight.w300,
                                                                   fontSize: 10,
-                                                                  color: MjkColor.black,
+                                                                  color: sruColor.black,
                                                                 ),
                                                               ),
                                                             ),
@@ -489,7 +489,7 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                               style: const TextStyle(
                                                                 fontWeight: FontWeight.w300,
                                                                 fontSize: 10,
-                                                                color: MjkColor.lightBlack018,
+                                                                color: sruColor.lightBlack018,
                                                               ),
                                                             ),
                                                             Spacings.horSpace(4),
@@ -500,7 +500,7 @@ class _TrackingPengirimanState extends ConsumerState<TrackingPengiriman> {
                                                               style: const TextStyle(
                                                                 fontWeight: FontWeight.bold,
                                                                 fontSize: 10,
-                                                                color: MjkColor.black,
+                                                                color: sruColor.black,
                                                               ),
                                                             ),
                                                           ],

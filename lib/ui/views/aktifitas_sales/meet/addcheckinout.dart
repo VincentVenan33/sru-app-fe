@@ -5,17 +5,17 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/models/get_data/get_data_dto.dart';
-import 'package:mjk_apps/core/networks/create_kunjungan_dto.dart';
-import 'package:mjk_apps/core/networks/get_data_dto_network.dart';
-import 'package:mjk_apps/core/view_models/meet/createcheckinout_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/models/get_data/get_data_dto.dart';
+import 'package:sru/core/networks/create_kunjungan_dto.dart';
+import 'package:sru/core/networks/get_data_dto_network.dart';
+import 'package:sru/core/view_models/meet/createcheckinout_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
 
 class AddCheckInOut extends ConsumerStatefulWidget {
   const AddCheckInOut({super.key});
@@ -102,7 +102,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
             child: SafeArea(
               child: Scaffold(
                 appBar: AppBar(
-                  backgroundColor: MjkColor.backgroundAtas,
+                  backgroundColor: sruColor.backgroundAtas,
                   leading: IconButton(
                     onPressed: () {
                       Navigator.pushNamed(
@@ -142,7 +142,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                               //       style: TextStyle(
                               //         fontSize: 14,
                               //         fontWeight: FontWeight.w400,
-                              //         color: MjkColor.lightBlack011,
+                              //         color: sruColor.lightBlack011,
                               //       ),
                               //     ),
                               //   ],
@@ -157,11 +157,11 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                               //       contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                               //       hintText: '',
                               //       hintStyle: const TextStyle(
-                              //         color: MjkColor.lightBlack011,
+                              //         color: sruColor.lightBlack011,
                               //         fontSize: 14,
                               //         fontWeight: FontWeight.bold,
                               //       ),
-                              //       fillColor: MjkColor.lightBlack019, // Add this line to set the background color
+                              //       fillColor: sruColor.lightBlack019, // Add this line to set the background color
                               //       filled: true,
                               //       enabledBorder: OutlineInputBorder(
                               //         borderRadius: BorderRadius.circular(8.0),
@@ -183,7 +183,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                                     style: TextStyle(
                                       fontWeight: FontWeight.w400,
                                       fontSize: 14,
-                                      color: MjkColor.lightBlack011,
+                                      color: sruColor.lightBlack011,
                                     ),
                                   ),
                                 ],
@@ -208,9 +208,9 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                                 },
                                 style: ElevatedButton.styleFrom(
                                   padding: const EdgeInsets.all(0),
-                                  backgroundColor: Color(MjkColor.transparent.value),
-                                  surfaceTintColor: MjkColor.transparent,
-                                  shadowColor: MjkColor.transparent,
+                                  backgroundColor: Color(sruColor.transparent.value),
+                                  surfaceTintColor: sruColor.transparent,
+                                  shadowColor: sruColor.transparent,
                                   shape: const RoundedRectangleBorder(
                                     side: BorderSide.none,
                                     borderRadius: BorderRadius.all(
@@ -224,7 +224,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                                     Text(
                                       customerController.text,
                                       style: const TextStyle(
-                                        color: MjkColor.black,
+                                        color: sruColor.black,
                                         fontWeight: FontWeight.w400,
                                         fontSize: 16,
                                       ),
@@ -239,12 +239,12 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                                           },
                                           icon: const Icon(
                                             Icons.refresh,
-                                            color: MjkColor.lightBlack014,
+                                            color: sruColor.lightBlack014,
                                           ),
                                         ),
                                         const Icon(
                                           Icons.search,
-                                          color: MjkColor.lightBlack014,
+                                          color: sruColor.lightBlack014,
                                         ),
                                       ],
                                     ),
@@ -259,7 +259,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                                     style: TextStyle(
                                       fontWeight: FontWeight.w400,
                                       fontSize: 14,
-                                      color: MjkColor.lightBlack011,
+                                      color: sruColor.lightBlack011,
                                     ),
                                   ),
                                 ],
@@ -270,7 +270,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                                   contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                   hintText: model.nama,
                                   hintStyle: const TextStyle(
-                                    color: MjkColor.black,
+                                    color: sruColor.black,
                                     fontSize: 14,
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -293,7 +293,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                                     style: TextStyle(
                                       fontWeight: FontWeight.w400,
                                       fontSize: 14,
-                                      color: MjkColor.lightBlack011,
+                                      color: sruColor.lightBlack011,
                                     ),
                                   ),
                                 ],
@@ -312,7 +312,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(8),
                                     ),
-                                    backgroundColor: MjkColor.transparent,
+                                    backgroundColor: sruColor.transparent,
                                     surfaceTintColor: Colors.transparent,
                                     shadowColor: const Color(0x00000000),
                                   ),
@@ -325,14 +325,14 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                                         DateFormat('dd/MM/yyyy').format(_selectedDate),
                                         style: const TextStyle(
                                           fontSize: 14,
-                                          color: MjkColor.black,
+                                          color: sruColor.black,
                                           fontWeight: FontWeight.w400,
                                         ),
                                       ),
                                       const Icon(
                                         Icons.calendar_month,
                                         size: 16,
-                                        color: MjkColor.lightBlack022,
+                                        color: sruColor.lightBlack022,
                                       ),
                                     ],
                                   ),
@@ -346,7 +346,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                               //       style: TextStyle(
                               //         fontWeight: FontWeight.w400,
                               //         fontSize: 14,
-                              //         color: MjkColor.lightBlack011,
+                              //         color: sruColor.lightBlack011,
                               //       ),
                               //     ),
                               //   ],
@@ -368,19 +368,19 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                               //       shape: RoundedRectangleBorder(
                               //         borderRadius: BorderRadius.circular(8),
                               //       ),
-                              //       backgroundColor: MjkColor.white,
+                              //       backgroundColor: sruColor.white,
                               //     ),
                               //     child: TextFormField(
                               //       controller: waktuinController,
                               //       style: const TextStyle(
-                              //         color: MjkColor.black,
+                              //         color: sruColor.black,
                               //         fontSize: 14,
                               //         fontWeight: FontWeight.w400,
                               //       ),
                               //       decoration: InputDecoration(
                               //         hintText: DateFormat('HH:mm').format(DateTime.now()),
                               //         hintStyle: const TextStyle(
-                              //           color: MjkColor.black,
+                              //           color: sruColor.black,
                               //           fontSize: 14,
                               //           fontWeight: FontWeight.w400,
                               //         ),
@@ -394,7 +394,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                               //         suffixIcon: const Icon(
                               //           Icons.access_time_filled,
                               //           size: 16,
-                              //           color: MjkColor.lightBlack022,
+                              //           color: sruColor.lightBlack022,
                               //         ),
                               //       ),
                               //       enabled: false,
@@ -410,7 +410,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                               //       style: TextStyle(
                               //         fontWeight: FontWeight.w400,
                               //         fontSize: 14,
-                              //         color: MjkColor.lightBlack011,
+                              //         color: sruColor.lightBlack011,
                               //       ),
                               //     ),
                               //   ],
@@ -432,12 +432,12 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                               //       shape: RoundedRectangleBorder(
                               //         borderRadius: BorderRadius.circular(8),
                               //       ),
-                              //       backgroundColor: MjkColor.white,
+                              //       backgroundColor: sruColor.white,
                               //     ),
                               //     child: TextFormField(
                               //       controller: waktuoutController,
                               //       style: const TextStyle(
-                              //         color: MjkColor.black,
+                              //         color: sruColor.black,
                               //         fontSize: 14,
                               //         fontWeight: FontWeight.w400,
                               //       ),
@@ -445,7 +445,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                               //         // contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                               //         hintText: DateFormat('HH:mm').format(DateTime.now()),
                               //         hintStyle: const TextStyle(
-                              //           color: MjkColor.black,
+                              //           color: sruColor.black,
                               //           fontSize: 14,
                               //           fontWeight: FontWeight.w400,
                               //         ),
@@ -459,7 +459,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                               //         suffixIcon: const Icon(
                               //           Icons.access_time_filled,
                               //           size: 16,
-                              //           color: MjkColor.lightBlack022,
+                              //           color: sruColor.lightBlack022,
                               //         ),
                               //       ),
                               //       enabled: false,
@@ -475,7 +475,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                                     style: TextStyle(
                                       fontWeight: FontWeight.w400,
                                       fontSize: 14,
-                                      color: MjkColor.lightBlack011,
+                                      color: sruColor.lightBlack011,
                                     ),
                                   ),
                                 ],
@@ -507,7 +507,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                                     style: TextStyle(
                                       fontWeight: FontWeight.w400,
                                       fontSize: 14,
-                                      color: MjkColor.lightBlack011,
+                                      color: sruColor.lightBlack011,
                                     ),
                                   ),
                                 ],
@@ -542,7 +542,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                                     style: TextStyle(
                                       fontWeight: FontWeight.w400,
                                       fontSize: 14,
-                                      color: MjkColor.lightBlack011,
+                                      color: sruColor.lightBlack011,
                                     ),
                                   ),
                                 ],
@@ -613,7 +613,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                               //       style: TextStyle(
                               //         fontWeight: FontWeight.w400,
                               //         fontSize: 14,
-                              //         color: MjkColor.lightBlack011,
+                              //         color: sruColor.lightBlack011,
                               //       ),
                               //     ),
                               //   ],
@@ -628,11 +628,11 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                               //       contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                               //       hintText: 'Latitude',
                               //       hintStyle: const TextStyle(
-                              //         color: MjkColor.lightBlack015,
+                              //         color: sruColor.lightBlack015,
                               //         fontSize: 14,
                               //         fontWeight: FontWeight.w400,
                               //       ),
-                              //       fillColor: MjkColor.lightBlack019,
+                              //       fillColor: sruColor.lightBlack019,
                               //       filled: true,
                               //       enabledBorder: OutlineInputBorder(
                               //         borderRadius: BorderRadius.circular(8.0),
@@ -654,7 +654,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                               //       style: TextStyle(
                               //         fontWeight: FontWeight.w400,
                               //         fontSize: 14,
-                              //         color: MjkColor.lightBlack011,
+                              //         color: sruColor.lightBlack011,
                               //       ),
                               //     ),
                               //   ],
@@ -669,11 +669,11 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                               //       contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                               //       hintText: 'longitude',
                               //       hintStyle: const TextStyle(
-                              //         color: MjkColor.lightBlack015,
+                              //         color: sruColor.lightBlack015,
                               //         fontSize: 14,
                               //         fontWeight: FontWeight.w400,
                               //       ),
-                              //       fillColor: MjkColor.lightBlack019,
+                              //       fillColor: sruColor.lightBlack019,
                               //       filled: true,
                               //       enabledBorder: OutlineInputBorder(
                               //         borderRadius: BorderRadius.circular(8.0),
@@ -819,7 +819,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
                               horizontal: 144,
                               vertical: 16,
                             ),
-                            backgroundColor: MjkColor.floatButtonSalesColor,
+                            backgroundColor: sruColor.floatButtonSalesColor,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                             ),
@@ -849,7 +849,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
     return Text(
       item.nama,
       style: const TextStyle(
-        color: MjkColor.black,
+        color: sruColor.black,
       ),
     );
   }
@@ -858,7 +858,7 @@ class _AddCheckInOutState extends ConsumerState<AddCheckInOut> {
     return Text(
       item.nama,
       style: const TextStyle(
-        color: MjkColor.black,
+        color: sruColor.black,
       ),
     );
   }

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/networks/total_get_data_dto_network.dart';
-import 'package:mjk_apps/core/services/shared_preferences_service.dart';
-import 'package:mjk_apps/core/utilities/string_utils.dart';
-import 'package:mjk_apps/core/view_models/aktifitas_sales/activityandcustomer_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/headers_sales.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/networks/total_get_data_dto_network.dart';
+import 'package:sru/core/services/shared_preferences_service.dart';
+import 'package:sru/core/utilities/string_utils.dart';
+import 'package:sru/core/view_models/aktifitas_sales/activityandcustomer_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/headers_sales.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
 
 class ActivitySalesView extends ConsumerStatefulWidget {
   const ActivitySalesView({super.key});
@@ -40,7 +40,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                       child: Column(
                         children: [
                           Container(
-                            decoration: const BoxDecoration(color: MjkColor.backgroundAtas),
+                            decoration: const BoxDecoration(color: sruColor.backgroundAtas),
                             child: Column(
                               children: [
                                 HeaderUser(
@@ -66,13 +66,13 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                                   style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w500,
-                                    color: MjkColor.lightBlack008,
+                                    color: sruColor.lightBlack008,
                                   ),
                                 ),
                                 Spacings.verSpace(12),
                                 const Divider(
                                   height: 1,
-                                  color: MjkColor.lightBlack009,
+                                  color: sruColor.lightBlack009,
                                 ),
                                 Spacings.verSpace(10),
                                 Column(
@@ -111,7 +111,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                   ),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: MjkColor.cardColorSales, // Set the background color here
+                      color: sruColor.cardColorSales, // Set the background color here
                       borderRadius: BorderRadius.circular(8.0), // Set the border radius here
                     ), // Set the background color here
                     child: ElevatedButton(
@@ -147,14 +147,14 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                                     const Text(
                                       'Omset',
                                       style: TextStyle(
-                                        color: MjkColor.lightBlack010,
+                                        color: sruColor.lightBlack010,
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
                                     IconButton(
                                       icon: const Icon(Icons.arrow_forward_ios),
-                                      color: MjkColor.lightBlack010,
+                                      color: sruColor.lightBlack010,
                                       iconSize: 16,
                                       onPressed: () {
                                         Navigator.pushNamed(
@@ -177,7 +177,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                               style: const TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: MjkColor.black,
+                                color: sruColor.black,
                               ),
                             ),
                           ],
@@ -195,7 +195,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                   ),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: MjkColor.cardColorSales, // Set the background color here
+                      color: sruColor.cardColorSales, // Set the background color here
                       borderRadius: BorderRadius.circular(8), // Set the border radius here
                     ), // Set the background color here
                     child: ElevatedButton(
@@ -228,14 +228,14 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                                 const Text(
                                   'Piutang',
                                   style: TextStyle(
-                                    color: MjkColor.lightBlack010,
+                                    color: sruColor.lightBlack010,
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
                                 IconButton(
                                   icon: const Icon(Icons.arrow_forward_ios),
-                                  color: MjkColor.lightBlack010,
+                                  color: sruColor.lightBlack010,
                                   iconSize: 16,
                                   onPressed: () {
                                     Navigator.pushNamed(
@@ -256,7 +256,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                               style: const TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: MjkColor.black,
+                                color: sruColor.black,
                               ),
                             ),
                           ],
@@ -292,7 +292,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
   //                       decoration: BoxDecoration(
   //                         borderRadius: BorderRadius.circular(9),
   //                         border: Border.all(
-  //                           color: MjkColor.lightBlack012,
+  //                           color: sruColor.lightBlack012,
   //                           width: 1,
   //                         ),
   //                       ),
@@ -334,7 +334,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
   //                                     style: const TextStyle(
   //                                       fontSize: 11,
   //                                       fontWeight: FontWeight.w400,
-  //                                       color: MjkColor.black,
+  //                                       color: sruColor.black,
   //                                     ),
   //                                   ),
   //                                   Spacings.verSpace(5),
@@ -343,7 +343,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
   //                                     style: const TextStyle(
   //                                       fontSize: 11,
   //                                       fontWeight: FontWeight.w400,
-  //                                       color: MjkColor.black,
+  //                                       color: sruColor.black,
   //                                     ),
   //                                   ),
   //                                   Spacings.verSpace(5),
@@ -352,7 +352,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
   //                                     style: const TextStyle(
   //                                       fontSize: 11,
   //                                       fontWeight: FontWeight.w400,
-  //                                       color: MjkColor.black,
+  //                                       color: sruColor.black,
   //                                     ),
   //                                   ),
   //                                 ],
@@ -361,7 +361,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
   //                                 children: [
   //                                   IconButton(
   //                                     icon: const Icon(Icons.arrow_forward_ios),
-  //                                     color: MjkColor.black,
+  //                                     color: sruColor.black,
   //                                     iconSize: 30,
   //                                     onPressed: () {
   //                                       Navigator.pushNamed(
@@ -398,7 +398,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(9),
                     border: Border.all(
-                      color: MjkColor.lightBlack012,
+                      color: sruColor.lightBlack012,
                       width: 1,
                     ),
                   ),
@@ -440,7 +440,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                                 style: const TextStyle(
                                   fontSize: 11,
                                   fontWeight: FontWeight.w400,
-                                  color: MjkColor.black,
+                                  color: sruColor.black,
                                 ),
                               ),
                               Spacings.verSpace(5),
@@ -449,7 +449,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                                 style: const TextStyle(
                                   fontSize: 11,
                                   fontWeight: FontWeight.w400,
-                                  color: MjkColor.black,
+                                  color: sruColor.black,
                                 ),
                               ),
                               Spacings.verSpace(5),
@@ -458,7 +458,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                                 style: const TextStyle(
                                   fontSize: 11,
                                   fontWeight: FontWeight.w400,
-                                  color: MjkColor.black,
+                                  color: sruColor.black,
                                 ),
                               ),
                             ],
@@ -467,7 +467,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                             children: [
                               IconButton(
                                 icon: const Icon(Icons.arrow_forward_ios),
-                                color: MjkColor.black,
+                                color: sruColor.black,
                                 iconSize: 30,
                                 onPressed: () {
                                   Navigator.pushNamed(
@@ -503,7 +503,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(9),
                     border: Border.all(
-                      color: MjkColor.lightBlack012,
+                      color: sruColor.lightBlack012,
                       width: 1,
                     ),
                   ),
@@ -545,7 +545,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                                 style: const TextStyle(
                                   fontSize: 11,
                                   fontWeight: FontWeight.w400,
-                                  color: MjkColor.black,
+                                  color: sruColor.black,
                                 ),
                               ),
                               Spacings.verSpace(5),
@@ -554,7 +554,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                                 style: const TextStyle(
                                   fontSize: 11,
                                   fontWeight: FontWeight.w400,
-                                  color: MjkColor.black,
+                                  color: sruColor.black,
                                 ),
                               ),
                               Spacings.verSpace(5),
@@ -563,7 +563,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                                 style: const TextStyle(
                                   fontSize: 11,
                                   fontWeight: FontWeight.w400,
-                                  color: MjkColor.black,
+                                  color: sruColor.black,
                                 ),
                               ),
                             ],
@@ -572,7 +572,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                             children: [
                               IconButton(
                                 icon: const Icon(Icons.arrow_forward_ios),
-                                color: MjkColor.black,
+                                color: sruColor.black,
                                 iconSize: 30,
                                 onPressed: () {
                                   Navigator.pushNamed(

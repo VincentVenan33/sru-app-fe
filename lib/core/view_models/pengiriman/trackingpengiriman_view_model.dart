@@ -1,6 +1,6 @@
-import 'package:mjk_apps/core/models/get_data/tracking_order_jual_get_data_dto.dart';
-import 'package:mjk_apps/core/networks/tracking_order_jual_get_data_dto_network.dart';
-import 'package:mjk_apps/core/view_models/base_view_model.dart';
+import 'package:sru/core/models/get_data/tracking_order_jual_get_data_dto.dart';
+import 'package:sru/core/networks/tracking_order_jual_get_data_dto_network.dart';
+import 'package:sru/core/view_models/base_view_model.dart';
 
 class TrackingPengirimanViewModel extends BaseViewModel {
   TrackingPengirimanViewModel({

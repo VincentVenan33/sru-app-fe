@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/ui/views/dashboard_view.dart';
-import 'package:mjk_apps/ui/views/orderjual/orderjual.dart';
-// import 'package:mjk_apps/ui/views/pengiriman/list_pengiriman_owner.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/ui/views/dashboard_view.dart';
+import 'package:sru/ui/views/orderjual/orderjual.dart';
+// import 'package:sru/ui/views/pengiriman/list_pengiriman_owner.dart';
 
 class NavbarOwnerView extends StatefulWidget {
   const NavbarOwnerView({super.key});
@@ -54,8 +54,8 @@ class _NavbarOwnerViewState extends State<NavbarOwnerView> {
               ),
             ],
             currentIndex: _selectedIndex,
-            selectedItemColor: MjkColor.navbarSelectedColor,
-            unselectedItemColor: MjkColor.navbarUnselectedColor,
+            selectedItemColor: sruColor.navbarSelectedColor,
+            unselectedItemColor: sruColor.navbarUnselectedColor,
             showUnselectedLabels: true,
             type: BottomNavigationBarType.fixed,
             onTap: _onItemTapped,

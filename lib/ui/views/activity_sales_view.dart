@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/ui/shared/headers_sales.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/ui/shared/headers_sales.dart';
+import 'package:sru/ui/shared/spacings.dart';
 
 class ActivitySalesView extends ConsumerStatefulWidget {
   const ActivitySalesView({super.key});
@@ -25,7 +25,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
         child: Column(
           children: [
             Container(
-              decoration: const BoxDecoration(color: MjkColor.backgroundAtas),
+              decoration: const BoxDecoration(color: sruColor.backgroundAtas),
               child: Column(
                 children: [
                   const HeaderUser(
@@ -61,7 +61,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: MjkColor.cardColorSales, // Set the background color here
+                      color: sruColor.cardColorSales, // Set the background color here
                       borderRadius: BorderRadius.circular(20.0), // Set the border radius here
                     ), // Set the background color here
                     child: Padding(
@@ -103,7 +103,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: MjkColor.cardColorSales, // Set the background color here
+                      color: sruColor.cardColorSales, // Set the background color here
                       borderRadius: BorderRadius.circular(20.0), // Set the border radius here
                     ), // Set the background color here
                     child: Padding(
@@ -329,7 +329,7 @@ class _ActivitySalesViewState extends ConsumerState<ActivitySalesView> {
                 //
                 // https://m3.material.io/components/floating-action-button/specs#669a1be8-7271-48cb-a74d-dd502d73bda4
                 FloatingActionButton.small(
-                  backgroundColor: MjkColor.floatButtonSalesColor,
+                  backgroundColor: sruColor.floatButtonSalesColor,
                   onPressed: () {
                     // Add your onPressed code here!
                   },

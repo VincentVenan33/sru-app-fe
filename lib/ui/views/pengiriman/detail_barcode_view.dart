@@ -4,16 +4,16 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:intl/intl.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/networks/nota_jual_get_data_dto_network.dart';
-import 'package:mjk_apps/core/networks/update_nota_jual_dto.dart';
-import 'package:mjk_apps/core/view_models/pengiriman/detail_barcode_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
-import 'package:mjk_apps/ui/views/navbar/navbar_sales_view.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/networks/nota_jual_get_data_dto_network.dart';
+import 'package:sru/core/networks/update_nota_jual_dto.dart';
+import 'package:sru/core/view_models/pengiriman/detail_barcode_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
+import 'package:sru/ui/views/navbar/navbar_sales_view.dart';
 
 class DetailBarcodeParam {
   const DetailBarcodeParam({
@@ -84,7 +84,7 @@ class _DetailBarcodeState extends ConsumerState<DetailBarcode> {
                 UnfocusHelper(
                   child: SafeArea(
                     child: Scaffold(
-                      backgroundColor: MjkColor.white,
+                      backgroundColor: sruColor.white,
                       body: NotificationListener<UserScrollNotification>(
                         onNotification: (notification) {
                           if (notification.direction == ScrollDirection.reverse) {
@@ -110,7 +110,7 @@ class _DetailBarcodeState extends ConsumerState<DetailBarcode> {
                                 child: Column(
                                   children: [
                                     AppBar(
-                                      backgroundColor: MjkColor.backgroundAtas,
+                                      backgroundColor: sruColor.backgroundAtas,
                                       leading: IconButton(
                                         onPressed: () {
                                           Navigator.pushNamedAndRemoveUntil(
@@ -159,7 +159,7 @@ class _DetailBarcodeState extends ConsumerState<DetailBarcode> {
                                                   style: TextStyle(
                                                     fontSize: 14,
                                                     fontWeight: FontWeight.w400,
-                                                    color: MjkColor.lightBlack011,
+                                                    color: sruColor.lightBlack011,
                                                   ),
                                                 ),
                                               ],
@@ -171,7 +171,7 @@ class _DetailBarcodeState extends ConsumerState<DetailBarcode> {
                                                 contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                                 hintText: model.notajual[0].kode,
                                                 hintStyle: const TextStyle(
-                                                  color: MjkColor.black,
+                                                  color: sruColor.black,
                                                   fontSize: 14,
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -195,7 +195,7 @@ class _DetailBarcodeState extends ConsumerState<DetailBarcode> {
                                                   style: TextStyle(
                                                     fontWeight: FontWeight.w400,
                                                     fontSize: 14,
-                                                    color: MjkColor.lightBlack011,
+                                                    color: sruColor.lightBlack011,
                                                   ),
                                                 ),
                                                 Spacings.verSpace(5),
@@ -208,7 +208,7 @@ class _DetailBarcodeState extends ConsumerState<DetailBarcode> {
                                                         DateTime.parse(model.notajual[0].tanggal ?? ''),
                                                       ),
                                                       hintStyle: const TextStyle(
-                                                        color: MjkColor.black,
+                                                        color: sruColor.black,
                                                         fontSize: 14,
                                                         fontWeight: FontWeight.w500,
                                                       ),
@@ -222,7 +222,7 @@ class _DetailBarcodeState extends ConsumerState<DetailBarcode> {
                                                       ),
                                                       suffixIcon: const Icon(
                                                         Icons.calendar_month,
-                                                        color: MjkColor.lightBlack016,
+                                                        color: sruColor.lightBlack016,
                                                         size: 16,
                                                       )),
                                                   readOnly: true,
@@ -235,7 +235,7 @@ class _DetailBarcodeState extends ConsumerState<DetailBarcode> {
                                                       style: TextStyle(
                                                         fontWeight: FontWeight.w400,
                                                         fontSize: 14,
-                                                        color: MjkColor.lightBlack011,
+                                                        color: sruColor.lightBlack011,
                                                       ),
                                                     ),
                                                   ],
@@ -247,7 +247,7 @@ class _DetailBarcodeState extends ConsumerState<DetailBarcode> {
                                                     contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                                     hintText: model.notajual[0].customer,
                                                     hintStyle: const TextStyle(
-                                                      color: MjkColor.black,
+                                                      color: sruColor.black,
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -270,7 +270,7 @@ class _DetailBarcodeState extends ConsumerState<DetailBarcode> {
                                                       style: TextStyle(
                                                         fontWeight: FontWeight.w400,
                                                         fontSize: 14,
-                                                        color: MjkColor.lightBlack011,
+                                                        color: sruColor.lightBlack011,
                                                       ),
                                                     ),
                                                   ],
@@ -282,7 +282,7 @@ class _DetailBarcodeState extends ConsumerState<DetailBarcode> {
                                                     contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                                     hintText: model.nama,
                                                     hintStyle: const TextStyle(
-                                                      color: MjkColor.black,
+                                                      color: sruColor.black,
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -305,7 +305,7 @@ class _DetailBarcodeState extends ConsumerState<DetailBarcode> {
                                                       style: TextStyle(
                                                         fontWeight: FontWeight.w400,
                                                         fontSize: 14,
-                                                        color: MjkColor.lightBlack011,
+                                                        color: sruColor.lightBlack011,
                                                       ),
                                                     ),
                                                   ],
@@ -322,7 +322,7 @@ class _DetailBarcodeState extends ConsumerState<DetailBarcode> {
                                                       hintText:
                                                           '${model.notajual[0].latitudedatang}, ${model.notajual[0].longitudedatang}',
                                                       hintStyle: const TextStyle(
-                                                        color: MjkColor.black,
+                                                        color: sruColor.black,
                                                         fontSize: 14,
                                                         fontWeight: FontWeight.w500,
                                                       ),
@@ -587,20 +587,20 @@ class _DetailBarcodeState extends ConsumerState<DetailBarcode> {
                                           model.notajual[0].statussampai == 1 &&
                                           model.notajual[0].statusdatang == 1
                                       ? Colors.transparent
-                                      : MjkColor.floatButtonSalesColor,
+                                      : sruColor.floatButtonSalesColor,
                                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                                   shadowColor: model.notajual.isNotEmpty &&
                                           model.notajual[0].statusberangkat == 1 &&
                                           model.notajual[0].statussampai == 1 &&
                                           model.notajual[0].statusdatang == 1
                                       ? Colors.transparent
-                                      : MjkColor.transparent,
+                                      : sruColor.transparent,
                                   surfaceTintColor: model.notajual.isNotEmpty &&
                                           model.notajual[0].statusberangkat == 1 &&
                                           model.notajual[0].statussampai == 1 &&
                                           model.notajual[0].statusdatang == 1
                                       ? Colors.transparent
-                                      : MjkColor.floatButtonSalesColor,
+                                      : sruColor.floatButtonSalesColor,
                                 ),
                                 child: !(model.notajual.isNotEmpty &&
                                         (model.notajual[0].statusberangkat == 0 ||
@@ -655,7 +655,7 @@ class _DetailBarcodeState extends ConsumerState<DetailBarcode> {
                               10,
                             ),
                           ),
-                          color: MjkColor.yellow003,
+                          color: sruColor.yellow003,
                         ),
                         child: const Text(
                           'Anda Sudah Mengantar Pesanan!',
@@ -663,7 +663,7 @@ class _DetailBarcodeState extends ConsumerState<DetailBarcode> {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: MjkColor.black,
+                            color: sruColor.black,
                           ),
                         ),
                       ),

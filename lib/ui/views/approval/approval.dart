@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/networks/order_jual_get_data_dto_network.dart';
-import 'package:mjk_apps/core/view_models/approval/approval_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
-import 'package:mjk_apps/ui/views/approval/detailorder.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/networks/order_jual_get_data_dto_network.dart';
+import 'package:sru/core/view_models/approval/approval_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
+import 'package:sru/ui/views/approval/detailorder.dart';
 
 import '../../shared/spacings.dart';
 
@@ -35,7 +35,7 @@ class _ApprovalViewState extends ConsumerState<ApprovalView> {
               child: SafeArea(
                 child: Scaffold(
                   appBar: AppBar(
-                    backgroundColor: MjkColor.backgroundAtas,
+                    backgroundColor: sruColor.backgroundAtas,
                     title: const Text(
                       'Daftar Order Jual',
                       textAlign: TextAlign.center,
@@ -106,7 +106,7 @@ class _ApprovalViewState extends ConsumerState<ApprovalView> {
                                                                   height: 25,
                                                                   decoration: const BoxDecoration(
                                                                     borderRadius: BorderRadius.all(Radius.circular(5)),
-                                                                    color: MjkColor.lightBlue006,
+                                                                    color: sruColor.lightBlue006,
                                                                   ),
                                                                   child: Text(
                                                                     model.orderjual[index].kode,
@@ -114,7 +114,7 @@ class _ApprovalViewState extends ConsumerState<ApprovalView> {
                                                                     style: const TextStyle(
                                                                       fontSize: 14,
                                                                       fontWeight: FontWeight.bold,
-                                                                      color: MjkColor.white,
+                                                                      color: sruColor.white,
                                                                     ),
                                                                   ),
                                                                 ),
@@ -127,7 +127,7 @@ class _ApprovalViewState extends ConsumerState<ApprovalView> {
                                                                   '${model.orderjual[index].customer}',
                                                                   style: const TextStyle(
                                                                     fontSize: 15.376,
-                                                                    color: MjkColor.black,
+                                                                    color: sruColor.black,
                                                                     fontWeight: FontWeight.bold,
                                                                   ),
                                                                 ),
@@ -145,7 +145,7 @@ class _ApprovalViewState extends ConsumerState<ApprovalView> {
                                                                         style: TextStyle(
                                                                           fontSize: 15.376,
                                                                           fontWeight: FontWeight.normal,
-                                                                          color: MjkColor.lightBlack018,
+                                                                          color: sruColor.lightBlack018,
                                                                         ),
                                                                       ),
                                                                       TextSpan(
@@ -153,7 +153,7 @@ class _ApprovalViewState extends ConsumerState<ApprovalView> {
                                                                         style: const TextStyle(
                                                                           fontSize: 15.376,
                                                                           fontWeight: FontWeight.bold,
-                                                                          color: MjkColor.black,
+                                                                          color: sruColor.black,
                                                                         ),
                                                                       ),
                                                                     ],
@@ -168,7 +168,7 @@ class _ApprovalViewState extends ConsumerState<ApprovalView> {
                                                                         style: TextStyle(
                                                                           fontSize: 15.376,
                                                                           fontWeight: FontWeight.normal,
-                                                                          color: MjkColor.lightBlack018,
+                                                                          color: sruColor.lightBlack018,
                                                                         ),
                                                                       ),
                                                                       TextSpan(
@@ -182,7 +182,7 @@ class _ApprovalViewState extends ConsumerState<ApprovalView> {
                                                                         style: const TextStyle(
                                                                           fontSize: 15.376,
                                                                           fontWeight: FontWeight.bold,
-                                                                          color: MjkColor.black,
+                                                                          color: sruColor.black,
                                                                         ),
                                                                       ),
                                                                     ],
@@ -197,7 +197,7 @@ class _ApprovalViewState extends ConsumerState<ApprovalView> {
                                                                         style: TextStyle(
                                                                           fontSize: 15.376,
                                                                           fontWeight: FontWeight.normal,
-                                                                          color: MjkColor.lightBlack018,
+                                                                          color: sruColor.lightBlack018,
                                                                         ),
                                                                       ),
                                                                       TextSpan(
@@ -233,7 +233,7 @@ class _ApprovalViewState extends ConsumerState<ApprovalView> {
                                                               icon: const Icon(
                                                                 Icons.chevron_right,
                                                                 size: 30,
-                                                                color: MjkColor.black,
+                                                                color: sruColor.black,
                                                               ),
                                                             ),
                                                           ],
@@ -247,7 +247,7 @@ class _ApprovalViewState extends ConsumerState<ApprovalView> {
                                             Spacings.verSpace(12),
                                             const Divider(
                                               height: 1,
-                                              color: MjkColor.lightBlack009,
+                                              color: sruColor.lightBlack009,
                                             ),
                                             Spacings.verSpace(12),
                                           ],
@@ -285,13 +285,13 @@ class _ApprovalViewState extends ConsumerState<ApprovalView> {
   Color _getStatusColor(String status) {
     switch (status) {
       case 'Approved':
-        return MjkColor.green005;
+        return sruColor.green005;
       case 'Pending':
-        return MjkColor.yellow001;
+        return sruColor.yellow001;
       case 'Rejected':
-        return MjkColor.red004;
+        return sruColor.red004;
       default:
-        return MjkColor.black;
+        return sruColor.black;
     }
   }
 }

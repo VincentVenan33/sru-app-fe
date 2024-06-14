@@ -1,1 +1,1 @@
- N:\\inspira\\inspira-mjk-app-fe\\.dart_tool\\flutter_build\\641ba49961054940389808a0ae30f56c\\native_assets.yaml: 
+ N:\\inspira\\inspira-sru-app-fe\\.dart_tool\\flutter_build\\641ba49961054940389808a0ae30f56c\\native_assets.yaml: 

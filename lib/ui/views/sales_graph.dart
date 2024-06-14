@@ -1,8 +1,8 @@
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/utilities/text_styles.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/utilities/text_styles.dart';
+import 'package:sru/ui/shared/spacings.dart';
 
 class SalesGraph extends StatefulWidget {
   const SalesGraph({super.key});
@@ -84,7 +84,7 @@ class _SalesGraphState extends State<SalesGraph> with TickerProviderStateMixin {
                   style: buildTextStyle(
                     fontSize: 12,
                     fontWeight: 500,
-                    color: MjkColor.lightBlack008,
+                    color: sruColor.lightBlack008,
                   ),
                 ),
               ],
@@ -92,7 +92,7 @@ class _SalesGraphState extends State<SalesGraph> with TickerProviderStateMixin {
             Spacings.verSpace(12),
             const Divider(
               height: 1,
-              color: MjkColor.lightBlack009,
+              color: sruColor.lightBlack009,
             ),
             SizeTransition(
               sizeFactor: _animation,
@@ -124,7 +124,7 @@ class _SalesGraphState extends State<SalesGraph> with TickerProviderStateMixin {
                   //                 height: 12,
                   //                 decoration: const BoxDecoration(
                   //                   shape: BoxShape.circle,
-                  //                   color: MjkColor.blue006,
+                  //                   color: sruColor.blue006,
                   //                 ),
                   //               ),
                   //               Spacings.horSpace(8),
@@ -133,7 +133,7 @@ class _SalesGraphState extends State<SalesGraph> with TickerProviderStateMixin {
                   //                 style: buildTextStyle(
                   //                   fontSize: 10,
                   //                   fontWeight: 400,
-                  //                   color: MjkColor.black,
+                  //                   color: sruColor.black,
                   //                 ),
                   //               ),
                   //             ],
@@ -155,7 +155,7 @@ class _SalesGraphState extends State<SalesGraph> with TickerProviderStateMixin {
                   //                 style: buildTextStyle(
                   //                   fontSize: 10,
                   //                   fontWeight: 400,
-                  //                   color: MjkColor.black,
+                  //                   color: sruColor.black,
                   //                 ),
                   //               ),
                   //             ],

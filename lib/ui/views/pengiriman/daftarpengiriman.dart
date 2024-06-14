@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/networks/order_jual_get_data_dto_network.dart';
-import 'package:mjk_apps/core/view_models/pengiriman/daftarpengiriman_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
-import 'package:mjk_apps/ui/views/pengiriman/detail_barcode_view.dart';
-import 'package:mjk_apps/ui/views/pengiriman/trackingpengiriman.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/networks/order_jual_get_data_dto_network.dart';
+import 'package:sru/core/view_models/pengiriman/daftarpengiriman_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
+import 'package:sru/ui/views/pengiriman/detail_barcode_view.dart';
+import 'package:sru/ui/views/pengiriman/trackingpengiriman.dart';
 
 import '../../shared/spacings.dart';
 
@@ -37,9 +37,9 @@ class _DaftarPengirimanViewState extends ConsumerState<DaftarPengirimanView> {
             child: UnfocusHelper(
               child: SafeArea(
                 child: Scaffold(
-                  backgroundColor: MjkColor.white,
+                  backgroundColor: sruColor.white,
                   appBar: AppBar(
-                    backgroundColor: MjkColor.backgroundAtas,
+                    backgroundColor: sruColor.backgroundAtas,
                     title: const Text(
                       'Daftar Pengiriman',
                       textAlign: TextAlign.center,
@@ -54,7 +54,7 @@ class _DaftarPengirimanViewState extends ConsumerState<DaftarPengirimanView> {
                           AssetImage(
                             'assets/icons/ri_qr-scan-line.png',
                           ),
-                          color: MjkColor.black,
+                          color: sruColor.black,
                           size: 31,
                         ),
                         style: const ButtonStyle(),
@@ -139,7 +139,7 @@ class _DaftarPengirimanViewState extends ConsumerState<DaftarPengirimanView> {
                                             children: [
                                               const Divider(
                                                 height: 1,
-                                                color: MjkColor.lightBlack009,
+                                                color: sruColor.lightBlack009,
                                               ),
                                               Spacings.verSpace(12),
                                               Row(
@@ -173,7 +173,7 @@ class _DaftarPengirimanViewState extends ConsumerState<DaftarPengirimanView> {
                                                                   '${model.orderjual[index].customer}',
                                                                   style: const TextStyle(
                                                                     fontSize: 15.376,
-                                                                    color: MjkColor.black,
+                                                                    color: sruColor.black,
                                                                     fontWeight: FontWeight.bold,
                                                                   ),
                                                                 ),
@@ -191,7 +191,7 @@ class _DaftarPengirimanViewState extends ConsumerState<DaftarPengirimanView> {
                                                                         style: TextStyle(
                                                                           fontSize: 15.376,
                                                                           fontWeight: FontWeight.normal,
-                                                                          color: MjkColor.lightBlack018,
+                                                                          color: sruColor.lightBlack018,
                                                                         ),
                                                                       ),
                                                                       TextSpan(
@@ -199,7 +199,7 @@ class _DaftarPengirimanViewState extends ConsumerState<DaftarPengirimanView> {
                                                                         style: const TextStyle(
                                                                           fontSize: 15.376,
                                                                           fontWeight: FontWeight.bold,
-                                                                          color: MjkColor.black,
+                                                                          color: sruColor.black,
                                                                         ),
                                                                       ),
                                                                     ],
@@ -214,7 +214,7 @@ class _DaftarPengirimanViewState extends ConsumerState<DaftarPengirimanView> {
                                                                         style: TextStyle(
                                                                           fontSize: 15.376,
                                                                           fontWeight: FontWeight.normal,
-                                                                          color: MjkColor.lightBlack018,
+                                                                          color: sruColor.lightBlack018,
                                                                         ),
                                                                       ),
                                                                       TextSpan(
@@ -222,7 +222,7 @@ class _DaftarPengirimanViewState extends ConsumerState<DaftarPengirimanView> {
                                                                         style: const TextStyle(
                                                                           fontSize: 15.376,
                                                                           fontWeight: FontWeight.bold,
-                                                                          color: MjkColor.black,
+                                                                          color: sruColor.black,
                                                                         ),
                                                                       ),
                                                                     ],
@@ -248,7 +248,7 @@ class _DaftarPengirimanViewState extends ConsumerState<DaftarPengirimanView> {
                                                               icon: const Icon(
                                                                 Icons.chevron_right,
                                                                 size: 30,
-                                                                color: MjkColor.black,
+                                                                color: sruColor.black,
                                                               ),
                                                             ),
                                                           ],
@@ -261,7 +261,7 @@ class _DaftarPengirimanViewState extends ConsumerState<DaftarPengirimanView> {
                                               // Spacings.verSpace(12),
                                               // const Divider(
                                               //   height: 1,
-                                              //   color: MjkColor.lightBlack009,
+                                              //   color: sruColor.lightBlack009,
                                               // ),
                                             ],
                                           ),

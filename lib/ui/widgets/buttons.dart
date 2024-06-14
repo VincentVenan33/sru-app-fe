@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/colors.dart';
 
 enum ButtonType { primary, outlineBasic, secondary, cancel, negative, outlineNegative, test }
 
@@ -11,20 +11,20 @@ enum ButtonSize {
 
 extension ButtonTypeExt on ButtonType {
   static const Map<ButtonType, Color> backgroundColors = <ButtonType, Color>{
-    ButtonType.primary: MjkColor.redPrimary,
-    ButtonType.secondary: MjkColor.secondary,
+    ButtonType.primary: sruColor.redPrimary,
+    ButtonType.secondary: sruColor.secondary,
   };
   Color get backgroundColor => backgroundColors[this]!;
 
   static const Map<ButtonType, Color> backgroundDisabledColors = <ButtonType, Color>{
-    ButtonType.primary: MjkColor.lightBlack001,
-    ButtonType.secondary: MjkColor.lightBlack001,
+    ButtonType.primary: sruColor.lightBlack001,
+    ButtonType.secondary: sruColor.lightBlack001,
   };
   Color get backgroundDisabled => backgroundDisabledColors[this]!;
 
   static const Map<ButtonType, Color> backgroundPressedColors = <ButtonType, Color>{
-    ButtonType.primary: MjkColor.redPrimary,
-    ButtonType.secondary: MjkColor.secondary,
+    ButtonType.primary: sruColor.redPrimary,
+    ButtonType.secondary: sruColor.secondary,
   };
   Color get backgroundPressedColor => backgroundPressedColors[this]!;
 
@@ -47,8 +47,8 @@ extension ButtonTypeExt on ButtonType {
   Color? get textColor => textColors[this];
 
   static const Map<ButtonType, Color> disabledTextColors = <ButtonType, Color>{
-    ButtonType.primary: MjkColor.lightBlack001,
-    ButtonType.secondary: MjkColor.lightBlack001,
+    ButtonType.primary: sruColor.lightBlack001,
+    ButtonType.secondary: sruColor.lightBlack001,
   };
   Color? get disabledTextColor => disabledTextColors[this];
 
@@ -186,7 +186,7 @@ class Button extends StatelessWidget {
         backgroundDisabled: buttonType.backgroundDisabled,
         backgroundPressed: buttonType.backgroundPressedColor,
         foreground: buttonType.foregroundColor,
-        foregroundDisabled: MjkColor.lightBlack001,
+        foregroundDisabled: sruColor.lightBlack001,
         foregroundPressed: buttonType.foregroundPressedColor,
         overlayColor: Colors.transparent,
         shadowColor: Colors.transparent,

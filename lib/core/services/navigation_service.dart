@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mjk_apps/main.dart';
+import 'package:sru/main.dart';
 
 final Provider<NavigationService> navigationProvider = Provider<NavigationService>(
   (ProviderRef<NavigationService> ref) => NavigationService(),

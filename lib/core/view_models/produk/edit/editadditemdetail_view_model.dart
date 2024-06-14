@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:mjk_apps/core/models/get_data/get_data_dto.dart';
-import 'package:mjk_apps/core/models/get_data/produk_get_data_dto.dart';
-import 'package:mjk_apps/core/models/get_data/satuan_barang_get_data_dto.dart';
-import 'package:mjk_apps/core/models/set_data/create_order_jual_detail_bonus_dto.dart';
-import 'package:mjk_apps/core/models/set_data/create_order_jual_dto.dart';
-import 'package:mjk_apps/core/networks/barang_get_data_dto_network.dart';
-import 'package:mjk_apps/core/networks/create_order_jual_detail_dto.dart';
-import 'package:mjk_apps/core/networks/get_data_dto_network.dart';
-import 'package:mjk_apps/core/networks/satuan_barang_get_data_dto_network.dart';
-import 'package:mjk_apps/core/services/shared_preferences_service.dart';
-import 'package:mjk_apps/core/view_models/base_view_model.dart';
+import 'package:sru/core/models/get_data/get_data_dto.dart';
+import 'package:sru/core/models/get_data/produk_get_data_dto.dart';
+import 'package:sru/core/models/get_data/satuan_barang_get_data_dto.dart';
+import 'package:sru/core/models/set_data/create_order_jual_detail_bonus_dto.dart';
+import 'package:sru/core/models/set_data/create_order_jual_dto.dart';
+import 'package:sru/core/networks/barang_get_data_dto_network.dart';
+import 'package:sru/core/networks/create_order_jual_detail_dto.dart';
+import 'package:sru/core/networks/get_data_dto_network.dart';
+import 'package:sru/core/networks/satuan_barang_get_data_dto_network.dart';
+import 'package:sru/core/services/shared_preferences_service.dart';
+import 'package:sru/core/view_models/base_view_model.dart';
 
 class EditAddItemDetailOrderJualViewModel extends BaseViewModel {
   EditAddItemDetailOrderJualViewModel({

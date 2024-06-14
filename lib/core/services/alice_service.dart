@@ -2,8 +2,8 @@ import 'package:alice_lightweight/core/alice_core.dart';
 import 'package:alice_lightweight/ui/page/alice_calls_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mjk_apps/core/app_constants/env.dart';
-import 'package:mjk_apps/main.dart';
+import 'package:sru/core/app_constants/env.dart';
+import 'package:sru/main.dart';
 import 'package:shake/shake.dart';
 
 final Provider<AliceCore> aliceCoreProvider = Provider<AliceCore>((ProviderRef<AliceCore> ref) {

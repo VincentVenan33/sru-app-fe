@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:mjk_apps/core/models/set_data/update_orderjualonly_dto.dart';
+import 'package:sru/core/models/set_data/update_orderjualonly_dto.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'update_order_jual_only_dto_api.g.dart';

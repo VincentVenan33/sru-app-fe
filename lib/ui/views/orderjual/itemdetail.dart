@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/networks/barang_get_data_dto_network.dart';
-import 'package:mjk_apps/core/networks/satuan_barang_get_data_dto_network.dart';
-import 'package:mjk_apps/core/services/shared_preferences_service.dart';
-import 'package:mjk_apps/core/view_models/produk/itemdetail_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/networks/barang_get_data_dto_network.dart';
+import 'package:sru/core/networks/satuan_barang_get_data_dto_network.dart';
+import 'package:sru/core/services/shared_preferences_service.dart';
+import 'package:sru/core/view_models/produk/itemdetail_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
 
 import '../../shared/spacings.dart';
 
@@ -53,7 +53,7 @@ class _DetailOrderJualState extends ConsumerState<DetailOrderJual> {
           return UnfocusHelper(
             child: SafeArea(
               child: Scaffold(
-                backgroundColor: MjkColor.white,
+                backgroundColor: sruColor.white,
                 body: RefreshIndicator(
                   onRefresh: () async => model.initModel(),
                   child: NotificationListener<UserScrollNotification>(
@@ -84,7 +84,7 @@ class _DetailOrderJualState extends ConsumerState<DetailOrderJual> {
                                 child: Column(
                                   children: [
                                     AppBar(
-                                      backgroundColor: MjkColor.backgroundAtas,
+                                      backgroundColor: sruColor.backgroundAtas,
                                       title: Text(
                                         'Item Detail',
                                         style: TextStyle(
@@ -143,7 +143,7 @@ class _DetailOrderJualState extends ConsumerState<DetailOrderJual> {
                                                   Text(
                                                     model.barang[0].kode,
                                                     style: const TextStyle(
-                                                      color: MjkColor.black,
+                                                      color: sruColor.black,
                                                       fontSize: 15,
                                                       fontWeight: FontWeight.w400,
                                                     ),
@@ -176,14 +176,14 @@ class _DetailOrderJualState extends ConsumerState<DetailOrderJual> {
                                                       style: TextStyle(
                                                           fontSize: 12,
                                                           fontWeight: FontWeight.w400,
-                                                          color: MjkColor.lightBlack008),
+                                                          color: sruColor.lightBlack008),
                                                     ),
                                                   ],
                                                 ),
                                                 Spacings.verSpace(12),
                                                 const Divider(
                                                   height: 1,
-                                                  color: MjkColor.lightBlack009,
+                                                  color: sruColor.lightBlack009,
                                                 ),
                                                 Spacings.verSpace(32),
                                                 Row(

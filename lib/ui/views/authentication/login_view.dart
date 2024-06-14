@@ -1,19 +1,19 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/networks/authentication_network.dart';
-import 'package:mjk_apps/core/services/authentication_service.dart';
-import 'package:mjk_apps/core/services/navigation_service.dart';
-import 'package:mjk_apps/core/services/shared_preferences_service.dart';
-import 'package:mjk_apps/core/utilities/text_styles.dart';
-import 'package:mjk_apps/core/view_models/authentication/login_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
-import 'package:mjk_apps/ui/widgets/buttons.dart';
-import 'package:mjk_apps/ui/widgets/text_inputs.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/networks/authentication_network.dart';
+import 'package:sru/core/services/authentication_service.dart';
+import 'package:sru/core/services/navigation_service.dart';
+import 'package:sru/core/services/shared_preferences_service.dart';
+import 'package:sru/core/utilities/text_styles.dart';
+import 'package:sru/core/view_models/authentication/login_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
+import 'package:sru/ui/widgets/buttons.dart';
+import 'package:sru/ui/widgets/text_inputs.dart';
 
 class LoginViewParam {
   LoginViewParam({
@@ -79,7 +79,8 @@ class _LoginViewState extends ConsumerState<LoginView> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Image.asset(
-                                    'assets/icons/mjk-logo.png',
+                                    'assets/icons/sru-logo.png',
+                                    width: 300,
                                   ),
                                 ],
                               ),
@@ -93,13 +94,13 @@ class _LoginViewState extends ConsumerState<LoginView> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: <Widget>[
-                                MjkTextInput(
+                                sruTextInput(
                                   controller: model.usernameController,
                                   hintText: 'Masukkan User',
                                   label: 'User',
                                 ),
                                 Spacings.verSpace(17.5),
-                                MjkTextInput(
+                                sruTextInput(
                                   controller: model.passwordController,
                                   enableFocusBorder: true,
                                   enableObscureText: true,
@@ -141,24 +142,28 @@ class _LoginViewState extends ConsumerState<LoginView> {
                                     //   context,
                                     //   Routes.navBarSales,
                                     // );
-                                    if (model.usernameController.text.isEmpty ||
-                                        model.passwordController.text.isEmpty) {
-                                      // handle required field
-                                      return;
-                                    }
+                                    Navigator.pushNamed(
+                                      context,
+                                      Routes.dashboard,
+                                    );
+                                    // if (model.usernameController.text.isEmpty ||
+                                    //     model.passwordController.text.isEmpty) {
+                                    //   // handle required field
+                                    //   return;
+                                    // }
 
-                                    final bool response = await model.requestLogin();
+                                    // final bool response = await model.requestLogin();
 
-                                    if (response && mounted) {
-                                      Navigator.pushNamed(
-                                        // ignore: use_build_context_synchronously
-                                        context,
-                                        Routes.navBarSales,
-                                      );
-                                    } else {
-                                      // Handle login failed
-                                      showErrorToast('Username/Password Salah!');
-                                    }
+                                    // if (response && mounted) {
+                                    //   Navigator.pushNamed(
+                                    //     // ignore: use_build_context_synchronously
+                                    //     context,
+                                    //     Routes.navBarSales,
+                                    //   );
+                                    // } else {
+                                    //   // Handle login failed
+                                    //   showErrorToast('Username/Password Salah!');
+                                    // }
                                   },
                                 ),
                               ],

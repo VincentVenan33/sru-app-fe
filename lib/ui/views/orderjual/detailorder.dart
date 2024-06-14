@@ -3,17 +3,17 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/networks/delete_order_jual_dto.dart';
-import 'package:mjk_apps/core/networks/order_jual_get_data_dto_network.dart';
-import 'package:mjk_apps/core/utilities/string_utils.dart';
-import 'package:mjk_apps/core/view_models/orderjual/detail_order_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
-import 'package:mjk_apps/ui/views/navbar/navbar_sales_view.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/networks/delete_order_jual_dto.dart';
+import 'package:sru/core/networks/order_jual_get_data_dto_network.dart';
+import 'package:sru/core/utilities/string_utils.dart';
+import 'package:sru/core/view_models/orderjual/detail_order_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
+import 'package:sru/ui/views/navbar/navbar_sales_view.dart';
 
 class DetailOrderPenjualanParam {
   const DetailOrderPenjualanParam({
@@ -93,7 +93,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
         return UnfocusHelper(
           child: SafeArea(
             child: Scaffold(
-              backgroundColor: MjkColor.white,
+              backgroundColor: sruColor.white,
               body: RefreshIndicator(
                 onRefresh: () async => model.initModel(),
                 child: NotificationListener<UserScrollNotification>(
@@ -123,7 +123,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                             child: Column(
                               children: [
                                 AppBar(
-                                  backgroundColor: MjkColor.backgroundAtas,
+                                  backgroundColor: sruColor.backgroundAtas,
                                   title: Text(
                                     'Detail Order Jual',
                                     style: TextStyle(
@@ -133,7 +133,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                   ),
                                   actions: [
                                     PopupMenuButton<String>(
-                                      iconColor: MjkColor.black,
+                                      iconColor: sruColor.black,
                                       itemBuilder: (BuildContext context) {
                                         return [
                                           PopupMenuItem<String>(
@@ -141,9 +141,9 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                             child: ElevatedButton(
                                               style: ElevatedButton.styleFrom(
                                                 padding: const EdgeInsets.all(0),
-                                                backgroundColor: Color(MjkColor.transparent.value),
-                                                surfaceTintColor: MjkColor.transparent,
-                                                shadowColor: MjkColor.transparent,
+                                                backgroundColor: Color(sruColor.transparent.value),
+                                                surfaceTintColor: sruColor.transparent,
+                                                shadowColor: sruColor.transparent,
                                                 shape: const RoundedRectangleBorder(
                                                   side: BorderSide.none,
                                                   borderRadius: BorderRadius.all(
@@ -156,13 +156,13 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                 children: [
                                                   const Icon(
                                                     Icons.edit,
-                                                    color: MjkColor.black,
+                                                    color: sruColor.black,
                                                   ),
                                                   Spacings.horSpace(10),
                                                   const Text(
                                                     'Edit',
                                                     style: TextStyle(
-                                                      color: MjkColor.black,
+                                                      color: sruColor.black,
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -176,9 +176,9 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                             child: ElevatedButton(
                                               style: ElevatedButton.styleFrom(
                                                 padding: const EdgeInsets.all(0),
-                                                backgroundColor: Color(MjkColor.transparent.value),
-                                                surfaceTintColor: MjkColor.transparent,
-                                                shadowColor: MjkColor.transparent,
+                                                backgroundColor: Color(sruColor.transparent.value),
+                                                surfaceTintColor: sruColor.transparent,
+                                                shadowColor: sruColor.transparent,
                                                 shape: const RoundedRectangleBorder(
                                                   side: BorderSide.none,
                                                   borderRadius: BorderRadius.all(
@@ -276,13 +276,13 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                 children: [
                                                   const Icon(
                                                     Icons.delete,
-                                                    color: MjkColor.red,
+                                                    color: sruColor.red,
                                                   ),
                                                   Spacings.horSpace(10),
                                                   const Text(
                                                     'Delete',
                                                     style: TextStyle(
-                                                      color: MjkColor.black,
+                                                      color: sruColor.black,
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -319,7 +319,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                               style: TextStyle(
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w400,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -331,7 +331,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintText: model.orderjual[0].kode,
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -354,7 +354,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -373,7 +373,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                               shape: RoundedRectangleBorder(
                                                 borderRadius: BorderRadius.circular(8),
                                               ),
-                                              backgroundColor: MjkColor.transparent,
+                                              backgroundColor: sruColor.transparent,
                                               surfaceTintColor: Colors.white,
                                               shadowColor: const Color(0x00000000),
                                             ),
@@ -385,14 +385,14 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                 Text(
                                                   '${model.orderjual[0].tanggal}',
                                                   style: const TextStyle(
-                                                    color: MjkColor.black,
+                                                    color: sruColor.black,
                                                     fontSize: 14,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                                 ),
                                                 const Icon(
                                                   Icons.calendar_month,
-                                                  color: MjkColor.lightBlack016,
+                                                  color: sruColor.lightBlack016,
                                                   size: 16,
                                                 ),
                                               ],
@@ -407,7 +407,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -420,7 +420,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintText: '${model.orderjual[0].customer}',
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontWeight: FontWeight.w500,
                                               fontSize: 14,
                                             ),
@@ -442,7 +442,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -455,7 +455,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintText: '${model.orderjual[0].sales}',
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontWeight: FontWeight.w500,
                                               fontSize: 14,
                                             ),
@@ -477,7 +477,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -492,7 +492,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                 ? _getStatusPPNText(model.orderjual[0].statusppn!)
                                                 : '-',
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontWeight: FontWeight.w500,
                                               fontSize: 14,
                                             ),
@@ -520,7 +520,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                               style: TextStyle(
                                                 fontSize: 15,
                                                 fontWeight: FontWeight.bold,
-                                                color: MjkColor.lightBlack008,
+                                                color: sruColor.lightBlack008,
                                               ),
                                             ),
                                           ],
@@ -560,7 +560,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                                 style: const TextStyle(
                                                                   fontSize: 17,
                                                                   fontWeight: FontWeight.bold,
-                                                                  color: MjkColor.black,
+                                                                  color: sruColor.black,
                                                                 ),
                                                               ),
                                                             ),
@@ -572,7 +572,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                           style: const TextStyle(
                                                             fontSize: 17,
                                                             fontWeight: FontWeight.w400,
-                                                            color: MjkColor.black,
+                                                            color: sruColor.black,
                                                           ),
                                                         ),
                                                         Spacings.verSpace(5),
@@ -581,7 +581,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                           style: const TextStyle(
                                                             fontSize: 17,
                                                             fontWeight: FontWeight.w400,
-                                                            color: MjkColor.black,
+                                                            color: sruColor.black,
                                                           ),
                                                         ),
                                                         Spacings.verSpace(5),
@@ -596,7 +596,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                           style: const TextStyle(
                                                             fontSize: 17,
                                                             fontWeight: FontWeight.w400,
-                                                            color: MjkColor.black,
+                                                            color: sruColor.black,
                                                           ),
                                                         ),
                                                       ],
@@ -622,7 +622,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                     style: TextStyle(
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.w500,
-                                                      color: MjkColor.lightBlack011,
+                                                      color: sruColor.lightBlack011,
                                                     ),
                                                   ),
                                                 ],
@@ -656,7 +656,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                                     hintText:
                                                                         '${model.orderjual[0].diskonprosentase}.00',
                                                                     hintStyle: const TextStyle(
-                                                                      color: MjkColor.black,
+                                                                      color: sruColor.black,
                                                                       fontWeight: FontWeight.w500,
                                                                       fontSize: 14,
                                                                     ),
@@ -701,7 +701,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                                     symbol: '',
                                                                   ),
                                                                   style: const TextStyle(
-                                                                    color: MjkColor.black,
+                                                                    color: sruColor.black,
                                                                     fontWeight: FontWeight.w500,
                                                                     fontSize: 14,
                                                                   ),
@@ -724,7 +724,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                     style: TextStyle(
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.w500,
-                                                      color: MjkColor.lightBlack011,
+                                                      color: sruColor.lightBlack011,
                                                     ),
                                                   ),
                                                 ],
@@ -747,7 +747,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                             symbol: '',
                                                           ),
                                                           style: const TextStyle(
-                                                            color: MjkColor.black,
+                                                            color: sruColor.black,
                                                             fontWeight: FontWeight.w500,
                                                             fontSize: 14,
                                                           ),
@@ -770,7 +770,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                           style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight: FontWeight.w500,
-                                                            color: MjkColor.lightBlack011,
+                                                            color: sruColor.lightBlack011,
                                                           ),
                                                         ),
                                                       ],
@@ -793,7 +793,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                                   symbol: '',
                                                                 ),
                                                                 style: const TextStyle(
-                                                                  color: MjkColor.black,
+                                                                  color: sruColor.black,
                                                                   fontWeight: FontWeight.w400,
                                                                   fontSize: 17,
                                                                 ),
@@ -812,7 +812,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                           style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight: FontWeight.w500,
-                                                            color: MjkColor.lightBlack011,
+                                                            color: sruColor.lightBlack011,
                                                           ),
                                                         ),
                                                       ],
@@ -834,7 +834,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                                       Text(
                                                                         '${model.orderjual[0].ppnprosentase}.00',
                                                                         style: const TextStyle(
-                                                                          color: MjkColor.black,
+                                                                          color: sruColor.black,
                                                                           fontWeight: FontWeight.w400,
                                                                           fontSize: 17,
                                                                         ),
@@ -861,7 +861,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                                           symbol: '',
                                                                         ),
                                                                         style: const TextStyle(
-                                                                          color: MjkColor.black,
+                                                                          color: sruColor.black,
                                                                           fontWeight: FontWeight.w400,
                                                                           fontSize: 17,
                                                                         ),
@@ -887,7 +887,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                     style: TextStyle(
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.w500,
-                                                      color: MjkColor.lightBlack011,
+                                                      color: sruColor.lightBlack011,
                                                     ),
                                                   ),
                                                 ],
@@ -910,7 +910,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                     symbol: '',
                                                   ),
                                                   hintStyle: const TextStyle(
-                                                    color: MjkColor.black,
+                                                    color: sruColor.black,
                                                     fontWeight: FontWeight.w500,
                                                     fontSize: 14,
                                                   ),
@@ -939,7 +939,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                     style: TextStyle(
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.w500,
-                                                      color: MjkColor.lightBlack011,
+                                                      color: sruColor.lightBlack011,
                                                     ),
                                                   ),
                                                 ],
@@ -962,7 +962,7 @@ class _DetailOrderPenjualanState extends ConsumerState<DetailOrderPenjualan> {
                                                             symbol: '',
                                                           ),
                                                           style: const TextStyle(
-                                                            color: MjkColor.black,
+                                                            color: sruColor.black,
                                                             fontWeight: FontWeight.w500,
                                                             fontSize: 14,
                                                           ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
-import 'package:mjk_apps/ui/views/navbar/navbar_sales_view.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
+import 'package:sru/ui/views/navbar/navbar_sales_view.dart';
 
 class NotifikasiView extends ConsumerStatefulWidget {
   const NotifikasiView({super.key});
@@ -31,9 +31,9 @@ class _NotifikasiViewState extends ConsumerState<NotifikasiView> with TickerProv
     return UnfocusHelper(
       child: SafeArea(
         child: Scaffold(
-          backgroundColor: MjkColor.white,
+          backgroundColor: sruColor.white,
           appBar: AppBar(
-            backgroundColor: MjkColor.backgroundAtas,
+            backgroundColor: sruColor.backgroundAtas,
             leading: IconButton(
               onPressed: () {
                 Navigator.pushNamedAndRemoveUntil(
@@ -92,7 +92,7 @@ class _NotifikasiViewState extends ConsumerState<NotifikasiView> with TickerProv
                               style: TextStyle(
                                 fontSize: 15.38,
                                 fontWeight: FontWeight.bold,
-                                color: MjkColor.black,
+                                color: sruColor.black,
                               ),
                             ),
                             Spacings.verSpace(15),
@@ -101,7 +101,7 @@ class _NotifikasiViewState extends ConsumerState<NotifikasiView> with TickerProv
                               style: TextStyle(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w400,
-                                color: MjkColor.lightBlack010,
+                                color: sruColor.lightBlack010,
                               ),
                             ),
                             Spacings.verSpace(15),
@@ -110,7 +110,7 @@ class _NotifikasiViewState extends ConsumerState<NotifikasiView> with TickerProv
                               style: TextStyle(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w400,
-                                color: MjkColor.lightBlack010,
+                                color: sruColor.lightBlack010,
                               ),
                             ),
                           ],
@@ -122,7 +122,7 @@ class _NotifikasiViewState extends ConsumerState<NotifikasiView> with TickerProv
                       children: [
                         Divider(
                           height: 1,
-                          color: MjkColor.lightBlack009,
+                          color: sruColor.lightBlack009,
                         ),
                       ],
                     ),

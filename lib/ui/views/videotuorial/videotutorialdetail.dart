@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
 
 class VideoTutorialDetailView extends ConsumerStatefulWidget {
   final String videotutorial;
@@ -31,9 +31,9 @@ class _VideoTutorialDetailViewState extends ConsumerState<VideoTutorialDetailVie
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: MjkColor.white,
+        backgroundColor: sruColor.white,
         appBar: AppBar(
-          backgroundColor: MjkColor.backgroundAtas,
+          backgroundColor: sruColor.backgroundAtas,
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             color: Colors.black,
@@ -62,7 +62,7 @@ class _VideoTutorialDetailViewState extends ConsumerState<VideoTutorialDetailVie
                 children: [
                   Container(
                     decoration: const BoxDecoration(
-                      color: MjkColor.black,
+                      color: sruColor.black,
                     ),
                     child: Image.asset(
                       'assets/images/Group 15460.png',
@@ -74,7 +74,7 @@ class _VideoTutorialDetailViewState extends ConsumerState<VideoTutorialDetailVie
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
-                      color: MjkColor.navbarUnselectedColor,
+                      color: sruColor.navbarUnselectedColor,
                     ),
                   ),
                 ],

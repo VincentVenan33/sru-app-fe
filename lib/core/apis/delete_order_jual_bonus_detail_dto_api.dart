@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:mjk_apps/core/models/delete_data/delete_order_jual_bonus_detail_dto.dart';
+import 'package:sru/core/models/delete_data/delete_order_jual_bonus_detail_dto.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'delete_order_jual_bonus_detail_dto_api.g.dart';

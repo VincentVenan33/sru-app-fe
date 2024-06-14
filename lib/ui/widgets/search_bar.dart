@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/utilities/text_styles.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/utilities/text_styles.dart';
 
 class SearchBar extends StatefulWidget {
   const SearchBar({
@@ -67,7 +67,7 @@ class _SearchBarState extends State<SearchBar> {
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
             width: _isSelected ? 2 : 0,
-            color: _isSelected ? Colors.blue : MjkColor.lightBlack002,
+            color: _isSelected ? Colors.blue : sruColor.lightBlack002,
           ),
         ),
         margin: EdgeInsets.all(!_isSelected ? 1 : 0),
@@ -85,7 +85,7 @@ class _SearchBarState extends State<SearchBar> {
               fontHeight: 16.08,
               fontSize: 13,
               fontWeight: 400,
-              color: MjkColor.lightBlack002,
+              color: sruColor.lightBlack002,
             ),
             icon: const Icon(
               Icons.search,

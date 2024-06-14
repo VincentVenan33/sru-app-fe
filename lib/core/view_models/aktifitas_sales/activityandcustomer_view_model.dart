@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:mjk_apps/core/models/get_data/total_get_data_dto.dart';
-import 'package:mjk_apps/core/networks/total_get_data_dto_network.dart';
-import 'package:mjk_apps/core/services/shared_preferences_service.dart';
-import 'package:mjk_apps/core/view_models/base_view_model.dart';
+import 'package:sru/core/models/get_data/total_get_data_dto.dart';
+import 'package:sru/core/networks/total_get_data_dto_network.dart';
+import 'package:sru/core/services/shared_preferences_service.dart';
+import 'package:sru/core/view_models/base_view_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ActivitySalesViewModel extends BaseViewModel {

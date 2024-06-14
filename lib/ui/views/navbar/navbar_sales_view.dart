@@ -4,13 +4,13 @@ import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/utilities/text_styles.dart';
-import 'package:mjk_apps/ui/views/aktifitas_sales/activityandcustomer.dart';
-import 'package:mjk_apps/ui/views/approval/approval.dart';
-import 'package:mjk_apps/ui/views/dashboard_view.dart';
-import 'package:mjk_apps/ui/views/orderjual/orderjual.dart';
-import 'package:mjk_apps/ui/views/pengiriman/daftarpengiriman.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/utilities/text_styles.dart';
+import 'package:sru/ui/views/aktifitas_sales/activityandcustomer.dart';
+import 'package:sru/ui/views/approval/approval.dart';
+import 'package:sru/ui/views/dashboard_view.dart';
+import 'package:sru/ui/views/orderjual/orderjual.dart';
+import 'package:sru/ui/views/pengiriman/daftarpengiriman.dart';
 
 class NavbarSalesViewParam {
   NavbarSalesViewParam({int? menuIndex}) : menuIndex = menuIndex ?? 0;
@@ -167,8 +167,8 @@ class _NavbarSalesViewState extends State<NavbarSalesView> {
                     ),
                   ],
                   currentIndex: _selectedIndex,
-                  selectedItemColor: MjkColor.navbarSelectedColor,
-                  unselectedItemColor: MjkColor.navbarUnselectedColor,
+                  selectedItemColor: sruColor.navbarSelectedColor,
+                  unselectedItemColor: sruColor.navbarUnselectedColor,
                   showUnselectedLabels: true,
                   type: BottomNavigationBarType.fixed,
                   onTap: _onItemTapped,
@@ -206,13 +206,13 @@ class _NavbarSalesViewState extends State<NavbarSalesView> {
       });
       BotToast.showSimpleNotification(
         title: "Tekan 2x untuk keluar aplikasi",
-        backgroundColor: MjkColor.black,
+        backgroundColor: sruColor.black,
         hideCloseButton: true,
         align: Alignment.bottomCenter,
         titleStyle: buildTextStyle(
           fontSize: 14,
           fontWeight: 400,
-          color: MjkColor.white,
+          color: sruColor.white,
         ),
       );
 

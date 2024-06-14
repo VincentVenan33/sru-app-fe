@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mjk_apps/core/services/authentication_service.dart';
-import 'package:mjk_apps/core/services/navigation_service.dart';
-import 'package:mjk_apps/core/view_models/splash_screen_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
+import 'package:sru/core/services/authentication_service.dart';
+import 'package:sru/core/services/navigation_service.dart';
+import 'package:sru/core/view_models/splash_screen_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
 
 class SplashScreenView extends ConsumerWidget {
   const SplashScreenView({super.key});
@@ -26,7 +26,7 @@ class SplashScreenView extends ConsumerWidget {
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    'assets/icons/mjk-logo.png',
+                    'assets/icons/sru-splash-logo.png',
                   ),
                   fit: BoxFit.none,
                 ),

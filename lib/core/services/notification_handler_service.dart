@@ -2,12 +2,12 @@
 // import 'dart:io';
 
 // import 'package:flutter_riverpod/flutter_riverpod.dart';
-// import 'package:mjk_apps/core/app_constants/app_constant.dart';
-// import 'package:mjk_apps/core/app_constants/route.dart';
-// import 'package:mjk_apps/core/models/inventory/dto/item_reorder_notifications_dto.dart';
-// import 'package:mjk_apps/core/services/authentication_service.dart';
-// import 'package:mjk_apps/core/services/navigation_service.dart';
-// import 'package:mjk_apps/core/services/push_notification_service.dart';
+// import 'package:sru/core/app_constants/app_constant.dart';
+// import 'package:sru/core/app_constants/route.dart';
+// import 'package:sru/core/models/inventory/dto/item_reorder_notifications_dto.dart';
+// import 'package:sru/core/services/authentication_service.dart';
+// import 'package:sru/core/services/navigation_service.dart';
+// import 'package:sru/core/services/push_notification_service.dart';
 
 // final notifHandlerService = Provider<NotificationHandlerService>(
 //   (ref) => NotificationHandlerService(

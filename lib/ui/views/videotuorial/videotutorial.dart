@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
-import 'package:mjk_apps/ui/views/videotuorial/videotutorialdetail.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
+import 'package:sru/ui/views/videotuorial/videotutorialdetail.dart';
 
 class VideoTutorialView extends ConsumerStatefulWidget {
   const VideoTutorialView({super.key});
@@ -22,9 +22,9 @@ class _VideoTutorialViewState extends ConsumerState<VideoTutorialView> with Tick
     return UnfocusHelper(
       child: SafeArea(
         child: Scaffold(
-          backgroundColor: MjkColor.white,
+          backgroundColor: sruColor.white,
           appBar: AppBar(
-            backgroundColor: MjkColor.backgroundAtas,
+            backgroundColor: sruColor.backgroundAtas,
             leading: IconButton(
               icon: const Icon(Icons.arrow_back),
               color: Colors.black,
@@ -69,7 +69,7 @@ class _VideoTutorialViewState extends ConsumerState<VideoTutorialView> with Tick
                       },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.all(0),
-                        backgroundColor: Color(MjkColor.transparent.value),
+                        backgroundColor: Color(sruColor.transparent.value),
                         surfaceTintColor: Colors.white,
                         shadowColor: const Color(0x00000000),
                         shape: const RoundedRectangleBorder(
@@ -96,7 +96,7 @@ class _VideoTutorialViewState extends ConsumerState<VideoTutorialView> with Tick
                                   AssetImage(
                                     'assets/icons/lets-icons_video.png',
                                   ),
-                                  color: MjkColor.black,
+                                  color: sruColor.black,
                                 )
                               ],
                             ),
@@ -109,7 +109,7 @@ class _VideoTutorialViewState extends ConsumerState<VideoTutorialView> with Tick
                                 style: const TextStyle(
                                   fontSize: 15.38,
                                   fontWeight: FontWeight.bold,
-                                  color: MjkColor.black,
+                                  color: sruColor.black,
                                 ),
                               ),
                             ],
@@ -122,7 +122,7 @@ class _VideoTutorialViewState extends ConsumerState<VideoTutorialView> with Tick
                       children: [
                         Divider(
                           height: 1,
-                          color: MjkColor.lightBlack009,
+                          color: sruColor.lightBlack009,
                         ),
                       ],
                     ),

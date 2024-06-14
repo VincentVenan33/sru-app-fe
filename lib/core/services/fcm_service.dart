@@ -3,13 +3,13 @@
 // import 'dart:io';
 // import 'package:collection/collection.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
-// import 'package:mjk_apps/core/app_constants/app_constant.dart';
-// import 'package:mjk_apps/core/models/authentication/login.dart';
-// import 'package:mjk_apps/core/models/fcm_token.dart';
-// import 'package:mjk_apps/core/network/notification_network.dart';
-// import 'package:mjk_apps/core/services/notification_handler_service.dart';
-// import 'package:mjk_apps/core/services/push_notification_service.dart';
-// import 'package:mjk_apps/core/services/shared_preferences_service.dart';
+// import 'package:sru/core/app_constants/app_constant.dart';
+// import 'package:sru/core/models/authentication/login.dart';
+// import 'package:sru/core/models/fcm_token.dart';
+// import 'package:sru/core/network/notification_network.dart';
+// import 'package:sru/core/services/notification_handler_service.dart';
+// import 'package:sru/core/services/push_notification_service.dart';
+// import 'package:sru/core/services/shared_preferences_service.dart';
 
 // class FCMService {
 //   FCMService({

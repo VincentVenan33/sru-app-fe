@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mjk_apps/core/models/get_data/get_data_dto.dart';
-import 'package:mjk_apps/core/models/get_data/kunjungan_get_data_dto.dart';
-import 'package:mjk_apps/core/networks/kunjungan_get_data_dto_network.dart';
-import 'package:mjk_apps/core/networks/update_kunjungan_dto.dart';
-import 'package:mjk_apps/core/view_models/base_view_model.dart';
+import 'package:sru/core/models/get_data/get_data_dto.dart';
+import 'package:sru/core/models/get_data/kunjungan_get_data_dto.dart';
+import 'package:sru/core/networks/kunjungan_get_data_dto_network.dart';
+import 'package:sru/core/networks/update_kunjungan_dto.dart';
+import 'package:sru/core/view_models/base_view_model.dart';
 
 class DetailPelangganViewModel extends BaseViewModel {
   DetailPelangganViewModel({

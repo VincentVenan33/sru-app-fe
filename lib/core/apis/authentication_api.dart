@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:mjk_apps/core/models/authentication/login.dart';
+import 'package:sru/core/models/authentication/login.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'authentication_api.g.dart';

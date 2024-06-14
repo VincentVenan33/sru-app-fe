@@ -3,14 +3,14 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/networks/get_data_dto_network.dart';
-import 'package:mjk_apps/core/view_models/customer/detailcustomer_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/networks/get_data_dto_network.dart';
+import 'package:sru/core/view_models/customer/detailcustomer_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
 
 class DetailCustomerParam {
   const DetailCustomerParam({
@@ -96,7 +96,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
         return UnfocusHelper(
           child: SafeArea(
             child: Scaffold(
-              backgroundColor: MjkColor.white,
+              backgroundColor: sruColor.white,
               body: RefreshIndicator(
                 onRefresh: () async => model.initModel(),
                 child: NotificationListener<UserScrollNotification>(
@@ -126,7 +126,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                             child: Column(
                               children: [
                                 AppBar(
-                                  backgroundColor: MjkColor.backgroundAtas,
+                                  backgroundColor: sruColor.backgroundAtas,
                                   leading: IconButton(
                                     onPressed: () {
                                       Navigator.pushNamed(
@@ -147,7 +147,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                   ),
                                   actions: [
                                     PopupMenuButton<String>(
-                                      iconColor: MjkColor.black,
+                                      iconColor: sruColor.black,
                                       itemBuilder: (BuildContext context) {
                                         return [
                                           PopupMenuItem<String>(
@@ -155,9 +155,9 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                             child: ElevatedButton(
                                               style: ElevatedButton.styleFrom(
                                                 padding: const EdgeInsets.all(0),
-                                                backgroundColor: Color(MjkColor.transparent.value),
-                                                surfaceTintColor: MjkColor.transparent,
-                                                shadowColor: MjkColor.transparent,
+                                                backgroundColor: Color(sruColor.transparent.value),
+                                                surfaceTintColor: sruColor.transparent,
+                                                shadowColor: sruColor.transparent,
                                                 shape: const RoundedRectangleBorder(
                                                   side: BorderSide.none,
                                                   borderRadius: BorderRadius.all(
@@ -170,13 +170,13 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                                 children: [
                                                   const Icon(
                                                     Icons.edit,
-                                                    color: MjkColor.black,
+                                                    color: sruColor.black,
                                                   ),
                                                   Spacings.horSpace(10),
                                                   const Text(
                                                     'Edit',
                                                     style: TextStyle(
-                                                      color: MjkColor.black,
+                                                      color: sruColor.black,
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -213,7 +213,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                               style: TextStyle(
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w400,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -225,7 +225,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintText: model.daftarcustomer[0].kode,
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -248,7 +248,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -260,7 +260,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                             hintText: model.daftarcustomer[0].nama,
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -283,7 +283,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -298,7 +298,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                               contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                               hintText: model.daftarcustomer[0].gelar,
                                               hintStyle: const TextStyle(
-                                                color: MjkColor.black,
+                                                color: sruColor.black,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -321,7 +321,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -336,7 +336,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                               contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                               hintText: model.daftarcustomer[0].kategoricustomer,
                                               hintStyle: const TextStyle(
-                                                color: MjkColor.black,
+                                                color: sruColor.black,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -359,7 +359,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -409,7 +409,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                                   Text(
                                                     '${model.daftarcustomer[0].desa}',
                                                     style: const TextStyle(
-                                                      color: MjkColor.black,
+                                                      color: sruColor.black,
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -438,7 +438,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                                   Text(
                                                     '${model.daftarcustomer[0].kecamatan}',
                                                     style: const TextStyle(
-                                                      color: MjkColor.black,
+                                                      color: sruColor.black,
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -468,7 +468,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                                   Text(
                                                     '${model.daftarcustomer[0].kota}',
                                                     style: const TextStyle(
-                                                      color: MjkColor.black,
+                                                      color: sruColor.black,
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -497,7 +497,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                                   Text(
                                                     '${model.daftarcustomer[0].provinsi}',
                                                     style: const TextStyle(
-                                                      color: MjkColor.black,
+                                                      color: sruColor.black,
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -515,7 +515,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -527,7 +527,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                             hintText: model.daftarcustomer[0].telepon,
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -559,7 +559,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                         //       style: TextStyle(
                                         //         fontWeight: FontWeight.w400,
                                         //         fontSize: 14,
-                                        //         color: MjkColor.lightBlack011,
+                                        //         color: sruColor.lightBlack011,
                                         //       ),
                                         //     ),
                                         //   ],
@@ -574,11 +574,11 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                         //       contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                         //       hintText: '${model.daftarcustomer[0].shareloc}',
                                         //       hintStyle: const TextStyle(
-                                        //         color: MjkColor.lightBlack015,
+                                        //         color: sruColor.lightBlack015,
                                         //         fontSize: 14,
                                         //         fontWeight: FontWeight.w400,
                                         //       ),
-                                        //       fillColor: MjkColor.lightBlack019,
+                                        //       fillColor: sruColor.lightBlack019,
                                         //       filled: true,
                                         //       enabledBorder: OutlineInputBorder(
                                         //         borderRadius: BorderRadius.circular(8.0),
@@ -600,7 +600,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -612,7 +612,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintText: model.daftarcustomer[0].ktp,
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -635,7 +635,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -652,7 +652,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                             decoration: InputDecoration(
                                               hintText: model.daftarcustomer[0].alamatktp,
                                               hintStyle: const TextStyle(
-                                                color: MjkColor.black,
+                                                color: sruColor.black,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -678,7 +678,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -690,7 +690,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                             hintText: model.daftarcustomer[0].jatuhtempo.toString(),
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -718,7 +718,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -730,7 +730,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                             hintText: model.daftarcustomer[0].npwp,
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -753,7 +753,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -765,7 +765,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                             hintText: model.daftarcustomer[0].kontak,
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -797,7 +797,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -809,7 +809,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintText: model.daftarcustomer[0].sales,
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -832,7 +832,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -844,7 +844,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                           decoration: InputDecoration(
                                             hintText: model.daftarcustomer[0].plafon.toString(),
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -874,7 +874,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -889,7 +889,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                               contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                               hintText: model.daftarcustomer[0].tipeoutlet,
                                               hintStyle: const TextStyle(
-                                                color: MjkColor.black,
+                                                color: sruColor.black,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -912,7 +912,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -929,7 +929,7 @@ class _DetailCustomerState extends ConsumerState<DetailCustomer> {
                                             decoration: InputDecoration(
                                               hintText: model.daftarcustomer[0].keterangan,
                                               hintStyle: const TextStyle(
-                                                color: MjkColor.black,
+                                                color: sruColor.black,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500,
                                               ),

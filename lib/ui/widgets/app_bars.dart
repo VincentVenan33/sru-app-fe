@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/utilities/text_styles.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/utilities/text_styles.dart';
+import 'package:sru/ui/shared/spacings.dart';
 
 PreferredSizeWidget buildAppBar(
   BuildContext context, {
@@ -20,7 +20,7 @@ PreferredSizeWidget buildAppBar(
     toolbarHeight: 60,
     flexibleSpace: Container(
       decoration: const BoxDecoration(
-        boxShadow: <BoxShadow>[BoxShadow(color: MjkColor.lightBlack001, blurRadius: 1.0, offset: Offset(0.0, 0.75))],
+        boxShadow: <BoxShadow>[BoxShadow(color: sruColor.lightBlack001, blurRadius: 1.0, offset: Offset(0.0, 0.75))],
         color: Colors.white,
       ),
       child: SafeArea(
@@ -75,14 +75,14 @@ PreferredSizeWidget buildBasicAppBar(
   return AppBar(
     systemOverlayStyle: SystemUiOverlayStyle.light,
     automaticallyImplyLeading: false,
-    backgroundColor: MjkColor.lightBlue005,
+    backgroundColor: sruColor.lightBlue005,
     foregroundColor: Colors.transparent,
     elevation: 0,
     toolbarHeight: 60,
     flexibleSpace: Container(
       decoration: const BoxDecoration(
-        boxShadow: <BoxShadow>[BoxShadow(color: MjkColor.lightBlack001, blurRadius: 1.0, offset: Offset(0.0, 0.75))],
-        color: MjkColor.lightBlue005,
+        boxShadow: <BoxShadow>[BoxShadow(color: sruColor.lightBlack001, blurRadius: 1.0, offset: Offset(0.0, 0.75))],
+        color: sruColor.lightBlue005,
       ),
       child: SafeArea(
         bottom: false,
@@ -100,7 +100,7 @@ PreferredSizeWidget buildBasicAppBar(
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    'assets/icons/mjk.png',
+                    'assets/icons/sru.png',
                   ),
                   fit: BoxFit.fitHeight,
                 ),

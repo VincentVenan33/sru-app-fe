@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:either_dart/either.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mjk_apps/core/apis/get_data_dto_api.dart';
-import 'package:mjk_apps/core/models/get_data/get_data_dto.dart';
-import 'package:mjk_apps/core/models/parsed_response.dart';
-import 'package:mjk_apps/core/services/dio_service.dart';
-import 'package:mjk_apps/core/utilities/error_utils.dart';
+import 'package:sru/core/apis/get_data_dto_api.dart';
+import 'package:sru/core/models/get_data/get_data_dto.dart';
+import 'package:sru/core/models/parsed_response.dart';
+import 'package:sru/core/services/dio_service.dart';
+import 'package:sru/core/utilities/error_utils.dart';
 import 'package:retrofit/dio.dart';
 
 final getDataDTOApi = Provider<GetDataDTOService>((ref) {

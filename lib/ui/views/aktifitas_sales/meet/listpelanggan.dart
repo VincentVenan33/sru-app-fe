@@ -3,16 +3,16 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/networks/kunjungan_get_data_dto_network.dart';
-import 'package:mjk_apps/core/view_models/meet/list_pelanggan_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
-import 'package:mjk_apps/ui/views/aktifitas_sales/meet/detailpelanggan.dart';
-import 'package:mjk_apps/ui/views/navbar/navbar_sales_view.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/networks/kunjungan_get_data_dto_network.dart';
+import 'package:sru/core/view_models/meet/list_pelanggan_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
+import 'package:sru/ui/views/aktifitas_sales/meet/detailpelanggan.dart';
+import 'package:sru/ui/views/navbar/navbar_sales_view.dart';
 
 import '../../../widgets/search_bar.dart' as search;
 
@@ -56,7 +56,7 @@ class _ListPelangganViewState extends ConsumerState<ListPelangganView> {
           child: UnfocusHelper(
             child: SafeArea(
               child: Scaffold(
-                backgroundColor: MjkColor.white,
+                backgroundColor: sruColor.white,
                 body: RefreshIndicator(
                   onRefresh: () async {
                     model.initModel();
@@ -100,7 +100,7 @@ class _ListPelangganViewState extends ConsumerState<ListPelangganView> {
                                         child: Column(
                                           children: [
                                             AppBar(
-                                              backgroundColor: MjkColor.backgroundAtas,
+                                              backgroundColor: sruColor.backgroundAtas,
                                               leading: IconButton(
                                                 icon: const Icon(Icons.arrow_back),
                                                 onPressed: () {
@@ -137,7 +137,7 @@ class _ListPelangganViewState extends ConsumerState<ListPelangganView> {
                                                           ),
                                                           decoration: BoxDecoration(
                                                             border: Border.all(
-                                                              color: MjkColor.lightBlack020,
+                                                              color: sruColor.lightBlack020,
                                                               width: 1,
                                                             ),
                                                             borderRadius: const BorderRadius.only(
@@ -170,7 +170,7 @@ class _ListPelangganViewState extends ConsumerState<ListPelangganView> {
                                                               ),
                                                               Spacings.verSpace(22),
                                                               Container(
-                                                                color: MjkColor.transparent,
+                                                                color: sruColor.transparent,
                                                                 child: Column(
                                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -181,9 +181,9 @@ class _ListPelangganViewState extends ConsumerState<ListPelangganView> {
                                                                       width: double.infinity,
                                                                       height: 58,
                                                                       decoration: BoxDecoration(
-                                                                        color: MjkColor.transparent,
+                                                                        color: sruColor.transparent,
                                                                         border: Border.all(
-                                                                          color: MjkColor.lightBlack020,
+                                                                          color: sruColor.lightBlack020,
                                                                           width: 1,
                                                                         ),
                                                                         borderRadius: BorderRadius.circular(40),
@@ -253,7 +253,7 @@ class _ListPelangganViewState extends ConsumerState<ListPelangganView> {
                                     vertical: 16,
                                     horizontal: 24,
                                   ),
-                                  color: MjkColor.white,
+                                  color: sruColor.white,
                                   child: search.SearchBar(
                                       controller: _searchController,
                                       hintText: 'Cari',
@@ -292,9 +292,9 @@ class _ListPelangganViewState extends ConsumerState<ListPelangganView> {
                                       },
                                       style: ElevatedButton.styleFrom(
                                         padding: const EdgeInsets.all(0),
-                                        backgroundColor: Color(MjkColor.transparent.value),
-                                        surfaceTintColor: MjkColor.transparent,
-                                        shadowColor: MjkColor.transparent,
+                                        backgroundColor: Color(sruColor.transparent.value),
+                                        surfaceTintColor: sruColor.transparent,
+                                        shadowColor: sruColor.transparent,
                                         shape: const RoundedRectangleBorder(
                                           side: BorderSide.none,
                                           borderRadius: BorderRadius.all(
@@ -317,7 +317,7 @@ class _ListPelangganViewState extends ConsumerState<ListPelangganView> {
                                                   height: 20,
                                                   decoration: const BoxDecoration(
                                                     borderRadius: BorderRadius.all(Radius.circular(5)),
-                                                    color: MjkColor.lightBlue006,
+                                                    color: sruColor.lightBlue006,
                                                   ),
                                                   child: Text(
                                                     model.kunjungan[index].kode,
@@ -325,7 +325,7 @@ class _ListPelangganViewState extends ConsumerState<ListPelangganView> {
                                                     style: const TextStyle(
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.bold,
-                                                      color: MjkColor.white,
+                                                      color: sruColor.white,
                                                       decoration: TextDecoration.none,
                                                     ),
                                                   ),
@@ -336,12 +336,12 @@ class _ListPelangganViewState extends ConsumerState<ListPelangganView> {
                                                     fontSize: 14,
                                                     fontWeight: FontWeight.bold,
                                                     color: model.kunjungan[index].statuskunjungan == 'BELUM DITEMUI'
-                                                        ? MjkColor.red004
+                                                        ? sruColor.red004
                                                         : model.kunjungan[index].statuskunjungan == 'SEDANG DITEMUI'
-                                                            ? MjkColor.yellow001
+                                                            ? sruColor.yellow001
                                                             : model.kunjungan[index].statuskunjungan == 'SUDAH DITEMUI'
-                                                                ? MjkColor.green005
-                                                                : MjkColor
+                                                                ? sruColor.green005
+                                                                : sruColor
                                                                     .black, // Warna default jika status tidak dikenali
                                                   ),
                                                 ),
@@ -354,7 +354,7 @@ class _ListPelangganViewState extends ConsumerState<ListPelangganView> {
                                                   '${model.kunjungan[index].customer}',
                                                   style: const TextStyle(
                                                     fontSize: 13,
-                                                    color: MjkColor.black,
+                                                    color: sruColor.black,
                                                     fontWeight: FontWeight.bold,
                                                   ),
                                                 ),
@@ -369,7 +369,7 @@ class _ListPelangganViewState extends ConsumerState<ListPelangganView> {
                                                     style: TextStyle(
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.normal,
-                                                      color: MjkColor.lightBlack018,
+                                                      color: sruColor.lightBlack018,
                                                     ),
                                                   ),
                                                   TextSpan(
@@ -377,7 +377,7 @@ class _ListPelangganViewState extends ConsumerState<ListPelangganView> {
                                                     style: const TextStyle(
                                                       fontSize: 16,
                                                       fontWeight: FontWeight.bold,
-                                                      color: MjkColor.lightBlack018,
+                                                      color: sruColor.lightBlack018,
                                                     ),
                                                   ),
                                                 ],
@@ -386,7 +386,7 @@ class _ListPelangganViewState extends ConsumerState<ListPelangganView> {
                                             Spacings.verSpace(12),
                                             const Divider(
                                               height: 1,
-                                              color: MjkColor.lightBlack009,
+                                              color: sruColor.lightBlack009,
                                             ),
                                             Spacings.verSpace(12),
                                           ],
@@ -412,7 +412,7 @@ class _ListPelangganViewState extends ConsumerState<ListPelangganView> {
                       Routes.addcheckinout,
                     );
                   },
-                  backgroundColor: MjkColor.floatButtonSalesColor,
+                  backgroundColor: sruColor.floatButtonSalesColor,
                   child: const Icon(
                     Icons.add,
                     color: Colors.white,
@@ -429,8 +429,8 @@ class _ListPelangganViewState extends ConsumerState<ListPelangganView> {
 
   Widget _buildButton(
       bool isActive, String text, BuildContext context, ListPelangganViewModel model, VoidCallback onPressed) {
-    Color foregroundColor = isActive ? MjkColor.white : MjkColor.lightBlack010;
-    Color backgroundColor = isActive ? MjkColor.lightBlue005 : MjkColor.white;
+    Color foregroundColor = isActive ? sruColor.white : sruColor.lightBlack010;
+    Color backgroundColor = isActive ? sruColor.lightBlue005 : sruColor.white;
     return Expanded(
       child: ElevatedButton(
         onPressed: onPressed,

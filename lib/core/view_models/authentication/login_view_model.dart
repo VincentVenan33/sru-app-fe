@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/models/authentication/login.dart';
-import 'package:mjk_apps/core/networks/authentication_network.dart';
-import 'package:mjk_apps/core/services/authentication_service.dart';
-import 'package:mjk_apps/core/services/navigation_service.dart';
-import 'package:mjk_apps/core/services/shared_preferences_service.dart';
-import 'package:mjk_apps/core/view_models/base_view_model.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/models/authentication/login.dart';
+import 'package:sru/core/networks/authentication_network.dart';
+import 'package:sru/core/services/authentication_service.dart';
+import 'package:sru/core/services/navigation_service.dart';
+import 'package:sru/core/services/shared_preferences_service.dart';
+import 'package:sru/core/view_models/base_view_model.dart';
 
 class LoginViewModel extends BaseViewModel {
   LoginViewModel({

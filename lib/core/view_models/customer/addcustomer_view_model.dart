@@ -1,11 +1,11 @@
 import 'dart:convert';
 
 import 'package:flutter/widgets.dart';
-import 'package:mjk_apps/core/models/get_data/get_data_dto.dart';
-import 'package:mjk_apps/core/networks/create_customer_dto.dart';
-import 'package:mjk_apps/core/networks/get_data_dto_network.dart';
-import 'package:mjk_apps/core/services/shared_preferences_service.dart';
-import 'package:mjk_apps/core/view_models/base_view_model.dart';
+import 'package:sru/core/models/get_data/get_data_dto.dart';
+import 'package:sru/core/networks/create_customer_dto.dart';
+import 'package:sru/core/networks/get_data_dto_network.dart';
+import 'package:sru/core/services/shared_preferences_service.dart';
+import 'package:sru/core/view_models/base_view_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AddCustomerViewModel extends BaseViewModel {

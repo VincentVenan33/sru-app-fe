@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/utilities/text_styles.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/utilities/text_styles.dart';
+import 'package:sru/ui/shared/spacings.dart';
 
 class SabpDropDown extends StatelessWidget {
   const SabpDropDown({
@@ -47,7 +47,7 @@ class SabpDropDown extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
                 width: 1,
-                color: _hasError ? Colors.red : MjkColor.lightBlack002,
+                color: _hasError ? Colors.red : sruColor.lightBlack002,
               ),
             ),
             child: Row(
@@ -58,7 +58,7 @@ class SabpDropDown extends StatelessWidget {
                     style: buildTextStyle(
                       fontSize: fontSize,
                       fontWeight: 400,
-                      color: MjkColor.lightBlack002,
+                      color: sruColor.lightBlack002,
                     ),
                   ),
                 ),

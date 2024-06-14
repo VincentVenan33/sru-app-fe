@@ -1,15 +1,15 @@
 import 'dart:convert';
 
 import 'package:flutter/widgets.dart';
-import 'package:mjk_apps/core/models/get_data/get_data_dto.dart';
-import 'package:mjk_apps/core/models/get_data/order_jual_get_data_dto.dart';
-import 'package:mjk_apps/core/models/set_data/create_order_jual_detail_bonus_dto.dart';
-import 'package:mjk_apps/core/networks/delete_order_jual_detail_dto.dart';
-import 'package:mjk_apps/core/networks/get_data_dto_network.dart';
-import 'package:mjk_apps/core/networks/order_jual_get_data_dto_network.dart';
-import 'package:mjk_apps/core/networks/update_order_jual_only_dto.dart';
-import 'package:mjk_apps/core/services/shared_preferences_service.dart';
-import 'package:mjk_apps/core/view_models/base_view_model.dart';
+import 'package:sru/core/models/get_data/get_data_dto.dart';
+import 'package:sru/core/models/get_data/order_jual_get_data_dto.dart';
+import 'package:sru/core/models/set_data/create_order_jual_detail_bonus_dto.dart';
+import 'package:sru/core/networks/delete_order_jual_detail_dto.dart';
+import 'package:sru/core/networks/get_data_dto_network.dart';
+import 'package:sru/core/networks/order_jual_get_data_dto_network.dart';
+import 'package:sru/core/networks/update_order_jual_only_dto.dart';
+import 'package:sru/core/services/shared_preferences_service.dart';
+import 'package:sru/core/view_models/base_view_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UpdateOrderJualViewModel extends BaseViewModel {

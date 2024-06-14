@@ -9,7 +9,7 @@ class AppConstant {
   static const String defaultCountryCode = '+62';
   static const String defaultLocale = 'in_ID';
 
-  static const String appSource = 'mjk-app';
+  static const String appSource = 'sru-app';
 
   static String? get platform {
     if (kIsWeb) {

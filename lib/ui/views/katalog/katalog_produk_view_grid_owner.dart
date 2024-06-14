@@ -1,9 +1,9 @@
 // import 'package:flutter/material.dart';
 // import 'package:flutter_riverpod/flutter_riverpod.dart';
-// import 'package:mjk_apps/core/networks/produk_network.dart';
-// import 'package:mjk_apps/core/view_models/view_model.dart';
-// import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-// import 'package:mjk_apps/ui/views/katalog/detail_katalog_produk_owner.dart';
+// import 'package:sru/core/networks/produk_network.dart';
+// import 'package:sru/core/view_models/view_model.dart';
+// import 'package:sru/ui/shared/loading_overlay.dart';
+// import 'package:sru/ui/views/katalog/detail_katalog_produk_owner.dart';
 
 // import '../../../core/view_models/produk/daftarprderjual_view_model.dart';
 // import '../../shared/spacings.dart';

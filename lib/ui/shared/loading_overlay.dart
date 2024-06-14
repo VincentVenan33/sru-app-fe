@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/colors.dart';
 
 class LoadingOverlay extends StatelessWidget {
   const LoadingOverlay({
@@ -26,7 +26,7 @@ class LoadingOverlay extends StatelessWidget {
                 color: Colors.white,
                 child: const CircularProgressIndicator(
                   strokeWidth: 5,
-                  color: MjkColor.blue001,
+                  color: sruColor.blue001,
                 ),
               )
             : const SizedBox.shrink(),

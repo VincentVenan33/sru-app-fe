@@ -3,18 +3,16 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:intl/intl.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/networks/dashboard_get_data_dto_network.dart';
-import 'package:mjk_apps/core/services/authentication_service.dart';
-import 'package:mjk_apps/core/utilities/string_utils.dart';
-import 'package:mjk_apps/core/utilities/text_styles.dart';
-import 'package:mjk_apps/core/view_models/dashboard_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
-import 'package:mjk_apps/ui/views/sales_graph.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/networks/dashboard_get_data_dto_network.dart';
+import 'package:sru/core/services/authentication_service.dart';
+import 'package:sru/core/utilities/string_utils.dart';
+import 'package:sru/core/utilities/text_styles.dart';
+import 'package:sru/core/view_models/dashboard_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
 
 class DashboardView extends ConsumerStatefulWidget {
   const DashboardView({super.key});
@@ -44,7 +42,7 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
           child: UnfocusHelper(
             child: SafeArea(
               child: Scaffold(
-                backgroundColor: MjkColor.white,
+                backgroundColor: sruColor.white,
                 body: NotificationListener<UserScrollNotification>(
                   onNotification: (notification) {
                     if (notification.direction == ScrollDirection.reverse) {
@@ -78,7 +76,7 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
                                     AppBar(
                                       // systemOverlayStyle: SystemUiOverlayStyle.light,
                                       automaticallyImplyLeading: false,
-                                      backgroundColor: MjkColor.lightBlue005,
+                                      backgroundColor: sruColor.lightBlue005,
                                       foregroundColor: Colors.transparent,
                                       elevation: 0,
                                       toolbarHeight: 60,
@@ -86,11 +84,11 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
                                         decoration: const BoxDecoration(
                                           boxShadow: <BoxShadow>[
                                             BoxShadow(
-                                                color: MjkColor.lightBlack001,
+                                                color: sruColor.lightBlack001,
                                                 blurRadius: 1.0,
                                                 offset: Offset(0.0, 0.75))
                                           ],
-                                          color: MjkColor.lightBlue005,
+                                          color: sruColor.lightBlue005,
                                         ),
                                         child: SafeArea(
                                           bottom: false,
@@ -103,12 +101,12 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
                                               ),
                                               Container(
                                                 width: 70,
-                                                height: 40,
+                                                height: 50,
                                                 alignment: Alignment.center,
                                                 decoration: const BoxDecoration(
                                                   image: DecorationImage(
                                                     image: AssetImage(
-                                                      'assets/icons/mjk.png',
+                                                      'assets/icons/sru.png',
                                                     ),
                                                     fit: BoxFit.fitHeight,
                                                   ),
@@ -118,7 +116,7 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
                                               Transform.translate(
                                                 offset: const Offset(10, 0),
                                                 child: Text(
-                                                  'Maju Jaya Kupang',
+                                                  'CV Sido Raya Utama',
                                                   style: buildTextStyle(
                                                     fontSize: 16,
                                                     fontWeight: 500,
@@ -138,34 +136,6 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
                                                   ),
                                                 ),
                                               ),
-                                              GestureDetector(
-                                                onTap: onNotificationButtonPressed,
-                                                child: anyNotif
-                                                    ? const SizedBox(
-                                                        child: Stack(
-                                                          children: <Widget>[
-                                                            ImageIcon(
-                                                              AssetImage(
-                                                                'assets/icons/notification-bing.png',
-                                                              ),
-                                                              size: 25,
-                                                            ),
-                                                            Positioned(
-                                                              top: 0.0,
-                                                              right: 0.0,
-                                                              child: Icon(Icons.brightness_1,
-                                                                  size: 8.0, color: Colors.redAccent),
-                                                            )
-                                                          ],
-                                                        ),
-                                                      )
-                                                    : const ImageIcon(
-                                                        AssetImage(
-                                                          'assets/icons/notification-bing.png',
-                                                        ),
-                                                      ),
-                                              ),
-                                              Spacings.horSpace(10),
                                               InkWell(
                                                 onTap: () => model.requestLogout(),
                                                 child: const ImageIcon(
@@ -190,31 +160,6 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
                                       ),
                                       child: Column(
                                         children: <Widget>[
-                                          const SalesGraph(),
-                                          Spacings.verSpace(20),
-                                          Row(
-                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              _buildCardSummary(
-                                                context,
-                                                true,
-                                                StringUtils.rupiahFormat(
-                                                  double.parse(
-                                                      model.omzet?.total != null ? '${model.omzet?.total}' : '0'),
-                                                  symbol: 'Rp. ',
-                                                ),
-                                              ),
-                                              _buildCardSummary(
-                                                context,
-                                                false,
-                                                StringUtils.rupiahFormat(
-                                                  double.parse(
-                                                      model.piutang?.total != null ? '${model.piutang?.total}' : '0'),
-                                                  symbol: 'Rp. ',
-                                                ),
-                                              ),
-                                            ],
-                                          ),
                                           Spacings.verSpace(20),
                                         ],
                                       ),
@@ -227,18 +172,18 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 24,
                                 ),
-                                color: MjkColor.white,
+                                color: sruColor.white,
                                 child: Column(
                                   children: [
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          'ORDER JUAL TERAKHIR',
+                                          'LIST SO',
                                           style: buildTextStyle(
-                                            fontSize: 12,
+                                            fontSize: 16,
                                             fontWeight: 500,
-                                            color: MjkColor.lightBlack008,
+                                            color: sruColor.black,
                                           ),
                                         ),
                                       ],
@@ -246,7 +191,7 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
                                     Spacings.verSpace(12),
                                     const Divider(
                                       height: 1,
-                                      color: MjkColor.lightBlack009,
+                                      color: sruColor.lightBlack009,
                                     ),
                                     Spacings.verSpace(21),
                                   ],
@@ -294,7 +239,7 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
                                                       child: Text(
                                                         model.orderjual[index].kode,
                                                         style: const TextStyle(
-                                                          color: MjkColor.white,
+                                                          color: sruColor.white,
                                                           fontWeight: FontWeight.w500,
                                                           fontSize: 14,
                                                         ),
@@ -311,7 +256,7 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
                                                       style: buildTextStyle(
                                                         fontSize: 15.376,
                                                         fontWeight: 400,
-                                                        color: MjkColor.black,
+                                                        color: sruColor.black,
                                                       ),
                                                     ),
                                                   ],
@@ -323,7 +268,7 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
                                                       style: buildTextStyle(
                                                         fontSize: 15.376,
                                                         fontWeight: 700,
-                                                        color: MjkColor.black,
+                                                        color: sruColor.black,
                                                       ),
                                                     ),
                                                     Spacings.verSpace(10.43),
@@ -337,7 +282,7 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
                                                       style: const TextStyle(
                                                         fontSize: 15.376,
                                                         fontWeight: FontWeight.w700,
-                                                        color: MjkColor.black,
+                                                        color: sruColor.black,
                                                       ),
                                                     ),
                                                   ],
@@ -349,7 +294,7 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
                                               children: [
                                                 Divider(
                                                   height: 1,
-                                                  color: MjkColor.lightBlack009,
+                                                  color: sruColor.lightBlack009,
                                                 ),
                                               ],
                                             ),
@@ -373,110 +318,6 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
           ),
         );
       },
-    );
-  }
-
-  Widget _buildCardSummary(
-    BuildContext context,
-    bool isPermintaan,
-    String quantity,
-  ) {
-    // ignore: unused_local_variable
-    double width = MediaQuery.of(context).size.width;
-
-    // Check if model.omzet and model.piutang are not empty before accessing the first element
-
-    return Stack(
-      children: <Widget>[
-        Container(
-          height: 80,
-          width: 160,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: MjkColor.blue006,
-          ),
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              padding: const EdgeInsets.all(0),
-              backgroundColor: Color(Colors.transparent.value),
-              surfaceTintColor: Colors.white,
-              shadowColor: const Color(0x00000000),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(0),
-              ),
-            ),
-            onPressed: () {
-              if (isPermintaan) {
-                Navigator.pushNamed(
-                  context,
-                  Routes.omsetdashboard,
-                );
-              } else {
-                Navigator.pushNamed(
-                  context,
-                  Routes.piutangdashboard,
-                );
-              }
-            },
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 12,
-                vertical: 0,
-              ),
-              child: Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            isPermintaan ? 'Omset' : 'Piutang',
-                            style: buildTextStyle(
-                              fontSize: 15,
-                              fontWeight: 800,
-                              color: Colors.white,
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: () {
-                              if (isPermintaan) {
-                                Navigator.pushNamed(
-                                  context,
-                                  Routes.omsetdashboard,
-                                );
-                              } else {
-                                Navigator.pushNamed(
-                                  context,
-                                  Routes.piutangdashboard,
-                                );
-                              }
-                            },
-                            icon: const Icon(
-                              Icons.arrow_forward_ios,
-                              size: 12,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Text(
-                        quantity,
-                        style: buildTextStyle(
-                          fontSize: 18,
-                          fontWeight: 600,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ],
     );
   }
 }

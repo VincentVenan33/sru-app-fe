@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/colors.dart';
 
 int _roundToNearest100(int value) {
   return (value / 100).round() * 100;
@@ -42,7 +42,7 @@ FontWeight normalizeFontWeight(double size, int weight) {
 TextStyle buildTextStyle({
   num fontSize = 14,
   int fontWeight = 400,
-  Color color = MjkColor.black002,
+  Color color = sruColor.black002,
   TextDecoration? decoration,
   double? fontHeight,
   double? letterSpacing,

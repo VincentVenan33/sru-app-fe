@@ -6,17 +6,17 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:intl/intl.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/networks/approval_order_jual_dto_network.dart';
-import 'package:mjk_apps/core/networks/order_jual_get_data_dto_network.dart';
-import 'package:mjk_apps/core/utilities/string_utils.dart';
-import 'package:mjk_apps/core/view_models/approval/detailorder_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
-import 'package:mjk_apps/ui/views/navbar/navbar_sales_view.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/networks/approval_order_jual_dto_network.dart';
+import 'package:sru/core/networks/order_jual_get_data_dto_network.dart';
+import 'package:sru/core/utilities/string_utils.dart';
+import 'package:sru/core/view_models/approval/detailorder_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
+import 'package:sru/ui/views/navbar/navbar_sales_view.dart';
 
 class ApprovalDetailOrderParam {
   const ApprovalDetailOrderParam({
@@ -97,7 +97,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
           child: UnfocusHelper(
             child: SafeArea(
               child: Scaffold(
-                backgroundColor: MjkColor.white,
+                backgroundColor: sruColor.white,
                 body: RefreshIndicator(
                   onRefresh: () async => model.initModel(),
                   child: NotificationListener<UserScrollNotification>(
@@ -133,7 +133,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                       child: Column(
                                         children: [
                                           AppBar(
-                                            backgroundColor: MjkColor.backgroundAtas,
+                                            backgroundColor: sruColor.backgroundAtas,
                                             leading: IconButton(
                                               onPressed: () {
                                                 Navigator.pushNamedAndRemoveUntil(
@@ -168,7 +168,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                               ),
                               if (model.statussetuju)
                                 Container(
-                                  color: MjkColor.white,
+                                  color: sruColor.white,
                                   padding: const EdgeInsets.symmetric(
                                     vertical: 8,
                                     horizontal: 24,
@@ -185,7 +185,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                           shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(10),
                                           ),
-                                          backgroundColor: MjkColor.red005,
+                                          backgroundColor: sruColor.red005,
                                         ),
                                         onPressed: () {
                                           showDialog(
@@ -272,7 +272,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                           children: [
                                             const Icon(
                                               Icons.close,
-                                              color: MjkColor.white,
+                                              color: sruColor.white,
                                               size: 20,
                                             ),
                                             Spacings.horSpace(8),
@@ -281,7 +281,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                 Text(
                                                   'Batal Setuju',
                                                   style: TextStyle(
-                                                    color: MjkColor.white,
+                                                    color: sruColor.white,
                                                     fontSize: 16,
                                                     fontWeight: FontWeight.w500,
                                                   ),
@@ -296,7 +296,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                 ),
                               if (!model.statussetuju)
                                 Container(
-                                  color: MjkColor.white,
+                                  color: sruColor.white,
                                   padding: const EdgeInsets.symmetric(
                                     vertical: 8,
                                     horizontal: 24,
@@ -313,7 +313,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                           shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(10),
                                           ),
-                                          backgroundColor: MjkColor.green006,
+                                          backgroundColor: sruColor.green006,
                                         ),
                                         onPressed: () {
                                           showDialog(
@@ -398,14 +398,14 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                           children: [
                                             const Icon(
                                               Icons.check,
-                                              color: MjkColor.white,
+                                              color: sruColor.white,
                                               size: 20,
                                             ),
                                             Spacings.horSpace(8),
                                             const Text(
                                               'Setuju',
                                               style: TextStyle(
-                                                color: MjkColor.white,
+                                                color: sruColor.white,
                                                 fontSize: 16,
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -424,7 +424,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                             shape: RoundedRectangleBorder(
                                               borderRadius: BorderRadius.circular(10),
                                             ),
-                                            backgroundColor: MjkColor.red005,
+                                            backgroundColor: sruColor.red005,
                                           ),
                                           onPressed: () {
                                             showDialog(
@@ -509,14 +509,14 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                             children: [
                                               const Icon(
                                                 Icons.close,
-                                                color: MjkColor.white,
+                                                color: sruColor.white,
                                                 size: 20,
                                               ),
                                               Spacings.horSpace(8),
                                               const Text(
                                                 'Tolak',
                                                 style: TextStyle(
-                                                  color: MjkColor.white,
+                                                  color: sruColor.white,
                                                   fontSize: 16,
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -550,7 +550,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                               style: TextStyle(
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w400,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -563,7 +563,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                               style: TextStyle(
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w400,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -575,7 +575,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintText: model.orderjual[0].kode,
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -598,7 +598,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -612,7 +612,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                 DateTime.parse(model.orderjual[0].tanggal ?? ''),
                                               ),
                                               hintStyle: const TextStyle(
-                                                color: MjkColor.black,
+                                                color: sruColor.black,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -626,7 +626,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                               ),
                                               suffixIcon: const Icon(
                                                 Icons.calendar_month,
-                                                color: MjkColor.lightBlack016,
+                                                color: sruColor.lightBlack016,
                                                 size: 16,
                                               )),
                                           readOnly: true,
@@ -639,7 +639,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -651,7 +651,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintText: '${model.orderjual[0].customer}',
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -674,7 +674,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -686,7 +686,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintText: '${model.orderjual[0].sales}',
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -709,7 +709,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -726,7 +726,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                             decoration: InputDecoration(
                                               hintText: '${model.orderjual[0].keterangan}',
                                               hintStyle: const TextStyle(
-                                                color: MjkColor.black,
+                                                color: sruColor.black,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -752,7 +752,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -769,7 +769,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                               symbol: 'Rp. ',
                                             ),
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -798,7 +798,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                               style: TextStyle(
                                                 fontSize: 15,
                                                 fontWeight: FontWeight.bold,
-                                                color: MjkColor.lightBlack008,
+                                                color: sruColor.lightBlack008,
                                               ),
                                             ),
                                           ],
@@ -838,7 +838,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                                 style: const TextStyle(
                                                                   fontSize: 17,
                                                                   fontWeight: FontWeight.bold,
-                                                                  color: MjkColor.black,
+                                                                  color: sruColor.black,
                                                                 ),
                                                               ),
                                                             ),
@@ -850,7 +850,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                           style: const TextStyle(
                                                             fontSize: 17,
                                                             fontWeight: FontWeight.w400,
-                                                            color: MjkColor.black,
+                                                            color: sruColor.black,
                                                           ),
                                                         ),
                                                         Spacings.verSpace(5),
@@ -859,7 +859,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                           style: const TextStyle(
                                                             fontSize: 17,
                                                             fontWeight: FontWeight.w400,
-                                                            color: MjkColor.black,
+                                                            color: sruColor.black,
                                                           ),
                                                         ),
                                                         Spacings.verSpace(5),
@@ -874,7 +874,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                           style: const TextStyle(
                                                             fontSize: 17,
                                                             fontWeight: FontWeight.w400,
-                                                            color: MjkColor.black,
+                                                            color: sruColor.black,
                                                           ),
                                                         ),
                                                       ],
@@ -902,7 +902,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                     style: TextStyle(
                                                       fontSize: 15,
                                                       fontWeight: FontWeight.bold,
-                                                      color: MjkColor.lightBlack008,
+                                                      color: sruColor.lightBlack008,
                                                     ),
                                                   ),
                                                 ],
@@ -947,7 +947,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                                   style: const TextStyle(
                                                                     fontSize: 17,
                                                                     fontWeight: FontWeight.bold,
-                                                                    color: MjkColor.black,
+                                                                    color: sruColor.black,
                                                                   ),
                                                                 ),
                                                               ),
@@ -959,7 +959,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                             style: const TextStyle(
                                                               fontSize: 17,
                                                               fontWeight: FontWeight.w400,
-                                                              color: MjkColor.black,
+                                                              color: sruColor.black,
                                                             ),
                                                           ),
                                                           Spacings.verSpace(5),
@@ -968,7 +968,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                             style: const TextStyle(
                                                               fontSize: 17,
                                                               fontWeight: FontWeight.w400,
-                                                              color: MjkColor.black,
+                                                              color: sruColor.black,
                                                             ),
                                                           ),
                                                           Spacings.verSpace(5),
@@ -977,7 +977,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                             style: const TextStyle(
                                                               fontSize: 17,
                                                               fontWeight: FontWeight.w400,
-                                                              color: MjkColor.black,
+                                                              color: sruColor.black,
                                                             ),
                                                           ),
                                                         ],
@@ -1005,7 +1005,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                     style: TextStyle(
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.w500,
-                                                      color: MjkColor.lightBlack011,
+                                                      color: sruColor.lightBlack011,
                                                     ),
                                                   ),
                                                 ],
@@ -1039,7 +1039,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                                     hintText:
                                                                         '${model.orderjual[0].diskonprosentase}.00',
                                                                     hintStyle: const TextStyle(
-                                                                      color: MjkColor.black,
+                                                                      color: sruColor.black,
                                                                       fontWeight: FontWeight.w500,
                                                                       fontSize: 14,
                                                                     ),
@@ -1084,7 +1084,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                                     symbol: '',
                                                                   ),
                                                                   style: const TextStyle(
-                                                                    color: MjkColor.black,
+                                                                    color: sruColor.black,
                                                                     fontWeight: FontWeight.w500,
                                                                     fontSize: 14,
                                                                   ),
@@ -1107,7 +1107,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                     style: TextStyle(
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.w500,
-                                                      color: MjkColor.lightBlack011,
+                                                      color: sruColor.lightBlack011,
                                                     ),
                                                   ),
                                                 ],
@@ -1130,7 +1130,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                             symbol: '',
                                                           ),
                                                           style: const TextStyle(
-                                                            color: MjkColor.black,
+                                                            color: sruColor.black,
                                                             fontWeight: FontWeight.w500,
                                                             fontSize: 14,
                                                           ),
@@ -1153,7 +1153,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                           style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight: FontWeight.w500,
-                                                            color: MjkColor.lightBlack011,
+                                                            color: sruColor.lightBlack011,
                                                           ),
                                                         ),
                                                       ],
@@ -1176,7 +1176,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                                   symbol: '',
                                                                 ),
                                                                 style: const TextStyle(
-                                                                  color: MjkColor.black,
+                                                                  color: sruColor.black,
                                                                   fontWeight: FontWeight.w400,
                                                                   fontSize: 17,
                                                                 ),
@@ -1195,7 +1195,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                           style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight: FontWeight.w500,
-                                                            color: MjkColor.lightBlack011,
+                                                            color: sruColor.lightBlack011,
                                                           ),
                                                         ),
                                                       ],
@@ -1217,7 +1217,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                                       Text(
                                                                         '${model.orderjual[0].ppnprosentase}.00',
                                                                         style: const TextStyle(
-                                                                          color: MjkColor.black,
+                                                                          color: sruColor.black,
                                                                           fontWeight: FontWeight.w400,
                                                                           fontSize: 17,
                                                                         ),
@@ -1244,7 +1244,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                                           symbol: '',
                                                                         ),
                                                                         style: const TextStyle(
-                                                                          color: MjkColor.black,
+                                                                          color: sruColor.black,
                                                                           fontWeight: FontWeight.w400,
                                                                           fontSize: 17,
                                                                         ),
@@ -1270,7 +1270,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                     style: TextStyle(
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.w500,
-                                                      color: MjkColor.lightBlack011,
+                                                      color: sruColor.lightBlack011,
                                                     ),
                                                   ),
                                                 ],
@@ -1293,7 +1293,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                     symbol: '',
                                                   ),
                                                   hintStyle: const TextStyle(
-                                                    color: MjkColor.black,
+                                                    color: sruColor.black,
                                                     fontWeight: FontWeight.w500,
                                                     fontSize: 14,
                                                   ),
@@ -1322,7 +1322,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                     style: TextStyle(
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.w500,
-                                                      color: MjkColor.lightBlack011,
+                                                      color: sruColor.lightBlack011,
                                                     ),
                                                   ),
                                                 ],
@@ -1345,7 +1345,7 @@ class _ApprovalDetailOrderState extends ConsumerState<ApprovalDetailOrder> with 
                                                             symbol: '',
                                                           ),
                                                           style: const TextStyle(
-                                                            color: MjkColor.black,
+                                                            color: sruColor.black,
                                                             fontWeight: FontWeight.w500,
                                                             fontSize: 14,
                                                           ),

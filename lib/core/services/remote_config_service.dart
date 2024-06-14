@@ -2,9 +2,9 @@
 
 // import 'package:firebase_remote_config/firebase_remote_config.dart';
 // import 'package:flutter_riverpod/flutter_riverpod.dart';
-// import 'package:mjk_apps/core/app_constants/app_constant.dart';
-// import 'package:mjk_apps/core/models/appwrite_credential.dart';
-// import 'package:mjk_apps/core/models/kategori_uom.dart';
+// import 'package:sru/core/app_constants/app_constant.dart';
+// import 'package:sru/core/models/appwrite_credential.dart';
+// import 'package:sru/core/models/kategori_uom.dart';
 
 // final remoteConfigProvider = Provider<RemoteConfigService>(
 //   (ref) => RemoteConfigService(),

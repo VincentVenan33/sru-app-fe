@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:mjk_apps/core/models/get_data/nota_jual_get_data_dto.dart';
+import 'package:sru/core/models/get_data/nota_jual_get_data_dto.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'nota_jual_get_data_dto_api.g.dart';

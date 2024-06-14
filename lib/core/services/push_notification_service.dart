@@ -1,7 +1,7 @@
 // import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 // import 'package:flutter_riverpod/flutter_riverpod.dart';
-// import 'package:mjk_apps/core/app_constants/app_constant.dart';
-// import 'package:mjk_apps/core/services/notification_handler_service.dart';
+// import 'package:sru/core/app_constants/app_constant.dart';
+// import 'package:sru/core/services/notification_handler_service.dart';
 
 // void _backgroundHandler(NotificationResponse response) {
 //   print(response.payload);

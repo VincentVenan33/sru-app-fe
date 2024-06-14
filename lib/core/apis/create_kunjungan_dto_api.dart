@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:mjk_apps/core/models/set_data/create_kunjungan_dto.dart';
+import 'package:sru/core/models/set_data/create_kunjungan_dto.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'create_kunjungan_dto_api.g.dart';

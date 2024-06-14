@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mjk_apps/core/models/get_data/produk_get_data_dto.dart';
-import 'package:mjk_apps/core/networks/barang_get_data_dto_network.dart';
-import 'package:mjk_apps/core/view_models/base_view_model.dart';
+import 'package:sru/core/models/get_data/produk_get_data_dto.dart';
+import 'package:sru/core/networks/barang_get_data_dto_network.dart';
+import 'package:sru/core/view_models/base_view_model.dart';
 
 class DaftarOrderJualViewModel extends BaseViewModel {
   DaftarOrderJualViewModel({

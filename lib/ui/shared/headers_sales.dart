@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
 
 class HeaderUser extends StatelessWidget {
   const HeaderUser({
@@ -27,7 +27,7 @@ class HeaderUser extends StatelessWidget {
             Container(
               width: 290,
               decoration: const BoxDecoration(
-                color: MjkColor.transparent,
+                color: sruColor.transparent,
               ),
               child: ElevatedButton(
                 onPressed: () {
@@ -38,9 +38,9 @@ class HeaderUser extends StatelessWidget {
                 },
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.all(0),
-                  backgroundColor: Color(MjkColor.backgroundAtas.value),
-                  surfaceTintColor: MjkColor.backgroundAtas,
-                  shadowColor: MjkColor.transparent,
+                  backgroundColor: Color(sruColor.backgroundAtas.value),
+                  surfaceTintColor: sruColor.backgroundAtas,
+                  shadowColor: sruColor.transparent,
                   shape: const RoundedRectangleBorder(
                     side: BorderSide.none,
                     borderRadius: BorderRadius.all(
@@ -74,14 +74,14 @@ class HeaderUser extends StatelessWidget {
                                 nama,
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  color: MjkColor.black,
+                                  color: sruColor.black,
                                 ),
                               ),
                               Text(
                                 admingrup,
                                 style: const TextStyle(
                                   fontWeight: FontWeight.w400,
-                                  color: MjkColor.black,
+                                  color: sruColor.black,
                                 ),
                               )
                             ],
@@ -160,7 +160,7 @@ class HeaderUser extends StatelessWidget {
 //                 decoration: BoxDecoration(
 //                   shape: BoxShape.circle,
 //                   border: Border.all(
-//                     color: MjkColor
+//                     color: sruColor
 //                         .iconButtonSalesColor, // Border color for the icon
 //                     width: 2.0, // Border width for the icon
 //                   ),

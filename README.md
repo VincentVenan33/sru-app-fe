@@ -1,4 +1,4 @@
-# mjk_apps
+# sru
 
 ## Pre requisite
 

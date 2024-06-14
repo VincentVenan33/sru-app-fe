@@ -2,10 +2,10 @@ import 'package:dio/dio.dart';
 import 'package:either_dart/either.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:retrofit/dio.dart';
-import 'package:mjk_apps/core/models/parsed_response.dart';
-import 'package:mjk_apps/core/services/dio_service.dart';
-import 'package:mjk_apps/core/services/shared_preferences_service.dart';
-import 'package:mjk_apps/core/utilities/error_utils.dart';
+import 'package:sru/core/models/parsed_response.dart';
+import 'package:sru/core/services/dio_service.dart';
+import 'package:sru/core/services/shared_preferences_service.dart';
+import 'package:sru/core/utilities/error_utils.dart';
 
 import '../apis/produk_api.dart';
 import '../models/produk/produk.dart';

@@ -6,9 +6,9 @@ import 'package:alice_lightweight/core/alice_dio_interceptor.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mjk_apps/core/app_constants/env.dart';
-import 'package:mjk_apps/core/services/alice_service.dart';
-import 'package:mjk_apps/core/services/authentication_service.dart';
+import 'package:sru/core/app_constants/env.dart';
+import 'package:sru/core/services/alice_service.dart';
+import 'package:sru/core/services/authentication_service.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 // ignore: depend_on_referenced_packages
 import 'package:rxdart/subjects.dart';

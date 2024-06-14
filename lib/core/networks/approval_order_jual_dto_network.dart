@@ -1,15 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:either_dart/either.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mjk_apps/core/apis/approval_order_jual_dto_api.dart';
-import 'package:mjk_apps/core/models/parsed_response.dart';
-import 'package:mjk_apps/core/models/set_data/approval_order_jual_dto.dart';
-import 'package:mjk_apps/core/services/dio_service.dart';
-import 'package:mjk_apps/core/utilities/error_utils.dart';
+import 'package:sru/core/apis/approval_order_jual_dto_api.dart';
+import 'package:sru/core/models/parsed_response.dart';
+import 'package:sru/core/models/set_data/approval_order_jual_dto.dart';
+import 'package:sru/core/services/dio_service.dart';
+import 'package:sru/core/utilities/error_utils.dart';
 import 'package:retrofit/dio.dart';
 
-final setApprovalOrderJualDTOApi =
-    Provider<SetApprovalOrderJualDTOService>((ref) {
+final setApprovalOrderJualDTOApi = Provider<SetApprovalOrderJualDTOService>((ref) {
   final DioService dio = ref.read(dioProvider);
   return SetApprovalOrderJualDTOService(
     dio.getDio(domainType: DomainType.account),

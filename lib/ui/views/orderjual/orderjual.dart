@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/networks/delete_order_jual_dto.dart';
-import 'package:mjk_apps/core/networks/order_jual_get_data_dto_network.dart';
-import 'package:mjk_apps/core/view_models/orderjual/orderjual_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
-import 'package:mjk_apps/ui/views/orderjual/detailorder.dart';
-import 'package:mjk_apps/ui/views/orderjual/edit/editorderjual.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/networks/delete_order_jual_dto.dart';
+import 'package:sru/core/networks/order_jual_get_data_dto_network.dart';
+import 'package:sru/core/view_models/orderjual/orderjual_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
+import 'package:sru/ui/views/orderjual/detailorder.dart';
+import 'package:sru/ui/views/orderjual/edit/editorderjual.dart';
 
 import '../../shared/spacings.dart';
 import '../../widgets/search_bar.dart' as search;
@@ -46,9 +46,9 @@ class _OrderJualViewState extends ConsumerState<OrderJualView> {
             child: UnfocusHelper(
               child: SafeArea(
                 child: Scaffold(
-                  backgroundColor: MjkColor.white,
+                  backgroundColor: sruColor.white,
                   appBar: AppBar(
-                    backgroundColor: MjkColor.backgroundAtas,
+                    backgroundColor: sruColor.backgroundAtas,
                     title: const Text(
                       'Daftar Order Jual',
                       style: TextStyle(
@@ -93,7 +93,7 @@ class _OrderJualViewState extends ConsumerState<OrderJualView> {
                                 height: 41,
                                 child: ElevatedButton(
                                   style: ButtonStyle(
-                                    backgroundColor: MaterialStateProperty.all<Color>(MjkColor.floatButtonSalesColor),
+                                    backgroundColor: MaterialStateProperty.all<Color>(sruColor.floatButtonSalesColor),
                                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                       RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(8.0),
@@ -121,7 +121,7 @@ class _OrderJualViewState extends ConsumerState<OrderJualView> {
                                       Spacings.horSpace(15),
                                       const Icon(
                                         Icons.book_outlined,
-                                        color: MjkColor.white,
+                                        color: sruColor.white,
                                         size: 24,
                                       ),
                                     ],
@@ -187,7 +187,7 @@ class _OrderJualViewState extends ConsumerState<OrderJualView> {
                                                                 height: 25,
                                                                 decoration: const BoxDecoration(
                                                                   borderRadius: BorderRadius.all(Radius.circular(5)),
-                                                                  color: MjkColor.lightBlue006,
+                                                                  color: sruColor.lightBlue006,
                                                                 ),
                                                                 child: Text(
                                                                   model.orderjual[index].kode,
@@ -195,7 +195,7 @@ class _OrderJualViewState extends ConsumerState<OrderJualView> {
                                                                   style: const TextStyle(
                                                                     fontSize: 14,
                                                                     fontWeight: FontWeight.bold,
-                                                                    color: MjkColor.white,
+                                                                    color: sruColor.white,
                                                                   ),
                                                                 ),
                                                               ),
@@ -208,7 +208,7 @@ class _OrderJualViewState extends ConsumerState<OrderJualView> {
                                                                 '${model.orderjual[index].customer}',
                                                                 style: const TextStyle(
                                                                   fontSize: 15.376,
-                                                                  color: MjkColor.black,
+                                                                  color: sruColor.black,
                                                                   fontWeight: FontWeight.bold,
                                                                 ),
                                                               ),
@@ -226,7 +226,7 @@ class _OrderJualViewState extends ConsumerState<OrderJualView> {
                                                                       style: TextStyle(
                                                                         fontSize: 15.376,
                                                                         fontWeight: FontWeight.normal,
-                                                                        color: MjkColor.lightBlack018,
+                                                                        color: sruColor.lightBlack018,
                                                                       ),
                                                                     ),
                                                                     TextSpan(
@@ -234,7 +234,7 @@ class _OrderJualViewState extends ConsumerState<OrderJualView> {
                                                                       style: const TextStyle(
                                                                         fontSize: 15.376,
                                                                         fontWeight: FontWeight.bold,
-                                                                        color: MjkColor.black,
+                                                                        color: sruColor.black,
                                                                       ),
                                                                     ),
                                                                   ],
@@ -249,7 +249,7 @@ class _OrderJualViewState extends ConsumerState<OrderJualView> {
                                                                       style: TextStyle(
                                                                         fontSize: 15.376,
                                                                         fontWeight: FontWeight.normal,
-                                                                        color: MjkColor.lightBlack018,
+                                                                        color: sruColor.lightBlack018,
                                                                       ),
                                                                     ),
                                                                     TextSpan(
@@ -263,7 +263,7 @@ class _OrderJualViewState extends ConsumerState<OrderJualView> {
                                                                       style: const TextStyle(
                                                                         fontSize: 15.376,
                                                                         fontWeight: FontWeight.bold,
-                                                                        color: MjkColor.black,
+                                                                        color: sruColor.black,
                                                                       ),
                                                                     ),
                                                                   ],
@@ -276,7 +276,7 @@ class _OrderJualViewState extends ConsumerState<OrderJualView> {
                                                       Row(
                                                         children: [
                                                           PopupMenuButton<String>(
-                                                            iconColor: MjkColor.black,
+                                                            iconColor: sruColor.black,
                                                             itemBuilder: (BuildContext context) {
                                                               return [
                                                                 PopupMenuItem<String>(
@@ -285,9 +285,9 @@ class _OrderJualViewState extends ConsumerState<OrderJualView> {
                                                                     style: ElevatedButton.styleFrom(
                                                                       padding: const EdgeInsets.all(0),
                                                                       backgroundColor:
-                                                                          Color(MjkColor.transparent.value),
-                                                                      surfaceTintColor: MjkColor.transparent,
-                                                                      shadowColor: MjkColor.transparent,
+                                                                          Color(sruColor.transparent.value),
+                                                                      surfaceTintColor: sruColor.transparent,
+                                                                      shadowColor: sruColor.transparent,
                                                                       shape: const RoundedRectangleBorder(
                                                                         side: BorderSide.none,
                                                                         borderRadius: BorderRadius.all(
@@ -309,13 +309,13 @@ class _OrderJualViewState extends ConsumerState<OrderJualView> {
                                                                       children: [
                                                                         const Icon(
                                                                           Icons.edit,
-                                                                          color: MjkColor.black,
+                                                                          color: sruColor.black,
                                                                         ),
                                                                         Spacings.horSpace(10),
                                                                         const Text(
                                                                           'Edit',
                                                                           style: TextStyle(
-                                                                            color: MjkColor.black,
+                                                                            color: sruColor.black,
                                                                             fontSize: 14,
                                                                             fontWeight: FontWeight.w500,
                                                                           ),
@@ -330,9 +330,9 @@ class _OrderJualViewState extends ConsumerState<OrderJualView> {
                                                                     style: ElevatedButton.styleFrom(
                                                                       padding: const EdgeInsets.all(0),
                                                                       backgroundColor:
-                                                                          Color(MjkColor.transparent.value),
-                                                                      surfaceTintColor: MjkColor.transparent,
-                                                                      shadowColor: MjkColor.transparent,
+                                                                          Color(sruColor.transparent.value),
+                                                                      surfaceTintColor: sruColor.transparent,
+                                                                      shadowColor: sruColor.transparent,
                                                                       shape: const RoundedRectangleBorder(
                                                                         side: BorderSide.none,
                                                                         borderRadius: BorderRadius.all(
@@ -444,13 +444,13 @@ class _OrderJualViewState extends ConsumerState<OrderJualView> {
                                                                       children: [
                                                                         const Icon(
                                                                           Icons.delete,
-                                                                          color: MjkColor.red,
+                                                                          color: sruColor.red,
                                                                         ),
                                                                         Spacings.horSpace(10),
                                                                         const Text(
                                                                           'Delete',
                                                                           style: TextStyle(
-                                                                            color: MjkColor.black,
+                                                                            color: sruColor.black,
                                                                             fontSize: 14,
                                                                             fontWeight: FontWeight.w500,
                                                                           ),
@@ -473,7 +473,7 @@ class _OrderJualViewState extends ConsumerState<OrderJualView> {
                                           Spacings.verSpace(12),
                                           const Divider(
                                             height: 1,
-                                            color: MjkColor.lightBlack009,
+                                            color: sruColor.lightBlack009,
                                           ),
                                           Spacings.verSpace(12),
                                         ],
@@ -496,7 +496,7 @@ class _OrderJualViewState extends ConsumerState<OrderJualView> {
                         Routes.addorderjual,
                       );
                     },
-                    backgroundColor: MjkColor.floatButtonSalesColor,
+                    backgroundColor: sruColor.floatButtonSalesColor,
                     child: const Icon(
                       Icons.add,
                       color: Colors.white,

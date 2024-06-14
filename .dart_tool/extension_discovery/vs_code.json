@@ -1,1 +1,4 @@
-{"version":2,"entries":[{"package":"mjk_apps","rootUri":"../","packageUri":"lib/"}]}
+{
+  "version": 2,
+  "entries": [{ "package": "sru", "rootUri": "../", "packageUri": "lib/" }]
+}

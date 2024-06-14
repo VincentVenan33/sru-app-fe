@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/utilities/text_styles.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/utilities/text_styles.dart';
+import 'package:sru/ui/shared/spacings.dart';
 
-class MjkTextInput extends StatefulWidget {
-  /// Don't use this factory method, instead use `MjkDatePicker` widget
-  factory MjkTextInput.datePicker({
+class sruTextInput extends StatefulWidget {
+  /// Don't use this factory method, instead use `sruDatePicker` widget
+  factory sruTextInput.datePicker({
     required TextEditingController controller,
     String? hintText,
     String? label,
     Future<void> Function()? onTap,
   }) {
-    return MjkTextInput(
+    return sruTextInput(
       controller: controller,
       hintText: hintText,
       label: label,
@@ -30,7 +30,7 @@ class MjkTextInput extends StatefulWidget {
     );
   }
 
-  factory MjkTextInput.money({
+  factory sruTextInput.money({
     required TextEditingController controller,
     required String prefixCurrency,
     String? hintText,
@@ -38,7 +38,7 @@ class MjkTextInput extends StatefulWidget {
     Future<void> Function()? onTap,
     required void Function(String value) onChanged,
   }) {
-    return MjkTextInput(
+    return sruTextInput(
       controller: controller,
       hintText: hintText,
       label: label,
@@ -57,7 +57,7 @@ class MjkTextInput extends StatefulWidget {
       ),
     );
   }
-  const MjkTextInput({
+  const sruTextInput({
     Key? key,
     required this.controller,
     this.label,
@@ -105,10 +105,10 @@ class MjkTextInput extends StatefulWidget {
   final bool isDatePicker;
 
   @override
-  State<MjkTextInput> createState() => _MjkTextInputState();
+  State<sruTextInput> createState() => _sruTextInputState();
 }
 
-class _MjkTextInputState extends State<MjkTextInput> {
+class _sruTextInputState extends State<sruTextInput> {
   bool _showPasswordEnabled = true;
   // ignore: unused_field
   String? _errorText;
@@ -165,14 +165,14 @@ class _MjkTextInputState extends State<MjkTextInput> {
                 borderRadius: BorderRadius.circular(10),
                 borderSide: const BorderSide(
                   width: 1,
-                  color: MjkColor.primary,
+                  color: sruColor.primary,
                 ),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: const BorderSide(
                   width: 1,
-                  color: MjkColor.lightBlack002,
+                  color: sruColor.lightBlack002,
                 ),
               ),
               prefixIcon: widget.prefixIcon,

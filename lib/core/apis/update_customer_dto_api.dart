@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:mjk_apps/core/models/set_data/update_customer_dto.dart';
+import 'package:sru/core/models/set_data/update_customer_dto.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'update_customer_dto_api.g.dart';

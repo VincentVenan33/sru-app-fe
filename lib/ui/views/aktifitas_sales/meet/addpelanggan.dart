@@ -3,12 +3,12 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/view_models/meet/createcheckinout_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/view_models/meet/createcheckinout_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
 
 import '../../../widgets/search_bar.dart' as search;
 
@@ -42,7 +42,7 @@ class _AddPelangganState extends ConsumerState<AddPelanggan> {
           isLoading: model.busy,
           child: UnfocusHelper(
             child: Scaffold(
-              backgroundColor: MjkColor.white,
+              backgroundColor: sruColor.white,
               body: RefreshIndicator(
                 onRefresh: () async {
                   model.initModel();
@@ -86,7 +86,7 @@ class _AddPelangganState extends ConsumerState<AddPelanggan> {
                                 child: Column(
                                   children: [
                                     AppBar(
-                                      backgroundColor: MjkColor.backgroundAtas,
+                                      backgroundColor: sruColor.backgroundAtas,
                                       title: Text(
                                         'Tambah Pelanggan',
                                         style: TextStyle(
@@ -102,7 +102,7 @@ class _AddPelangganState extends ConsumerState<AddPelanggan> {
                               ),
                             ),
                             Container(
-                              color: MjkColor.white,
+                              color: sruColor.white,
                               padding: const EdgeInsets.only(
                                 left: 24,
                                 right: 24,
@@ -140,7 +140,7 @@ class _AddPelangganState extends ConsumerState<AddPelanggan> {
                                   itemCount: model.customer.length,
                                   itemBuilder: (context, index) {
                                     return RadioListTile(
-                                      tileColor: MjkColor.transparent,
+                                      tileColor: sruColor.transparent,
                                       title: Text(
                                         model.customer[index].nama,
                                       ),
@@ -180,14 +180,14 @@ class _AddPelangganState extends ConsumerState<AddPelanggan> {
 
   Widget buildLoadingIndicator() {
     return Container(
-      color: MjkColor.white,
+      color: sruColor.white,
       padding: const EdgeInsets.all(20),
       child: const Center(
         child: SizedBox(
           height: 30,
           width: 30,
           child: CircularProgressIndicator(
-            color: MjkColor.blue001,
+            color: sruColor.blue001,
           ),
         ),
       ),

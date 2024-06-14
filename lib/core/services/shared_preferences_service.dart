@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mjk_apps/core/models/authentication/login.dart';
-import 'package:mjk_apps/core/models/set_data/create_order_jual_dto.dart';
+import 'package:sru/core/models/authentication/login.dart';
+import 'package:sru/core/models/set_data/create_order_jual_dto.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final sharedPrefProvider = Provider<SharedPreferencesService>(

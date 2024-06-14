@@ -1,6 +1,6 @@
 {
-  "name": "mjk_apps",
-  "short_name": "mjk_apps",
+  "name": "sru",
+  "short_name": "sru",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#0175C2",

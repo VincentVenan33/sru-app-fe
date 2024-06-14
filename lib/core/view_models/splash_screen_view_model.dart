@@ -1,10 +1,10 @@
 // import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/services/authentication_service.dart';
-import 'package:mjk_apps/core/services/navigation_service.dart';
-import 'package:mjk_apps/core/view_models/base_view_model.dart';
-import 'package:mjk_apps/ui/views/authentication/login_view.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/services/authentication_service.dart';
+import 'package:sru/core/services/navigation_service.dart';
+import 'package:sru/core/view_models/base_view_model.dart';
+import 'package:sru/ui/views/authentication/login_view.dart';
 
 class SplashScreenViewModel extends BaseViewModel {
   SplashScreenViewModel({

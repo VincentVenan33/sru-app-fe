@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/views/navbar/navbar_sales_view.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/views/navbar/navbar_sales_view.dart';
 
 class SalesActivityView extends ConsumerStatefulWidget {
   const SalesActivityView({super.key});
@@ -52,7 +52,7 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
                 expandedHeight: 90,
                 floating: false,
                 pinned: true,
-                backgroundColor: MjkColor.backgroundAtas,
+                backgroundColor: sruColor.backgroundAtas,
                 automaticallyImplyLeading: false,
                 titleSpacing: 0.0,
                 toolbarHeight: 90,
@@ -70,7 +70,7 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
                           children: [
                             Spacings.verSpace(10),
                             Container(
-                              decoration: const BoxDecoration(color: MjkColor.backgroundAtas),
+                              decoration: const BoxDecoration(color: sruColor.backgroundAtas),
                               child: Column(
                                 children: [
                                   Padding(
@@ -120,7 +120,7 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
                   background: Column(
                     children: [
                       Container(
-                        decoration: const BoxDecoration(color: MjkColor.backgroundAtas),
+                        decoration: const BoxDecoration(color: sruColor.backgroundAtas),
                         child: Column(
                           children: [
                             Padding(
@@ -193,13 +193,13 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
                               style: TextStyle(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 12,
-                                color: MjkColor.lightBlack008,
+                                color: sruColor.lightBlack008,
                               ),
                             ),
                             Spacings.verSpace(12),
                             const Divider(
                               height: 1,
-                              color: MjkColor.lightBlack009,
+                              color: sruColor.lightBlack009,
                             ),
                             Spacings.verSpace(14),
                           ],
@@ -210,7 +210,7 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
                     Spacings.verSpace(14),
                     const Divider(
                       height: 1,
-                      color: MjkColor.lightBlack009,
+                      color: sruColor.lightBlack009,
                     ),
                     Spacings.verSpace(20),
                     kegiatanCardSales(context),
@@ -229,7 +229,7 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
               Routes.addsalesactivity,
             );
           },
-          backgroundColor: MjkColor.floatButtonSalesColor,
+          backgroundColor: sruColor.floatButtonSalesColor,
           child: const Icon(
             Icons.add,
             color: Colors.white,
@@ -314,7 +314,7 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
                     height: 78,
                     decoration: const BoxDecoration(
                       border: Border(
-                        right: BorderSide(color: MjkColor.lightBlack009),
+                        right: BorderSide(color: sruColor.lightBlack009),
                       ),
                     ),
                   ),
@@ -347,7 +347,7 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
                             ),
                             Icon(
                               Icons.arrow_forward_ios,
-                              color: MjkColor.lightBlack010,
+                              color: sruColor.lightBlack010,
                               size: 15,
                             ),
                           ],
@@ -358,14 +358,14 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
                             Icon(
                               Icons.arrow_right_alt_outlined,
                               size: 9,
-                              color: MjkColor.lightBlack013,
+                              color: sruColor.lightBlack013,
                             ),
                             Text(
                               'Judul Kegiatan Pertama',
                               style: TextStyle(
                                 fontWeight: FontWeight.w300,
                                 fontSize: 11,
-                                color: MjkColor.green003,
+                                color: sruColor.green003,
                               ),
                             )
                           ],
@@ -375,14 +375,14 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
                             Icon(
                               Icons.arrow_right_alt_outlined,
                               size: 9,
-                              color: MjkColor.lightBlack013,
+                              color: sruColor.lightBlack013,
                             ),
                             Text(
                               'Judul Kegiatan Kedua',
                               style: TextStyle(
                                 fontWeight: FontWeight.w300,
                                 fontSize: 11,
-                                color: MjkColor.lightBlack013,
+                                color: sruColor.lightBlack013,
                               ),
                             )
                           ],
@@ -392,14 +392,14 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
                             Icon(
                               Icons.arrow_right_alt_outlined,
                               size: 9,
-                              color: MjkColor.lightBlack013,
+                              color: sruColor.lightBlack013,
                             ),
                             Text(
                               'Judul Kegiatan Ketiga',
                               style: TextStyle(
                                 fontWeight: FontWeight.w300,
                                 fontSize: 11,
-                                color: MjkColor.lightBlack013,
+                                color: sruColor.lightBlack013,
                               ),
                             )
                           ],
@@ -425,7 +425,7 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
                     height: 78,
                     decoration: const BoxDecoration(
                       border: Border(
-                        right: BorderSide(color: MjkColor.lightBlack009),
+                        right: BorderSide(color: sruColor.lightBlack009),
                       ),
                     ),
                   ),
@@ -458,7 +458,7 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
                             ),
                             Icon(
                               Icons.arrow_forward_ios,
-                              color: MjkColor.lightBlack010,
+                              color: sruColor.lightBlack010,
                               size: 15,
                             ),
                           ],
@@ -469,14 +469,14 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
                             Icon(
                               Icons.arrow_right_alt_outlined,
                               size: 9,
-                              color: MjkColor.lightBlack013,
+                              color: sruColor.lightBlack013,
                             ),
                             Text(
                               'Judul Kegiatan Pertama',
                               style: TextStyle(
                                 fontWeight: FontWeight.w300,
                                 fontSize: 11,
-                                color: MjkColor.green003,
+                                color: sruColor.green003,
                               ),
                             )
                           ],
@@ -486,14 +486,14 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
                             Icon(
                               Icons.arrow_right_alt_outlined,
                               size: 9,
-                              color: MjkColor.lightBlack013,
+                              color: sruColor.lightBlack013,
                             ),
                             Text(
                               'Judul Kegiatan Kedua',
                               style: TextStyle(
                                 fontWeight: FontWeight.w300,
                                 fontSize: 11,
-                                color: MjkColor.lightBlack013,
+                                color: sruColor.lightBlack013,
                               ),
                             )
                           ],
@@ -519,7 +519,7 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
                     height: 78,
                     decoration: const BoxDecoration(
                       border: Border(
-                        right: BorderSide(color: MjkColor.lightBlack009),
+                        right: BorderSide(color: sruColor.lightBlack009),
                       ),
                     ),
                   ),
@@ -552,7 +552,7 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
                             ),
                             Icon(
                               Icons.arrow_forward_ios,
-                              color: MjkColor.lightBlack010,
+                              color: sruColor.lightBlack010,
                               size: 15,
                             ),
                           ],
@@ -563,14 +563,14 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
                             Icon(
                               Icons.arrow_right_alt_outlined,
                               size: 9,
-                              color: MjkColor.lightBlack013,
+                              color: sruColor.lightBlack013,
                             ),
                             Text(
                               'Judul Kegiatan Pertama',
                               style: TextStyle(
                                 fontWeight: FontWeight.w300,
                                 fontSize: 11,
-                                color: MjkColor.green003,
+                                color: sruColor.green003,
                               ),
                             )
                           ],
@@ -580,14 +580,14 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
                             Icon(
                               Icons.arrow_right_alt_outlined,
                               size: 9,
-                              color: MjkColor.lightBlack013,
+                              color: sruColor.lightBlack013,
                             ),
                             Text(
                               'Judul Kegiatan Kedua',
                               style: TextStyle(
                                 fontWeight: FontWeight.w300,
                                 fontSize: 11,
-                                color: MjkColor.lightBlack013,
+                                color: sruColor.lightBlack013,
                               ),
                             )
                           ],
@@ -597,14 +597,14 @@ class _SalesActivityViewState extends ConsumerState<SalesActivityView> with Tick
                             Icon(
                               Icons.arrow_right_alt_outlined,
                               size: 9,
-                              color: MjkColor.lightBlack013,
+                              color: sruColor.lightBlack013,
                             ),
                             Text(
                               'Judul Kegiatan Kedua',
                               style: TextStyle(
                                 fontWeight: FontWeight.w300,
                                 fontSize: 11,
-                                color: MjkColor.lightBlack013,
+                                color: sruColor.lightBlack013,
                               ),
                             )
                           ],

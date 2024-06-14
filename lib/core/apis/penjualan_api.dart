@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:mjk_apps/core/models/penjualan/approval_order_penjualan.dart';
+import 'package:sru/core/models/penjualan/approval_order_penjualan.dart';
 
 part 'penjualan_api.g.dart';
 

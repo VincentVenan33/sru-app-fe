@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MjkColor {
+class sruColor {
   static const Color redPrimary = Color(0xFF171956);
   static const Color primary = Colors.blue;
   static const Color secondary = Colors.orange;

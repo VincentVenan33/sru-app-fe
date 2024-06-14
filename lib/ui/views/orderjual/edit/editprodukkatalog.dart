@@ -3,15 +3,15 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/models/get_data/order_jual_get_data_dto.dart';
-import 'package:mjk_apps/core/networks/barang_get_data_dto_network.dart';
-import 'package:mjk_apps/core/view_models/produk/daftarorderjual_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
-import 'package:mjk_apps/ui/views/orderjual/edit/editadditemdetail.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/models/get_data/order_jual_get_data_dto.dart';
+import 'package:sru/core/networks/barang_get_data_dto_network.dart';
+import 'package:sru/core/view_models/produk/daftarorderjual_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
+import 'package:sru/ui/views/orderjual/edit/editadditemdetail.dart';
 
 import '../../../shared/spacings.dart';
 import '../../../widgets/search_bar.dart' as search;
@@ -62,7 +62,7 @@ class _EditProdukKatalogViewState extends ConsumerState<EditProdukKatalogView> {
           child: UnfocusHelper(
             child: SafeArea(
               child: Scaffold(
-                backgroundColor: MjkColor.white,
+                backgroundColor: sruColor.white,
                 body: NotificationListener<UserScrollNotification>(
                   onNotification: (notification) {
                     if (notification.direction == ScrollDirection.reverse) {
@@ -95,7 +95,7 @@ class _EditProdukKatalogViewState extends ConsumerState<EditProdukKatalogView> {
                                   child: Column(
                                     children: [
                                       AppBar(
-                                        backgroundColor: MjkColor.backgroundAtas,
+                                        backgroundColor: sruColor.backgroundAtas,
                                         title: Text(
                                           'Katalog Produk',
                                           style: TextStyle(
@@ -111,7 +111,7 @@ class _EditProdukKatalogViewState extends ConsumerState<EditProdukKatalogView> {
                                 ),
                               ),
                               Container(
-                                color: MjkColor.white,
+                                color: sruColor.white,
                                 padding: const EdgeInsets.only(
                                   left: 24,
                                   right: 24,

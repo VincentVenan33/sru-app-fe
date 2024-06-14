@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/ui/shared/spacings.dart';
 
 class AddSalesActivity extends ConsumerStatefulWidget {
   const AddSalesActivity({super.key});
@@ -50,7 +50,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
         child: Column(
           children: [
             Container(
-              decoration: const BoxDecoration(color: MjkColor.backgroundAtas),
+              decoration: const BoxDecoration(color: sruColor.backgroundAtas),
               child: Column(
                 children: [
                   Padding(
@@ -108,7 +108,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                             style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
-                              color: MjkColor.lightBlack011,
+                              color: sruColor.lightBlack011,
                             ),
                           ),
                           SizedBox(
@@ -126,7 +126,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(8),
                                 ),
-                                backgroundColor: MjkColor.white,
+                                backgroundColor: sruColor.white,
                               ),
                               onPressed: _pickDate,
                               child: Row(
@@ -137,7 +137,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                     DateFormat('dd/MM/yyyy').format(_selectedDate),
                                     style: const TextStyle(
                                       fontSize: 14,
-                                      color: MjkColor.black,
+                                      color: sruColor.black,
                                       fontWeight: FontWeight.w400,
                                     ),
                                   ),
@@ -163,7 +163,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                               ElevatedButton(
                                 onPressed: _showTimePickerawal,
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: MjkColor.green004, // Set background color to green
+                                  backgroundColor: sruColor.green004, // Set background color to green
                                   padding: const EdgeInsets.symmetric(
                                     horizontal: 5,
                                     vertical: 0,
@@ -191,7 +191,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                         controller: jamawalController,
                                         decoration: const InputDecoration(
                                           hintText: '00.00',
-                                          hintStyle: TextStyle(color: MjkColor.white),
+                                          hintStyle: TextStyle(color: sruColor.white),
                                           border: OutlineInputBorder(
                                             borderSide: BorderSide.none,
                                           ),
@@ -212,7 +212,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                               ElevatedButton(
                                 onPressed: _showTimePickerakhir,
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: MjkColor.lightBlack015, // Set background color to green
+                                  backgroundColor: sruColor.lightBlack015, // Set background color to green
                                   padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 5), // Add padding
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8), // Apply border radius
@@ -237,7 +237,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                         controller: jamakhirController,
                                         decoration: const InputDecoration(
                                           hintText: '00.00',
-                                          hintStyle: TextStyle(color: MjkColor.white),
+                                          hintStyle: TextStyle(color: sruColor.white),
                                           border: OutlineInputBorder(
                                             borderSide: BorderSide.none,
                                           ),
@@ -265,7 +265,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                 style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14,
-                                  color: MjkColor.lightBlack011,
+                                  color: sruColor.lightBlack011,
                                 ),
                               ),
                             ],
@@ -280,7 +280,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                 contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                 hintText: 'Pilih Pelangan',
                                 hintStyle: const TextStyle(
-                                  color: MjkColor.lightBlack015,
+                                  color: sruColor.lightBlack015,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 14,
                                 ),
@@ -307,7 +307,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                 style: TextStyle(
                                                   fontSize: 18,
                                                   fontWeight: FontWeight.bold,
-                                                  color: MjkColor.black,
+                                                  color: sruColor.black,
                                                 ),
                                               ),
                                               IconButton(
@@ -316,7 +316,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                 },
                                                 icon: const Icon(
                                                   Icons.cancel_outlined,
-                                                  color: MjkColor.lightBlack017,
+                                                  color: sruColor.lightBlack017,
                                                 ),
                                               ),
                                             ],
@@ -338,7 +338,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                           ),
                                                           hintText: 'Pencarian',
                                                           hintStyle: const TextStyle(
-                                                            color: MjkColor.lightBlack016,
+                                                            color: sruColor.lightBlack016,
                                                             fontWeight: FontWeight.w400,
                                                             fontSize: 13,
                                                           ),
@@ -355,9 +355,9 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                           prefixIcon: const Icon(
                                                             Icons.search_rounded,
                                                             size: 14,
-                                                            color: MjkColor.lightBlack016,
+                                                            color: sruColor.lightBlack016,
                                                           ),
-                                                          fillColor: MjkColor.lightBlack016,
+                                                          fillColor: sruColor.lightBlack016,
                                                         ),
                                                       ),
                                                     ),
@@ -379,7 +379,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                             height: 25,
                                                             decoration: const BoxDecoration(
                                                               borderRadius: BorderRadius.all(Radius.circular(5)),
-                                                              color: MjkColor.lightBlue006,
+                                                              color: sruColor.lightBlue006,
                                                             ),
                                                             child: const Text(
                                                               'C-BRI-00082',
@@ -387,7 +387,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                               style: TextStyle(
                                                                 fontSize: 14,
                                                                 fontWeight: FontWeight.bold,
-                                                                color: MjkColor.white,
+                                                                color: sruColor.white,
                                                               ),
                                                             ),
                                                           ),
@@ -400,7 +400,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                             'ARGA KENCANA MANDIRI PT',
                                                             style: TextStyle(
                                                               fontSize: 13,
-                                                              color: MjkColor.black,
+                                                              color: sruColor.black,
                                                               fontWeight: FontWeight.bold,
                                                             ),
                                                           ),
@@ -415,7 +415,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                             style: TextStyle(
                                                               fontSize: 11,
                                                               fontWeight: FontWeight.w300,
-                                                              color: MjkColor.lightBlack018,
+                                                              color: sruColor.lightBlack018,
                                                             ),
                                                           ),
                                                           RichText(
@@ -426,7 +426,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                                   style: TextStyle(
                                                                     fontSize: 11,
                                                                     fontWeight: FontWeight.normal,
-                                                                    color: MjkColor.lightBlack018,
+                                                                    color: sruColor.lightBlack018,
                                                                   ),
                                                                 ),
                                                                 TextSpan(
@@ -434,7 +434,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                                   style: TextStyle(
                                                                     fontSize: 11,
                                                                     fontWeight: FontWeight.bold,
-                                                                    color: MjkColor.lightBlack018,
+                                                                    color: sruColor.lightBlack018,
                                                                   ),
                                                                 ),
                                                               ],
@@ -448,7 +448,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                                   style: TextStyle(
                                                                     fontSize: 11,
                                                                     fontWeight: FontWeight.normal,
-                                                                    color: MjkColor.lightBlack018,
+                                                                    color: sruColor.lightBlack018,
                                                                   ),
                                                                 ),
                                                                 TextSpan(
@@ -456,7 +456,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                                   style: TextStyle(
                                                                     fontSize: 11,
                                                                     fontWeight: FontWeight.bold,
-                                                                    color: MjkColor.lightBlack018,
+                                                                    color: sruColor.lightBlack018,
                                                                   ),
                                                                 ),
                                                               ],
@@ -467,7 +467,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                       Spacings.verSpace(12),
                                                       const Divider(
                                                         height: 1,
-                                                        color: MjkColor.lightBlack009,
+                                                        color: sruColor.lightBlack009,
                                                       ),
                                                       Spacings.verSpace(12),
                                                     ],
@@ -488,7 +488,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                             height: 25,
                                                             decoration: const BoxDecoration(
                                                               borderRadius: BorderRadius.all(Radius.circular(5)),
-                                                              color: MjkColor.lightBlue006,
+                                                              color: sruColor.lightBlue006,
                                                             ),
                                                             child: const Text(
                                                               'C-BRI-00009',
@@ -496,7 +496,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                               style: TextStyle(
                                                                 fontSize: 14,
                                                                 fontWeight: FontWeight.bold,
-                                                                color: MjkColor.white,
+                                                                color: sruColor.white,
                                                               ),
                                                             ),
                                                           ),
@@ -509,7 +509,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                             'BAPAK DJAN FARIDZ',
                                                             style: TextStyle(
                                                               fontSize: 13,
-                                                              color: MjkColor.black,
+                                                              color: sruColor.black,
                                                               fontWeight: FontWeight.bold,
                                                             ),
                                                           ),
@@ -524,7 +524,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                             style: TextStyle(
                                                               fontSize: 11,
                                                               fontWeight: FontWeight.w300,
-                                                              color: MjkColor.lightBlack018,
+                                                              color: sruColor.lightBlack018,
                                                             ),
                                                           ),
                                                           RichText(
@@ -535,7 +535,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                                   style: TextStyle(
                                                                     fontSize: 11,
                                                                     fontWeight: FontWeight.normal,
-                                                                    color: MjkColor.lightBlack018,
+                                                                    color: sruColor.lightBlack018,
                                                                   ),
                                                                 ),
                                                                 TextSpan(
@@ -543,7 +543,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                                   style: TextStyle(
                                                                     fontSize: 11,
                                                                     fontWeight: FontWeight.bold,
-                                                                    color: MjkColor.lightBlack018,
+                                                                    color: sruColor.lightBlack018,
                                                                   ),
                                                                 ),
                                                               ],
@@ -557,7 +557,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                                   style: TextStyle(
                                                                     fontSize: 11,
                                                                     fontWeight: FontWeight.normal,
-                                                                    color: MjkColor.lightBlack018,
+                                                                    color: sruColor.lightBlack018,
                                                                   ),
                                                                 ),
                                                                 TextSpan(
@@ -565,7 +565,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                                   style: TextStyle(
                                                                     fontSize: 11,
                                                                     fontWeight: FontWeight.bold,
-                                                                    color: MjkColor.lightBlack018,
+                                                                    color: sruColor.lightBlack018,
                                                                   ),
                                                                 ),
                                                               ],
@@ -576,7 +576,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                       Spacings.verSpace(12),
                                                       const Divider(
                                                         height: 1,
-                                                        color: MjkColor.lightBlack009,
+                                                        color: sruColor.lightBlack009,
                                                       ),
                                                       Spacings.verSpace(12),
                                                     ],
@@ -597,7 +597,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                             height: 25,
                                                             decoration: const BoxDecoration(
                                                               borderRadius: BorderRadius.all(Radius.circular(5)),
-                                                              color: MjkColor.lightBlue006,
+                                                              color: sruColor.lightBlue006,
                                                             ),
                                                             child: const Text(
                                                               'C-BRI-00126',
@@ -605,7 +605,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                               style: TextStyle(
                                                                 fontSize: 14,
                                                                 fontWeight: FontWeight.bold,
-                                                                color: MjkColor.white,
+                                                                color: sruColor.white,
                                                               ),
                                                             ),
                                                           ),
@@ -618,7 +618,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                             'BAPAK AFIF',
                                                             style: TextStyle(
                                                               fontSize: 13,
-                                                              color: MjkColor.black,
+                                                              color: sruColor.black,
                                                               fontWeight: FontWeight.bold,
                                                             ),
                                                           ),
@@ -633,7 +633,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                             style: TextStyle(
                                                               fontSize: 11,
                                                               fontWeight: FontWeight.w300,
-                                                              color: MjkColor.lightBlack018,
+                                                              color: sruColor.lightBlack018,
                                                             ),
                                                           ),
                                                           RichText(
@@ -644,7 +644,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                                   style: TextStyle(
                                                                     fontSize: 11,
                                                                     fontWeight: FontWeight.normal,
-                                                                    color: MjkColor.lightBlack018,
+                                                                    color: sruColor.lightBlack018,
                                                                   ),
                                                                 ),
                                                                 TextSpan(
@@ -652,7 +652,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                                   style: TextStyle(
                                                                     fontSize: 11,
                                                                     fontWeight: FontWeight.bold,
-                                                                    color: MjkColor.lightBlack018,
+                                                                    color: sruColor.lightBlack018,
                                                                   ),
                                                                 ),
                                                               ],
@@ -666,7 +666,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                                   style: TextStyle(
                                                                     fontSize: 11,
                                                                     fontWeight: FontWeight.normal,
-                                                                    color: MjkColor.lightBlack018,
+                                                                    color: sruColor.lightBlack018,
                                                                   ),
                                                                 ),
                                                                 TextSpan(
@@ -674,7 +674,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                                   style: TextStyle(
                                                                     fontSize: 11,
                                                                     fontWeight: FontWeight.bold,
-                                                                    color: MjkColor.lightBlack018,
+                                                                    color: sruColor.lightBlack018,
                                                                   ),
                                                                 ),
                                                               ],
@@ -685,7 +685,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                       Spacings.verSpace(12),
                                                       const Divider(
                                                         height: 1,
-                                                        color: MjkColor.lightBlack009,
+                                                        color: sruColor.lightBlack009,
                                                       ),
                                                       Spacings.verSpace(12),
                                                     ],
@@ -706,7 +706,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                             height: 25,
                                                             decoration: const BoxDecoration(
                                                               borderRadius: BorderRadius.all(Radius.circular(5)),
-                                                              color: MjkColor.lightBlue006,
+                                                              color: sruColor.lightBlue006,
                                                             ),
                                                             child: const Text(
                                                               'C-BRI-00126',
@@ -714,7 +714,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                               style: TextStyle(
                                                                 fontSize: 14,
                                                                 fontWeight: FontWeight.bold,
-                                                                color: MjkColor.white,
+                                                                color: sruColor.white,
                                                               ),
                                                             ),
                                                           ),
@@ -727,7 +727,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                             'BAPAK AGUS',
                                                             style: TextStyle(
                                                               fontSize: 13,
-                                                              color: MjkColor.black,
+                                                              color: sruColor.black,
                                                               fontWeight: FontWeight.bold,
                                                             ),
                                                           ),
@@ -742,7 +742,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                             style: TextStyle(
                                                               fontSize: 11,
                                                               fontWeight: FontWeight.w300,
-                                                              color: MjkColor.lightBlack018,
+                                                              color: sruColor.lightBlack018,
                                                             ),
                                                           ),
                                                           RichText(
@@ -753,7 +753,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                                   style: TextStyle(
                                                                     fontSize: 11,
                                                                     fontWeight: FontWeight.normal,
-                                                                    color: MjkColor.lightBlack018,
+                                                                    color: sruColor.lightBlack018,
                                                                   ),
                                                                 ),
                                                                 TextSpan(
@@ -761,7 +761,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                                   style: TextStyle(
                                                                     fontSize: 11,
                                                                     fontWeight: FontWeight.bold,
-                                                                    color: MjkColor.lightBlack018,
+                                                                    color: sruColor.lightBlack018,
                                                                   ),
                                                                 ),
                                                               ],
@@ -775,7 +775,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                                   style: TextStyle(
                                                                     fontSize: 11,
                                                                     fontWeight: FontWeight.normal,
-                                                                    color: MjkColor.lightBlack018,
+                                                                    color: sruColor.lightBlack018,
                                                                   ),
                                                                 ),
                                                                 TextSpan(
@@ -783,7 +783,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                                   style: TextStyle(
                                                                     fontSize: 11,
                                                                     fontWeight: FontWeight.bold,
-                                                                    color: MjkColor.lightBlack018,
+                                                                    color: sruColor.lightBlack018,
                                                                   ),
                                                                 ),
                                                               ],
@@ -794,7 +794,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                       Spacings.verSpace(12),
                                                       const Divider(
                                                         height: 1,
-                                                        color: MjkColor.lightBlack009,
+                                                        color: sruColor.lightBlack009,
                                                       ),
                                                       Spacings.verSpace(12),
                                                     ],
@@ -807,7 +807,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                       },
                                     );
                                   },
-                                  color: MjkColor.lightBlack016,
+                                  color: sruColor.lightBlack016,
                                 ),
                               ),
                             ),
@@ -820,7 +820,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                 style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14,
-                                  color: MjkColor.lightBlack011,
+                                  color: sruColor.lightBlack011,
                                 ),
                               ),
                             ],
@@ -835,7 +835,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                 contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                 hintText: 'Tulis Judul Kegiatan...',
                                 hintStyle: const TextStyle(
-                                  color: MjkColor.lightBlack015,
+                                  color: sruColor.lightBlack015,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 14,
                                 ),
@@ -858,7 +858,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                 style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14,
-                                  color: MjkColor.lightBlack011,
+                                  color: sruColor.lightBlack011,
                                 ),
                               ),
                             ],
@@ -873,7 +873,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                 contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                 hintText: 'Tulis Rencana Kegiatan...',
                                 hintStyle: const TextStyle(
-                                  color: MjkColor.lightBlack015,
+                                  color: sruColor.lightBlack015,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 14,
                                 ),
@@ -887,7 +887,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                 ),
                                 suffixIcon: IconButton(
                                   icon: const Icon(Icons.add_box_outlined),
-                                  color: MjkColor.lightBlack016,
+                                  color: sruColor.lightBlack016,
                                   onPressed: () {
                                     {
                                       showDialog(
@@ -902,7 +902,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                   style: TextStyle(
                                                     fontSize: 18,
                                                     fontWeight: FontWeight.bold,
-                                                    color: MjkColor.black,
+                                                    color: sruColor.black,
                                                   ),
                                                 ),
                                                 IconButton(
@@ -911,7 +911,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                   },
                                                   icon: const Icon(
                                                     Icons.cancel_outlined,
-                                                    color: MjkColor.lightBlack017,
+                                                    color: sruColor.lightBlack017,
                                                   ),
                                                 ),
                                               ],
@@ -926,7 +926,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                     style: TextStyle(
                                                       fontWeight: FontWeight.w400,
                                                       fontSize: 14,
-                                                      color: MjkColor.lightBlack011,
+                                                      color: sruColor.lightBlack011,
                                                     ),
                                                   ),
                                                   Spacings.verSpace(2),
@@ -940,7 +940,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                             const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                                         hintText: 'Tulis Judul Kegiatan...',
                                                         hintStyle: const TextStyle(
-                                                          color: MjkColor.lightBlack015,
+                                                          color: sruColor.lightBlack015,
                                                           fontWeight: FontWeight.bold,
                                                           fontSize: 14,
                                                         ),
@@ -963,7 +963,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                         style: TextStyle(
                                                           fontWeight: FontWeight.w400,
                                                           fontSize: 14,
-                                                          color: MjkColor.lightBlack011,
+                                                          color: sruColor.lightBlack011,
                                                         ),
                                                       ),
                                                     ],
@@ -983,7 +983,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                             left: 16, right: 8, top: 6, bottom: 6),
                                                         hintText: 'Tulis Hasil Kegiatan',
                                                         hintStyle: const TextStyle(
-                                                          color: MjkColor.lightBlack015,
+                                                          color: sruColor.lightBlack015,
                                                           fontWeight: FontWeight.bold,
                                                           fontSize: 14,
                                                         ),
@@ -1009,7 +1009,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                         );
                                                       },
                                                       style: ElevatedButton.styleFrom(
-                                                        backgroundColor: MjkColor.floatButtonSalesColor,
+                                                        backgroundColor: sruColor.floatButtonSalesColor,
                                                         shape: RoundedRectangleBorder(
                                                           borderRadius: BorderRadius.circular(10),
                                                         ),
@@ -1035,7 +1035,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                                         );
                                                       },
                                                       style: ElevatedButton.styleFrom(
-                                                        backgroundColor: MjkColor.lightBlue006,
+                                                        backgroundColor: sruColor.lightBlue006,
                                                         shape: RoundedRectangleBorder(
                                                           borderRadius: BorderRadius.circular(10),
                                                         ),
@@ -1070,7 +1070,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                 style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14,
-                                  color: MjkColor.lightBlack011,
+                                  color: sruColor.lightBlack011,
                                 ),
                               ),
                             ],
@@ -1081,7 +1081,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 14,
-                              color: MjkColor.lightBlack011,
+                              color: sruColor.lightBlack011,
                             ),
                           ),
                           Spacings.verSpace(14),
@@ -1092,7 +1092,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                 style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14,
-                                  color: MjkColor.lightBlack011,
+                                  color: sruColor.lightBlack011,
                                 ),
                               ),
                             ],
@@ -1111,7 +1111,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                 contentPadding: const EdgeInsets.only(left: 16, right: 8, top: 6, bottom: 6),
                                 hintText: 'Tulis Hasil Kegiatan',
                                 hintStyle: const TextStyle(
-                                  color: MjkColor.lightBlack015,
+                                  color: sruColor.lightBlack015,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 14,
                                 ),
@@ -1142,7 +1142,7 @@ class _AddSalesActivityState extends ConsumerState<AddSalesActivity> {
                                   horizontal: 144,
                                   vertical: 16,
                                 ),
-                                backgroundColor: MjkColor.floatButtonSalesColor,
+                                backgroundColor: sruColor.floatButtonSalesColor,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),

@@ -3,18 +3,18 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/networks/get_data_dto_network.dart';
-import 'package:mjk_apps/core/utilities/string_utils.dart';
-import 'package:mjk_apps/core/view_models/customer/customer_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
-import 'package:mjk_apps/ui/views/aktifitas_sales/customer/detailcustomer.dart';
-import 'package:mjk_apps/ui/views/aktifitas_sales/customer/updatecustomer.dart';
-import 'package:mjk_apps/ui/views/navbar/navbar_sales_view.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/networks/get_data_dto_network.dart';
+import 'package:sru/core/utilities/string_utils.dart';
+import 'package:sru/core/view_models/customer/customer_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
+import 'package:sru/ui/views/aktifitas_sales/customer/detailcustomer.dart';
+import 'package:sru/ui/views/aktifitas_sales/customer/updatecustomer.dart';
+import 'package:sru/ui/views/navbar/navbar_sales_view.dart';
 
 import '../../../widgets/search_bar.dart' as search;
 
@@ -60,7 +60,7 @@ class _CustomerViewState extends ConsumerState<CustomerView> {
           child: UnfocusHelper(
             child: SafeArea(
               child: Scaffold(
-                backgroundColor: MjkColor.white,
+                backgroundColor: sruColor.white,
                 body: RefreshIndicator(
                   onRefresh: () async {
                     model.initModel();
@@ -103,7 +103,7 @@ class _CustomerViewState extends ConsumerState<CustomerView> {
                                   child: Column(
                                     children: [
                                       AppBar(
-                                        backgroundColor: MjkColor.backgroundAtas,
+                                        backgroundColor: sruColor.backgroundAtas,
                                         leading: IconButton(
                                           onPressed: () {
                                             Navigator.pushNamedAndRemoveUntil(
@@ -140,7 +140,7 @@ class _CustomerViewState extends ConsumerState<CustomerView> {
                                                     ),
                                                     decoration: BoxDecoration(
                                                       border: Border.all(
-                                                        color: MjkColor.lightBlack020,
+                                                        color: sruColor.lightBlack020,
                                                         width: 1,
                                                       ),
                                                       borderRadius: const BorderRadius.only(
@@ -173,7 +173,7 @@ class _CustomerViewState extends ConsumerState<CustomerView> {
                                                         ),
                                                         Spacings.verSpace(22),
                                                         Container(
-                                                          color: MjkColor.transparent,
+                                                          color: sruColor.transparent,
                                                           child: Column(
                                                             mainAxisAlignment: MainAxisAlignment.center,
                                                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -184,9 +184,9 @@ class _CustomerViewState extends ConsumerState<CustomerView> {
                                                                 width: double.infinity,
                                                                 height: 58,
                                                                 decoration: BoxDecoration(
-                                                                  color: MjkColor.transparent,
+                                                                  color: sruColor.transparent,
                                                                   border: Border.all(
-                                                                    color: MjkColor.lightBlack020,
+                                                                    color: sruColor.lightBlack020,
                                                                     width: 1,
                                                                   ),
                                                                   borderRadius: BorderRadius.circular(40),
@@ -254,7 +254,7 @@ class _CustomerViewState extends ConsumerState<CustomerView> {
                                 duration: const Duration(milliseconds: 500),
                                 offset: tabIsHide == false ? Offset.zero : const Offset(0, -0.8),
                                 child: Container(
-                                  color: MjkColor.white,
+                                  color: sruColor.white,
                                   padding: const EdgeInsets.only(
                                     left: 24,
                                     right: 24,
@@ -307,9 +307,9 @@ class _CustomerViewState extends ConsumerState<CustomerView> {
                                       },
                                       style: ElevatedButton.styleFrom(
                                         padding: const EdgeInsets.all(0),
-                                        backgroundColor: Color(MjkColor.transparent.value),
-                                        surfaceTintColor: MjkColor.transparent,
-                                        shadowColor: MjkColor.transparent,
+                                        backgroundColor: Color(sruColor.transparent.value),
+                                        surfaceTintColor: sruColor.transparent,
+                                        shadowColor: sruColor.transparent,
                                         shape: const RoundedRectangleBorder(
                                           side: BorderSide.none,
                                           borderRadius: BorderRadius.all(
@@ -335,7 +335,7 @@ class _CustomerViewState extends ConsumerState<CustomerView> {
                                                       height: 20,
                                                       decoration: const BoxDecoration(
                                                         borderRadius: BorderRadius.all(Radius.circular(5)),
-                                                        color: MjkColor.lightBlue006,
+                                                        color: sruColor.lightBlue006,
                                                       ),
                                                       child: Text(
                                                         model.daftarcustomer[index].kode,
@@ -343,7 +343,7 @@ class _CustomerViewState extends ConsumerState<CustomerView> {
                                                         style: const TextStyle(
                                                           fontSize: 14,
                                                           fontWeight: FontWeight.bold,
-                                                          color: MjkColor.white,
+                                                          color: sruColor.white,
                                                         ),
                                                       ),
                                                     ),
@@ -356,7 +356,7 @@ class _CustomerViewState extends ConsumerState<CustomerView> {
                                                       model.daftarcustomer[index].nama,
                                                       style: const TextStyle(
                                                         fontSize: 16,
-                                                        color: MjkColor.black,
+                                                        color: sruColor.black,
                                                         fontWeight: FontWeight.bold,
                                                       ),
                                                     ),
@@ -371,7 +371,7 @@ class _CustomerViewState extends ConsumerState<CustomerView> {
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight: FontWeight.normal,
-                                                          color: MjkColor.lightBlack018,
+                                                          color: sruColor.lightBlack018,
                                                         ),
                                                       ),
                                                       TextSpan(
@@ -384,7 +384,7 @@ class _CustomerViewState extends ConsumerState<CustomerView> {
                                                         style: const TextStyle(
                                                           fontSize: 16,
                                                           fontWeight: FontWeight.bold,
-                                                          color: MjkColor.black,
+                                                          color: sruColor.black,
                                                         ),
                                                       ),
                                                     ],
@@ -393,7 +393,7 @@ class _CustomerViewState extends ConsumerState<CustomerView> {
                                                 Spacings.verSpace(12),
                                                 const Divider(
                                                   height: 1,
-                                                  color: MjkColor.lightBlack009,
+                                                  color: sruColor.lightBlack009,
                                                 ),
                                                 Spacings.verSpace(12),
                                               ],
@@ -403,13 +403,13 @@ class _CustomerViewState extends ConsumerState<CustomerView> {
                                                 IconButton(
                                                   style: const ButtonStyle(
                                                     backgroundColor: MaterialStatePropertyAll(
-                                                      MjkColor.yellow,
+                                                      sruColor.yellow,
                                                     ),
                                                     shadowColor: MaterialStatePropertyAll(
-                                                      MjkColor.transparent,
+                                                      sruColor.transparent,
                                                     ),
                                                     surfaceTintColor: MaterialStatePropertyAll(
-                                                      MjkColor.yellow,
+                                                      sruColor.yellow,
                                                     ),
                                                   ),
                                                   onPressed: () {
@@ -424,7 +424,7 @@ class _CustomerViewState extends ConsumerState<CustomerView> {
                                                   },
                                                   icon: const Icon(
                                                     Icons.edit,
-                                                    color: MjkColor.white,
+                                                    color: sruColor.white,
                                                     size: 25,
                                                   ),
                                                 ),
@@ -453,7 +453,7 @@ class _CustomerViewState extends ConsumerState<CustomerView> {
                       Routes.addcustomer,
                     );
                   },
-                  backgroundColor: MjkColor.floatButtonSalesColor,
+                  backgroundColor: sruColor.floatButtonSalesColor,
                   child: const Icon(
                     Icons.add,
                     color: Colors.white,
@@ -470,8 +470,8 @@ class _CustomerViewState extends ConsumerState<CustomerView> {
 
   Widget _buildButton(
       bool isActive, String text, BuildContext context, CustomerViewModel model, VoidCallback onPressed) {
-    Color foregroundColor = isActive ? MjkColor.white : MjkColor.lightBlack010;
-    Color backgroundColor = isActive ? MjkColor.lightBlue005 : MjkColor.white;
+    Color foregroundColor = isActive ? sruColor.white : sruColor.lightBlack010;
+    Color backgroundColor = isActive ? sruColor.lightBlue005 : sruColor.white;
     return Expanded(
       child: ElevatedButton(
         onPressed: onPressed,

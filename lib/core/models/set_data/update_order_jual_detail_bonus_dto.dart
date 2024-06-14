@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:mjk_apps/core/models/set_data/create_order_jual_detail_bonus_dto.dart';
+import 'package:sru/core/models/set_data/create_order_jual_detail_bonus_dto.dart';
 
 part 'update_order_jual_detail_bonus_dto.g.dart';
 

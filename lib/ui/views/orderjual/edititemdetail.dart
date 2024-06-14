@@ -3,17 +3,17 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/models/get_data/satuan_barang_get_data_dto.dart';
-import 'package:mjk_apps/core/models/set_data/create_order_jual_detail_bonus_dto.dart';
-import 'package:mjk_apps/core/networks/satuan_barang_get_data_dto_network.dart';
-import 'package:mjk_apps/core/services/shared_preferences_service.dart';
-import 'package:mjk_apps/core/view_models/produk/edititemdetail_view_model.dart';
-import 'package:mjk_apps/core/view_models/produk/itemdetail_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/models/get_data/satuan_barang_get_data_dto.dart';
+import 'package:sru/core/models/set_data/create_order_jual_detail_bonus_dto.dart';
+import 'package:sru/core/networks/satuan_barang_get_data_dto_network.dart';
+import 'package:sru/core/services/shared_preferences_service.dart';
+import 'package:sru/core/view_models/produk/edititemdetail_view_model.dart';
+import 'package:sru/core/view_models/produk/itemdetail_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
 
 import '../../shared/spacings.dart';
 
@@ -165,7 +165,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
         return UnfocusHelper(
           child: SafeArea(
             child: Scaffold(
-              backgroundColor: MjkColor.white,
+              backgroundColor: sruColor.white,
               body: RefreshIndicator(
                 onRefresh: () async => model.initModel(),
                 child: NotificationListener<UserScrollNotification>(
@@ -196,7 +196,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                               child: Column(
                                 children: [
                                   AppBar(
-                                    backgroundColor: MjkColor.backgroundAtas,
+                                    backgroundColor: sruColor.backgroundAtas,
                                     title: Text(
                                       'Item Detail',
                                       style: TextStyle(
@@ -261,7 +261,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                 Text(
                                                   namaController.text,
                                                   style: const TextStyle(
-                                                    color: MjkColor.black,
+                                                    color: sruColor.black,
                                                     fontSize: 15,
                                                     fontWeight: FontWeight.w400,
                                                   ),
@@ -284,14 +284,14 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                   style: TextStyle(
                                                       fontSize: 12,
                                                       fontWeight: FontWeight.bold,
-                                                      color: MjkColor.lightBlack008),
+                                                      color: sruColor.lightBlack008),
                                                 ),
                                               ],
                                             ),
                                             Spacings.verSpace(12),
                                             const Divider(
                                               height: 1,
-                                              color: MjkColor.lightBlack009,
+                                              color: sruColor.lightBlack009,
                                             ),
                                             Spacings.verSpace(12),
                                             const Row(
@@ -302,7 +302,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                   style: TextStyle(
                                                     fontSize: 14,
                                                     fontWeight: FontWeight.w500,
-                                                    color: MjkColor.lightBlack011,
+                                                    color: sruColor.lightBlack011,
                                                   ),
                                                 ),
                                               ],
@@ -317,7 +317,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                     hint: Text(
                                                       '${widget.param.detailItem?.satuanqty}',
                                                       style: const TextStyle(
-                                                          color: MjkColor.black,
+                                                          color: sruColor.black,
                                                           fontSize: 14,
                                                           fontWeight: FontWeight.w500),
                                                     ),
@@ -370,7 +370,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                   },
                                                   icon: const Icon(
                                                     Icons.refresh_outlined,
-                                                    color: MjkColor.lightBlack014,
+                                                    color: sruColor.lightBlack014,
                                                   ),
                                                 ),
                                               ],
@@ -386,7 +386,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                   style: TextStyle(
                                                     fontSize: 14,
                                                     fontWeight: FontWeight.w500,
-                                                    color: MjkColor.lightBlack011,
+                                                    color: sruColor.lightBlack011,
                                                   ),
                                                 ),
                                               ],
@@ -400,7 +400,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                   style: ElevatedButton.styleFrom(
                                                     padding: const EdgeInsets.all(0),
                                                     backgroundColor:
-                                                        MjkColor.floatButtonSalesColor, // Ubah ke warna yang sesuai
+                                                        sruColor.floatButtonSalesColor, // Ubah ke warna yang sesuai
                                                     shape: const RoundedRectangleBorder(
                                                       side: BorderSide.none,
                                                       borderRadius: BorderRadius.all(
@@ -481,7 +481,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                   style: ElevatedButton.styleFrom(
                                                     padding: const EdgeInsets.all(0),
                                                     backgroundColor:
-                                                        MjkColor.floatButtonSalesColor, // Ubah ke warna yang sesuai
+                                                        sruColor.floatButtonSalesColor, // Ubah ke warna yang sesuai
                                                     shape: const RoundedRectangleBorder(
                                                       side: BorderSide.none,
                                                       borderRadius: BorderRadius.all(
@@ -530,14 +530,14 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                         style: TextStyle(
                                                             fontSize: 12,
                                                             fontWeight: FontWeight.bold,
-                                                            color: MjkColor.lightBlack008),
+                                                            color: sruColor.lightBlack008),
                                                       ),
                                                     ],
                                                   ),
                                                   Spacings.verSpace(12),
                                                   const Divider(
                                                     height: 1,
-                                                    color: MjkColor.lightBlack009,
+                                                    color: sruColor.lightBlack009,
                                                   ),
                                                   Spacings.verSpace(37),
                                                   TextFormField(
@@ -552,7 +552,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                           const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                                       hintText: 'Masukkan harga',
                                                       hintStyle: const TextStyle(
-                                                        color: MjkColor.lightBlack015,
+                                                        color: sruColor.lightBlack015,
                                                         fontWeight: FontWeight.w300,
                                                         fontSize: 14,
                                                       ),
@@ -591,14 +591,14 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                         style: TextStyle(
                                                             fontSize: 12,
                                                             fontWeight: FontWeight.bold,
-                                                            color: MjkColor.lightBlack008),
+                                                            color: sruColor.lightBlack008),
                                                       ),
                                                     ],
                                                   ),
                                                   Spacings.verSpace(12),
                                                   const Divider(
                                                     height: 1,
-                                                    color: MjkColor.lightBlack009,
+                                                    color: sruColor.lightBlack009,
                                                   ),
                                                   Spacings.verSpace(12),
                                                   Row(
@@ -614,7 +614,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                                   style: TextStyle(
                                                                     fontSize: 14,
                                                                     fontWeight: FontWeight.w500,
-                                                                    color: MjkColor.lightBlack011,
+                                                                    color: sruColor.lightBlack011,
                                                                   ),
                                                                 ),
                                                               ],
@@ -631,7 +631,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                                       Text(
                                                                         satuanisiController.text,
                                                                         style: const TextStyle(
-                                                                          color: MjkColor.black,
+                                                                          color: sruColor.black,
                                                                           fontWeight: FontWeight.w400,
                                                                           fontSize: 17,
                                                                         ),
@@ -658,7 +658,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                                   style: TextStyle(
                                                                     fontSize: 14,
                                                                     fontWeight: FontWeight.w500,
-                                                                    color: MjkColor.lightBlack011,
+                                                                    color: sruColor.lightBlack011,
                                                                   ),
                                                                 ),
                                                               ],
@@ -675,7 +675,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                                       Text(
                                                                         isiController.text,
                                                                         style: const TextStyle(
-                                                                          color: MjkColor.black,
+                                                                          color: sruColor.black,
                                                                           fontWeight: FontWeight.w400,
                                                                           fontSize: 17,
                                                                         ),
@@ -709,14 +709,14 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                   style: TextStyle(
                                                       fontSize: 12,
                                                       fontWeight: FontWeight.bold,
-                                                      color: MjkColor.lightBlack008),
+                                                      color: sruColor.lightBlack008),
                                                 ),
                                               ],
                                             ),
                                             Spacings.verSpace(12),
                                             const Divider(
                                               height: 1,
-                                              color: MjkColor.lightBlack009,
+                                              color: sruColor.lightBlack009,
                                             ),
                                             Spacings.verSpace(12),
                                             Row(
@@ -732,7 +732,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                             style: TextStyle(
                                                               fontSize: 14,
                                                               fontWeight: FontWeight.w500,
-                                                              color: MjkColor.lightBlack011,
+                                                              color: sruColor.lightBlack011,
                                                             ),
                                                           ),
                                                         ],
@@ -750,7 +750,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                               const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                                           hintText: 'Masukkan diskon 1',
                                                           hintStyle: const TextStyle(
-                                                            color: MjkColor.lightBlack015,
+                                                            color: sruColor.lightBlack015,
                                                             fontWeight: FontWeight.w300,
                                                             fontSize: 14,
                                                           ),
@@ -787,7 +787,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                             style: TextStyle(
                                                               fontSize: 14,
                                                               fontWeight: FontWeight.w500,
-                                                              color: MjkColor.lightBlack011,
+                                                              color: sruColor.lightBlack011,
                                                             ),
                                                           ),
                                                         ],
@@ -805,7 +805,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                               const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                                           hintText: 'Masukkan diskon 2',
                                                           hintStyle: const TextStyle(
-                                                            color: MjkColor.lightBlack015,
+                                                            color: sruColor.lightBlack015,
                                                             fontWeight: FontWeight.w300,
                                                             fontSize: 14,
                                                           ),
@@ -842,7 +842,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                             style: TextStyle(
                                                               fontSize: 14,
                                                               fontWeight: FontWeight.w500,
-                                                              color: MjkColor.lightBlack011,
+                                                              color: sruColor.lightBlack011,
                                                             ),
                                                           ),
                                                         ],
@@ -860,7 +860,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                               const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                                           hintText: 'Masukkan diskon 3',
                                                           hintStyle: const TextStyle(
-                                                            color: MjkColor.lightBlack015,
+                                                            color: sruColor.lightBlack015,
                                                             fontWeight: FontWeight.w300,
                                                             fontSize: 14,
                                                           ),
@@ -903,14 +903,14 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                   style: TextStyle(
                                                       fontSize: 12,
                                                       fontWeight: FontWeight.bold,
-                                                      color: MjkColor.lightBlack008),
+                                                      color: sruColor.lightBlack008),
                                                 ),
                                               ],
                                             ),
                                             Spacings.verSpace(12),
                                             const Divider(
                                               height: 1,
-                                              color: MjkColor.lightBlack009,
+                                              color: sruColor.lightBlack009,
                                             ),
                                             Spacings.verSpace(12),
                                             Row(
@@ -926,7 +926,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                             style: TextStyle(
                                                               fontSize: 14,
                                                               fontWeight: FontWeight.w500,
-                                                              color: MjkColor.lightBlack011,
+                                                              color: sruColor.lightBlack011,
                                                             ),
                                                           ),
                                                         ],
@@ -944,7 +944,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                               const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                                           hintText: 'Masukkan diskon direct',
                                                           hintStyle: const TextStyle(
-                                                            color: MjkColor.lightBlack015,
+                                                            color: sruColor.lightBlack015,
                                                             fontWeight: FontWeight.w300,
                                                             fontSize: 14,
                                                           ),
@@ -981,7 +981,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                             style: TextStyle(
                                                               fontSize: 14,
                                                               fontWeight: FontWeight.w500,
-                                                              color: MjkColor.lightBlack011,
+                                                              color: sruColor.lightBlack011,
                                                             ),
                                                           ),
                                                         ],
@@ -998,7 +998,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                                 Text(
                                                                   totalController.text,
                                                                   style: const TextStyle(
-                                                                    color: MjkColor.black,
+                                                                    color: sruColor.black,
                                                                     fontWeight: FontWeight.w400,
                                                                     fontSize: 17,
                                                                   ),
@@ -1029,14 +1029,14 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                   style: TextStyle(
                                                       fontSize: 12,
                                                       fontWeight: FontWeight.bold,
-                                                      color: MjkColor.lightBlack008),
+                                                      color: sruColor.lightBlack008),
                                                 ),
                                               ],
                                             ),
                                             Spacings.verSpace(12),
                                             const Divider(
                                               height: 1,
-                                              color: MjkColor.lightBlack009,
+                                              color: sruColor.lightBlack009,
                                             ),
                                             Spacings.verSpace(12),
                                             Row(
@@ -1052,7 +1052,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                             style: TextStyle(
                                                               fontSize: 14,
                                                               fontWeight: FontWeight.w500,
-                                                              color: MjkColor.lightBlack011,
+                                                              color: sruColor.lightBlack011,
                                                             ),
                                                           ),
                                                         ],
@@ -1069,7 +1069,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                                 Text(
                                                                   nettoController.text,
                                                                   style: const TextStyle(
-                                                                    color: MjkColor.black,
+                                                                    color: sruColor.black,
                                                                     fontWeight: FontWeight.w400,
                                                                     fontSize: 17,
                                                                   ),
@@ -1094,7 +1094,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                             style: TextStyle(
                                                               fontSize: 14,
                                                               fontWeight: FontWeight.w500,
-                                                              color: MjkColor.lightBlack011,
+                                                              color: sruColor.lightBlack011,
                                                             ),
                                                           ),
                                                         ],
@@ -1111,7 +1111,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                                                                 Text(
                                                                   subtotalController.text,
                                                                   style: const TextStyle(
-                                                                    color: MjkColor.black,
+                                                                    color: sruColor.black,
                                                                     fontWeight: FontWeight.w400,
                                                                     fontSize: 17,
                                                                   ),
@@ -1192,7 +1192,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
                             horizontal: 124,
                             vertical: 16,
                           ),
-                          backgroundColor: MjkColor.floatButtonSalesColor,
+                          backgroundColor: sruColor.floatButtonSalesColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
@@ -1221,7 +1221,7 @@ class _EditDetailOrderJualState extends ConsumerState<EditDetailOrderJual> {
     return Text(
       '${item.nama}',
       style: const TextStyle(
-        color: MjkColor.black,
+        color: sruColor.black,
       ),
     );
   }

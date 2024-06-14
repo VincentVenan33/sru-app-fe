@@ -5,16 +5,16 @@ import 'package:flutter_masked_text2/flutter_masked_text2.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/models/get_data/get_data_dto.dart';
-import 'package:mjk_apps/core/networks/get_data_dto_network.dart';
-import 'package:mjk_apps/core/networks/update_customer_dto.dart';
-import 'package:mjk_apps/core/view_models/customer/updatecustomer_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/models/get_data/get_data_dto.dart';
+import 'package:sru/core/networks/get_data_dto_network.dart';
+import 'package:sru/core/networks/update_customer_dto.dart';
+import 'package:sru/core/view_models/customer/updatecustomer_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
 
 class UpdateCustomerParam {
   const UpdateCustomerParam({
@@ -98,7 +98,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
         return UnfocusHelper(
           child: SafeArea(
             child: Scaffold(
-              backgroundColor: MjkColor.white,
+              backgroundColor: sruColor.white,
               body: RefreshIndicator(
                 onRefresh: () async => model.initModel(),
                 child: NotificationListener<UserScrollNotification>(
@@ -128,7 +128,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                             child: Column(
                               children: [
                                 AppBar(
-                                  backgroundColor: MjkColor.backgroundAtas,
+                                  backgroundColor: sruColor.backgroundAtas,
                                   leading: IconButton(
                                     onPressed: () {
                                       Navigator.pushNamed(
@@ -171,7 +171,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                               style: TextStyle(
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w400,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -183,7 +183,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintText: model.daftarcustomer[0].kode,
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontSize: 14,
                                               fontWeight: FontWeight.bold,
                                             ),
@@ -206,7 +206,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -216,7 +216,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                           controller: model.namaController,
                                           style: const TextStyle(
                                             fontWeight: FontWeight.w500,
-                                            color: MjkColor.black,
+                                            color: sruColor.black,
                                           ),
                                           decoration: InputDecoration(
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
@@ -238,7 +238,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -254,7 +254,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                                     ? Text(
                                                         '${model.daftarcustomer[0].gelar}',
                                                         style: const TextStyle(
-                                                            color: MjkColor.black,
+                                                            color: sruColor.black,
                                                             fontSize: 14,
                                                             fontWeight: FontWeight.w500),
                                                       )
@@ -297,7 +297,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                                 },
                                                 icon: const Icon(
                                                   Icons.refresh_outlined,
-                                                  color: MjkColor.lightBlack014,
+                                                  color: sruColor.lightBlack014,
                                                 ),
                                               ),
                                             ),
@@ -311,7 +311,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -328,7 +328,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                                     ? Text(
                                                         '${model.daftarcustomer[0].kategoricustomer}',
                                                         style: const TextStyle(
-                                                            color: MjkColor.black,
+                                                            color: sruColor.black,
                                                             fontSize: 14,
                                                             fontWeight: FontWeight.w500),
                                                       )
@@ -373,7 +373,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                                 },
                                                 icon: const Icon(
                                                   Icons.refresh_outlined,
-                                                  color: MjkColor.lightBlack014,
+                                                  color: sruColor.lightBlack014,
                                                 ),
                                               ),
                                             ),
@@ -387,7 +387,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -403,7 +403,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                             controller: model.alamatController,
                                             style: const TextStyle(
                                               fontWeight: FontWeight.w500,
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                             ),
                                             decoration: InputDecoration(
                                               contentPadding:
@@ -455,9 +455,9 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                           },
                                           style: ElevatedButton.styleFrom(
                                             padding: const EdgeInsets.all(0),
-                                            backgroundColor: Color(MjkColor.transparent.value),
-                                            surfaceTintColor: MjkColor.transparent,
-                                            shadowColor: MjkColor.transparent,
+                                            backgroundColor: Color(sruColor.transparent.value),
+                                            surfaceTintColor: sruColor.transparent,
+                                            shadowColor: sruColor.transparent,
                                             shape: const RoundedRectangleBorder(
                                               side: BorderSide.none,
                                               borderRadius: BorderRadius.all(
@@ -473,7 +473,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                                 child: Text(
                                                   model.desaController.text,
                                                   style: const TextStyle(
-                                                    color: MjkColor.black,
+                                                    color: sruColor.black,
                                                     fontWeight: FontWeight.w400,
                                                     fontSize: 16,
                                                   ),
@@ -492,12 +492,12 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                                     },
                                                     icon: const Icon(
                                                       Icons.refresh,
-                                                      color: MjkColor.lightBlack014,
+                                                      color: sruColor.lightBlack014,
                                                     ),
                                                   ),
                                                   const Icon(
                                                     Icons.search,
-                                                    color: MjkColor.lightBlack014,
+                                                    color: sruColor.lightBlack014,
                                                   ),
                                                 ],
                                               ),
@@ -518,7 +518,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                             Text(
                                               model.kecamatanController.text,
                                               style: const TextStyle(
-                                                color: MjkColor.black,
+                                                color: sruColor.black,
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 16,
                                               ),
@@ -539,7 +539,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                             Text(
                                               model.kotaController.text,
                                               style: const TextStyle(
-                                                color: MjkColor.black,
+                                                color: sruColor.black,
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 16,
                                               ),
@@ -560,7 +560,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                             Text(
                                               model.provinsiController.text,
                                               style: const TextStyle(
-                                                color: MjkColor.black,
+                                                color: sruColor.black,
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 16,
                                               ),
@@ -575,7 +575,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -585,7 +585,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                           controller: model.nohpController,
                                           style: const TextStyle(
                                             fontWeight: FontWeight.w500,
-                                            color: MjkColor.black,
+                                            color: sruColor.black,
                                           ),
                                           decoration: InputDecoration(
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
@@ -616,7 +616,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                         //       style: TextStyle(
                                         //         fontWeight: FontWeight.w400,
                                         //         fontSize: 14,
-                                        //         color: MjkColor.lightBlack011,
+                                        //         color: sruColor.lightBlack011,
                                         //       ),
                                         //     ),
                                         //   ],
@@ -631,11 +631,11 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                         //       contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                         //       hintText: 'Latlong Customer',
                                         //       hintStyle: const TextStyle(
-                                        //         color: MjkColor.lightBlack015,
+                                        //         color: sruColor.lightBlack015,
                                         //         fontSize: 14,
                                         //         fontWeight: FontWeight.w400,
                                         //       ),
-                                        //       fillColor: MjkColor.lightBlack019,
+                                        //       fillColor: sruColor.lightBlack019,
                                         //       filled: true,
                                         //       enabledBorder: OutlineInputBorder(
                                         //         borderRadius: BorderRadius.circular(8.0),
@@ -657,7 +657,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -668,7 +668,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                           maxLength: 16,
                                           style: const TextStyle(
                                             fontWeight: FontWeight.w500,
-                                            color: MjkColor.black,
+                                            color: sruColor.black,
                                           ),
                                           decoration: InputDecoration(
                                             contentPadding: const EdgeInsets.only(
@@ -678,7 +678,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                             ),
                                             hintText: 'No. KTP Customer',
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.lightBlack015,
+                                              color: sruColor.lightBlack015,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -718,7 +718,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -731,7 +731,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                             minLines: 5,
                                             style: const TextStyle(
                                               fontWeight: FontWeight.w500,
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                             ),
                                             keyboardType: TextInputType.multiline,
                                             scrollPadding: const EdgeInsets.all(8.0),
@@ -758,7 +758,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -768,13 +768,13 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                           controller: model.jatuhtempoController,
                                           style: const TextStyle(
                                             fontWeight: FontWeight.w500,
-                                            color: MjkColor.black,
+                                            color: sruColor.black,
                                           ),
                                           decoration: InputDecoration(
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintText: 'Jatuh Tempo (Hari)',
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.lightBlack015,
+                                              color: sruColor.lightBlack015,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -801,7 +801,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -811,14 +811,14 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                           controller: model.npwpController,
                                           style: const TextStyle(
                                             fontWeight: FontWeight.w500,
-                                            color: MjkColor.black,
+                                            color: sruColor.black,
                                           ),
                                           maxLength: 20,
                                           decoration: InputDecoration(
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintText: 'No. NPWP Customer',
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.lightBlack015,
+                                              color: sruColor.lightBlack015,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -841,7 +841,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -851,13 +851,13 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                           controller: model.kontakController,
                                           style: const TextStyle(
                                             fontWeight: FontWeight.w500,
-                                            color: MjkColor.black,
+                                            color: sruColor.black,
                                           ),
                                           decoration: InputDecoration(
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintText: 'Kontak Customer',
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.lightBlack015,
+                                              color: sruColor.lightBlack015,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -879,7 +879,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -891,7 +891,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintText: model.nama,
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontWeight: FontWeight.w500,
                                             ),
                                             enabledBorder: OutlineInputBorder(
@@ -913,7 +913,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -924,7 +924,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                           scrollPadding: const EdgeInsets.all(8.0),
                                           style: const TextStyle(
                                             fontWeight: FontWeight.w500,
-                                            color: MjkColor.black,
+                                            color: sruColor.black,
                                           ),
                                           controller: model.plafonController,
                                           decoration: InputDecoration(
@@ -932,7 +932,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                             hintStyle: const TextStyle(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w400,
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                             ),
                                             contentPadding:
                                                 const EdgeInsets.only(left: 16, right: 8, top: 6, bottom: 6),
@@ -960,7 +960,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -977,7 +977,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                                     ? Text(
                                                         '${model.daftarcustomer[0].tipeoutlet}',
                                                         style: const TextStyle(
-                                                            color: MjkColor.black,
+                                                            color: sruColor.black,
                                                             fontSize: 14,
                                                             fontWeight: FontWeight.w500),
                                                       )
@@ -1020,7 +1020,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                                 },
                                                 icon: const Icon(
                                                   Icons.refresh_outlined,
-                                                  color: MjkColor.lightBlack014,
+                                                  color: sruColor.lightBlack014,
                                                 ),
                                               ),
                                             ),
@@ -1034,7 +1034,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -1047,7 +1047,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                                             minLines: 5,
                                             style: const TextStyle(
                                               fontWeight: FontWeight.w500,
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                             ),
                                             keyboardType: TextInputType.multiline,
                                             scrollPadding: const EdgeInsets.all(8.0),
@@ -1192,7 +1192,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
                             horizontal: 144,
                             vertical: 16,
                           ),
-                          backgroundColor: MjkColor.floatButtonSalesColor,
+                          backgroundColor: sruColor.floatButtonSalesColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
@@ -1221,7 +1221,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
     return Text(
       item.nama,
       style: const TextStyle(
-        color: MjkColor.black,
+        color: sruColor.black,
       ),
     );
   }
@@ -1230,7 +1230,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
     return Text(
       item.nama,
       style: const TextStyle(
-        color: MjkColor.black,
+        color: sruColor.black,
       ),
     );
   }
@@ -1239,7 +1239,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
     return Text(
       item.nama,
       style: const TextStyle(
-        color: MjkColor.black,
+        color: sruColor.black,
       ),
     );
   }
@@ -1248,7 +1248,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
     return Text(
       item.nama,
       style: const TextStyle(
-        color: MjkColor.black,
+        color: sruColor.black,
       ),
     );
   }
@@ -1257,7 +1257,7 @@ class _UpdateCustomerState extends ConsumerState<UpdateCustomer> {
     return Text(
       item.nama,
       style: const TextStyle(
-        color: MjkColor.black,
+        color: sruColor.black,
       ),
     );
   }

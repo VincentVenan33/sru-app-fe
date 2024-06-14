@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mjk_apps/core/models/authentication/login.dart';
-import 'package:mjk_apps/core/services/navigation_service.dart';
-import 'package:mjk_apps/core/services/shared_preferences_service.dart';
-import 'package:mjk_apps/ui/views/authentication/login_view.dart';
+import 'package:sru/core/models/authentication/login.dart';
+import 'package:sru/core/services/navigation_service.dart';
+import 'package:sru/core/services/shared_preferences_service.dart';
+import 'package:sru/ui/views/authentication/login_view.dart';
 
 final Provider<AuthenticationService> authProvider = Provider<AuthenticationService>(
   (ProviderRef<AuthenticationService> ref) {

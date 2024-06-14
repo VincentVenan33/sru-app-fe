@@ -3,19 +3,19 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:intl/intl.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/networks/omset_piutang_get_data_dto_network.dart';
-import 'package:mjk_apps/core/networks/total_omset_piutang_get_data_dto_network.dart';
-import 'package:mjk_apps/core/services/shared_preferences_service.dart';
-import 'package:mjk_apps/core/utilities/string_utils.dart';
-import 'package:mjk_apps/core/utilities/text_styles.dart';
-import 'package:mjk_apps/core/view_models/piutang_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
-import 'package:mjk_apps/ui/views/navbar/navbar_sales_view.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/networks/omset_piutang_get_data_dto_network.dart';
+import 'package:sru/core/networks/total_omset_piutang_get_data_dto_network.dart';
+import 'package:sru/core/services/shared_preferences_service.dart';
+import 'package:sru/core/utilities/string_utils.dart';
+import 'package:sru/core/utilities/text_styles.dart';
+import 'package:sru/core/view_models/piutang_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
+import 'package:sru/ui/views/navbar/navbar_sales_view.dart';
 
 class PiutangDashboardView extends ConsumerStatefulWidget {
   const PiutangDashboardView({super.key});
@@ -77,7 +77,7 @@ class _PiutangDashboardViewState extends ConsumerState<PiutangDashboardView> {
                                       child: Column(
                                         children: [
                                           Container(
-                                            decoration: const BoxDecoration(color: MjkColor.backgroundAtas),
+                                            decoration: const BoxDecoration(color: sruColor.backgroundAtas),
                                             child: Column(
                                               children: [
                                                 Padding(
@@ -165,20 +165,20 @@ class _PiutangDashboardViewState extends ConsumerState<PiutangDashboardView> {
                                       left: 24,
                                       right: 24,
                                     ),
-                                    color: MjkColor.white,
+                                    color: sruColor.white,
                                     child: Column(children: [
                                       const Text(
                                         'TOTAL PIUTANG',
                                         style: TextStyle(
                                           fontSize: 12,
                                           fontWeight: FontWeight.bold,
-                                          color: MjkColor.lightBlack008,
+                                          color: sruColor.lightBlack008,
                                         ),
                                       ),
                                       Spacings.verSpace(12),
                                       const Divider(
                                         height: 1,
-                                        color: MjkColor.lightBlack009,
+                                        color: sruColor.lightBlack009,
                                       ),
                                       Spacings.verSpace(23),
                                     ]),
@@ -228,7 +228,7 @@ class _PiutangDashboardViewState extends ConsumerState<PiutangDashboardView> {
                                                             child: Text(
                                                               '${model.piutang[index].transaksikode}',
                                                               style: const TextStyle(
-                                                                color: MjkColor.white,
+                                                                color: sruColor.white,
                                                                 fontWeight: FontWeight.w500,
                                                                 fontSize: 14,
                                                               ),
@@ -245,7 +245,7 @@ class _PiutangDashboardViewState extends ConsumerState<PiutangDashboardView> {
                                                             style: buildTextStyle(
                                                               fontSize: 15.376,
                                                               fontWeight: 400,
-                                                              color: MjkColor.lightBlack010,
+                                                              color: sruColor.lightBlack010,
                                                             ),
                                                           ),
                                                         ],
@@ -257,7 +257,7 @@ class _PiutangDashboardViewState extends ConsumerState<PiutangDashboardView> {
                                                         style: buildTextStyle(
                                                           fontSize: 15.376,
                                                           fontWeight: 700,
-                                                          color: MjkColor.lightBlack011,
+                                                          color: sruColor.lightBlack011,
                                                         ),
                                                       ),
                                                     ],
@@ -267,7 +267,7 @@ class _PiutangDashboardViewState extends ConsumerState<PiutangDashboardView> {
                                                     children: [
                                                       Divider(
                                                         height: 1,
-                                                        color: MjkColor.lightBlack009,
+                                                        color: sruColor.lightBlack009,
                                                       ),
                                                     ],
                                                   ),
@@ -291,7 +291,7 @@ class _PiutangDashboardViewState extends ConsumerState<PiutangDashboardView> {
                     ),
                   ),
                   bottomSheet: Container(
-                    color: MjkColor.white,
+                    color: sruColor.white,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 20,
@@ -303,7 +303,7 @@ class _PiutangDashboardViewState extends ConsumerState<PiutangDashboardView> {
                           const Text(
                             'Total',
                             style: TextStyle(
-                              color: MjkColor.lightBlack011,
+                              color: sruColor.lightBlack011,
                               fontWeight: FontWeight.w400,
                               fontSize: 14,
                             ),
@@ -314,7 +314,7 @@ class _PiutangDashboardViewState extends ConsumerState<PiutangDashboardView> {
                               symbol: 'Rp. ',
                             ),
                             style: const TextStyle(
-                              color: MjkColor.lightBlack011,
+                              color: sruColor.lightBlack011,
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
                             ),

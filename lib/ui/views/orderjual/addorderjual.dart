@@ -4,19 +4,19 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:intl/intl.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/models/get_data/get_data_dto.dart';
-import 'package:mjk_apps/core/networks/create_order_jual_detail_bonus_dto.dart';
-import 'package:mjk_apps/core/networks/get_data_dto_network.dart';
-import 'package:mjk_apps/core/services/shared_preferences_service.dart';
-import 'package:mjk_apps/core/utilities/string_utils.dart';
-import 'package:mjk_apps/core/view_models/orderjual/addorderjual_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
-import 'package:mjk_apps/ui/views/navbar/navbar_sales_view.dart';
-import 'package:mjk_apps/ui/views/orderjual/edititemdetail.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/models/get_data/get_data_dto.dart';
+import 'package:sru/core/networks/create_order_jual_detail_bonus_dto.dart';
+import 'package:sru/core/networks/get_data_dto_network.dart';
+import 'package:sru/core/services/shared_preferences_service.dart';
+import 'package:sru/core/utilities/string_utils.dart';
+import 'package:sru/core/view_models/orderjual/addorderjual_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
+import 'package:sru/ui/views/navbar/navbar_sales_view.dart';
+import 'package:sru/ui/views/orderjual/edititemdetail.dart';
 
 class AddOrderJual extends ConsumerStatefulWidget {
   const AddOrderJual({super.key});
@@ -130,7 +130,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
         return UnfocusHelper(
           child: SafeArea(
             child: Scaffold(
-              backgroundColor: MjkColor.white,
+              backgroundColor: sruColor.white,
               body: RefreshIndicator(
                 onRefresh: () async => model.initModel(),
                 child: NotificationListener<UserScrollNotification>(
@@ -162,7 +162,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                   child: Column(
                                     children: [
                                       AppBar(
-                                        backgroundColor: MjkColor.backgroundAtas,
+                                        backgroundColor: sruColor.backgroundAtas,
                                         leading: IconButton(
                                           onPressed: () {
                                             Navigator.pushNamedAndRemoveUntil(
@@ -214,7 +214,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                       //       style: TextStyle(
                                       //         fontSize: 14,
                                       //         fontWeight: FontWeight.w400,
-                                      //         color: MjkColor.lightBlack011,
+                                      //         color: sruColor.lightBlack011,
                                       //       ),
                                       //     ),
                                       //   ],
@@ -229,11 +229,11 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                       //       contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                       //       hintText: 'C-BRI-00009',
                                       //       hintStyle: const TextStyle(
-                                      //         color: MjkColor.lightBlack011,
+                                      //         color: sruColor.lightBlack011,
                                       //         fontSize: 14,
                                       //         fontWeight: FontWeight.bold,
                                       //       ),
-                                      //       fillColor: MjkColor.lightBlack019, // Add this line to set the background color
+                                      //       fillColor: sruColor.lightBlack019, // Add this line to set the background color
                                       //       filled: true,
                                       //       enabledBorder: OutlineInputBorder(
                                       //         borderRadius: BorderRadius.circular(8.0),
@@ -255,7 +255,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                             style: TextStyle(
                                               fontWeight: FontWeight.w400,
                                               fontSize: 14,
-                                              color: MjkColor.lightBlack011,
+                                              color: sruColor.lightBlack011,
                                             ),
                                           ),
                                         ],
@@ -275,8 +275,8 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                             shape: RoundedRectangleBorder(
                                               borderRadius: BorderRadius.circular(8),
                                             ),
-                                            backgroundColor: MjkColor.transparent,
-                                            surfaceTintColor: MjkColor.transparent,
+                                            backgroundColor: sruColor.transparent,
+                                            surfaceTintColor: sruColor.transparent,
                                             shadowColor: const Color(0x00000000),
                                           ),
                                           onPressed: _pickDate,
@@ -288,13 +288,13 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                                 DateFormat('dd/MM/yyyy').format(_selectedDate),
                                                 style: const TextStyle(
                                                   fontSize: 14,
-                                                  color: MjkColor.black,
+                                                  color: sruColor.black,
                                                   fontWeight: FontWeight.w400,
                                                 ),
                                               ),
                                               const Icon(
                                                 Icons.calendar_month,
-                                                color: MjkColor.lightBlack016,
+                                                color: sruColor.lightBlack016,
                                                 size: 16,
                                               ),
                                             ],
@@ -309,7 +309,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                             style: TextStyle(
                                               fontWeight: FontWeight.w400,
                                               fontSize: 14,
-                                              color: MjkColor.lightBlack011,
+                                              color: sruColor.lightBlack011,
                                             ),
                                           ),
                                         ],
@@ -335,9 +335,9 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                         },
                                         style: ElevatedButton.styleFrom(
                                           padding: const EdgeInsets.all(0),
-                                          backgroundColor: Color(MjkColor.transparent.value),
-                                          surfaceTintColor: MjkColor.transparent,
-                                          shadowColor: MjkColor.transparent,
+                                          backgroundColor: Color(sruColor.transparent.value),
+                                          surfaceTintColor: sruColor.transparent,
+                                          shadowColor: sruColor.transparent,
                                           shape: const RoundedRectangleBorder(
                                             side: BorderSide.none,
                                             borderRadius: BorderRadius.all(
@@ -351,7 +351,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                             Text(
                                               customerController.text,
                                               style: const TextStyle(
-                                                color: MjkColor.black,
+                                                color: sruColor.black,
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 16,
                                               ),
@@ -366,12 +366,12 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                                   },
                                                   icon: const Icon(
                                                     Icons.refresh,
-                                                    color: MjkColor.lightBlack014,
+                                                    color: sruColor.lightBlack014,
                                                   ),
                                                 ),
                                                 const Icon(
                                                   Icons.search,
-                                                  color: MjkColor.lightBlack014,
+                                                  color: sruColor.lightBlack014,
                                                 ),
                                               ],
                                             ),
@@ -386,7 +386,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                             style: TextStyle(
                                               fontWeight: FontWeight.w400,
                                               fontSize: 14,
-                                              color: MjkColor.lightBlack011,
+                                              color: sruColor.lightBlack011,
                                             ),
                                           ),
                                         ],
@@ -398,7 +398,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                           contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                           hintText: model.nama,
                                           hintStyle: const TextStyle(
-                                            color: MjkColor.black,
+                                            color: sruColor.black,
                                             fontSize: 14,
                                             fontWeight: FontWeight.w400,
                                           ),
@@ -421,7 +421,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                             style: TextStyle(
                                               fontWeight: FontWeight.w400,
                                               fontSize: 14,
-                                              color: MjkColor.lightBlack011,
+                                              color: sruColor.lightBlack011,
                                             ),
                                           ),
                                         ],
@@ -469,7 +469,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                             style: TextStyle(
                                               fontSize: 15,
                                               fontWeight: FontWeight.bold,
-                                              color: MjkColor.lightBlack008,
+                                              color: sruColor.lightBlack008,
                                             ),
                                           ),
                                           IconButton(
@@ -575,7 +575,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                                         style: const TextStyle(
                                                           fontSize: 17,
                                                           fontWeight: FontWeight.bold,
-                                                          color: MjkColor.black,
+                                                          color: sruColor.black,
                                                         ),
                                                       ),
                                                     ),
@@ -680,7 +680,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                                   style: const TextStyle(
                                                     fontSize: 17,
                                                     fontWeight: FontWeight.w400,
-                                                    color: MjkColor.black,
+                                                    color: sruColor.black,
                                                   ),
                                                 ),
                                                 Spacings.verSpace(5),
@@ -689,7 +689,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                                   style: const TextStyle(
                                                     fontSize: 17,
                                                     fontWeight: FontWeight.w400,
-                                                    color: MjkColor.black,
+                                                    color: sruColor.black,
                                                   ),
                                                 ),
                                                 Spacings.verSpace(5),
@@ -704,7 +704,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                                   style: const TextStyle(
                                                     fontSize: 17,
                                                     fontWeight: FontWeight.w400,
-                                                    color: MjkColor.black,
+                                                    color: sruColor.black,
                                                   ),
                                                 ),
                                               ],
@@ -730,7 +730,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                             style: TextStyle(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
-                                              color: MjkColor.lightBlack011,
+                                              color: sruColor.lightBlack011,
                                             ),
                                           ),
                                         ],
@@ -758,7 +758,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                                               const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                                           hintText: 'Masukkan diskon',
                                                           hintStyle: const TextStyle(
-                                                            color: MjkColor.lightBlack015,
+                                                            color: sruColor.lightBlack015,
                                                             fontWeight: FontWeight.w300,
                                                             fontSize: 14,
                                                           ),
@@ -798,7 +798,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                                           // ),
                                                           diskonnominalController.text,
                                                           style: const TextStyle(
-                                                            color: MjkColor.black,
+                                                            color: sruColor.black,
                                                             fontWeight: FontWeight.w400,
                                                             fontSize: 17,
                                                           ),
@@ -821,7 +821,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                             style: TextStyle(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
-                                              color: MjkColor.lightBlack011,
+                                              color: sruColor.lightBlack011,
                                             ),
                                           ),
                                         ],
@@ -839,7 +839,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                                   subtotalController.text =
                                                       '${model.detailItems.fold(0, (sum, item) => sum + (item.subtotal))}',
                                                   style: const TextStyle(
-                                                    color: MjkColor.black,
+                                                    color: sruColor.black,
                                                     fontWeight: FontWeight.w400,
                                                     fontSize: 17,
                                                   ),
@@ -862,7 +862,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                                   style: TextStyle(
                                                     fontSize: 14,
                                                     fontWeight: FontWeight.w500,
-                                                    color: MjkColor.lightBlack011,
+                                                    color: sruColor.lightBlack011,
                                                   ),
                                                 ),
                                               ],
@@ -879,7 +879,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                                       Text(
                                                         dppController.text,
                                                         style: const TextStyle(
-                                                          color: MjkColor.black,
+                                                          color: sruColor.black,
                                                           fontWeight: FontWeight.w400,
                                                           fontSize: 17,
                                                         ),
@@ -898,7 +898,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                                   style: TextStyle(
                                                     fontSize: 14,
                                                     fontWeight: FontWeight.w500,
-                                                    color: MjkColor.lightBlack011,
+                                                    color: sruColor.lightBlack011,
                                                   ),
                                                 ),
                                               ],
@@ -920,7 +920,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                                               Text(
                                                                 '11.00',
                                                                 style: TextStyle(
-                                                                  color: MjkColor.black,
+                                                                  color: sruColor.black,
                                                                   fontWeight: FontWeight.w400,
                                                                   fontSize: 17,
                                                                 ),
@@ -940,7 +940,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                                               Text(
                                                                 ppnnominalController.text,
                                                                 style: const TextStyle(
-                                                                  color: MjkColor.black,
+                                                                  color: sruColor.black,
                                                                   fontWeight: FontWeight.w400,
                                                                   fontSize: 17,
                                                                 ),
@@ -966,7 +966,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                             style: TextStyle(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
-                                              color: MjkColor.lightBlack011,
+                                              color: sruColor.lightBlack011,
                                             ),
                                           ),
                                         ],
@@ -983,7 +983,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                           contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                           hintText: 'Masukkan biaya lain',
                                           hintStyle: const TextStyle(
-                                            color: MjkColor.lightBlack015,
+                                            color: sruColor.lightBlack015,
                                             fontWeight: FontWeight.w300,
                                             fontSize: 14,
                                           ),
@@ -1012,7 +1012,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                             style: TextStyle(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
-                                              color: MjkColor.lightBlack011,
+                                              color: sruColor.lightBlack011,
                                             ),
                                           ),
                                         ],
@@ -1029,7 +1029,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                                 Text(
                                                   totalController.text,
                                                   style: const TextStyle(
-                                                    color: MjkColor.black,
+                                                    color: sruColor.black,
                                                     fontWeight: FontWeight.w400,
                                                     fontSize: 17,
                                                   ),
@@ -1074,7 +1074,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                 horizontal: 124,
                                 vertical: 16,
                               ),
-                              backgroundColor: MjkColor.floatButtonSalesColor,
+                              backgroundColor: sruColor.floatButtonSalesColor,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
@@ -1188,7 +1188,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
                                   horizontal: 144,
                                   vertical: 16,
                                 ),
-                                backgroundColor: MjkColor.floatButtonSalesColor,
+                                backgroundColor: sruColor.floatButtonSalesColor,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
@@ -1219,7 +1219,7 @@ class _AddOrderJualState extends ConsumerState<AddOrderJual> {
     return Text(
       item.nama,
       style: const TextStyle(
-        color: MjkColor.black,
+        color: sruColor.black,
       ),
     );
   }

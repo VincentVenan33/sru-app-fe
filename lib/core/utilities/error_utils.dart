@@ -2,8 +2,8 @@ import 'dart:developer';
 
 import 'package:either_dart/either.dart';
 import 'package:flutter/material.dart';
-import 'package:mjk_apps/core/models/error.dart';
-import 'package:mjk_apps/core/models/parsed_response.dart';
+import 'package:sru/core/models/error.dart';
+import 'package:sru/core/models/parsed_response.dart';
 import 'package:retrofit/dio.dart';
 
 class ErrorUtils<T> {

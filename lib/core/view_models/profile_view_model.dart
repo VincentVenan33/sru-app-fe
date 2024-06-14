@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:mjk_apps/core/services/authentication_service.dart';
-import 'package:mjk_apps/core/services/shared_preferences_service.dart';
-import 'package:mjk_apps/core/view_models/base_view_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:sru/core/services/authentication_service.dart';
+import 'package:sru/core/services/shared_preferences_service.dart';
+import 'package:sru/core/view_models/base_view_model.dart';
 
 class ProfileModel extends BaseViewModel {
   ProfileModel({

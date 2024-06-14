@@ -5,15 +5,15 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:mjk_apps/core/app_constants/colors.dart';
-import 'package:mjk_apps/core/app_constants/route.dart';
-import 'package:mjk_apps/core/networks/kunjungan_get_data_dto_network.dart';
-import 'package:mjk_apps/core/networks/update_kunjungan_dto.dart';
-import 'package:mjk_apps/core/view_models/meet/detailpelanggan_view_model.dart';
-import 'package:mjk_apps/core/view_models/view_model.dart';
-import 'package:mjk_apps/ui/shared/loading_overlay.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
-import 'package:mjk_apps/ui/shared/unfocus_helper.dart';
+import 'package:sru/core/app_constants/colors.dart';
+import 'package:sru/core/app_constants/route.dart';
+import 'package:sru/core/networks/kunjungan_get_data_dto_network.dart';
+import 'package:sru/core/networks/update_kunjungan_dto.dart';
+import 'package:sru/core/view_models/meet/detailpelanggan_view_model.dart';
+import 'package:sru/core/view_models/view_model.dart';
+import 'package:sru/ui/shared/loading_overlay.dart';
+import 'package:sru/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/unfocus_helper.dart';
 
 class DetailPelangganParam {
   const DetailPelangganParam({
@@ -65,7 +65,7 @@ class _DetailPelangganState extends ConsumerState<DetailPelanggan> {
         return UnfocusHelper(
           child: SafeArea(
             child: Scaffold(
-              backgroundColor: MjkColor.white,
+              backgroundColor: sruColor.white,
               body: RefreshIndicator(
                 onRefresh: () async => model.initModel(),
                 child: NotificationListener<UserScrollNotification>(
@@ -95,7 +95,7 @@ class _DetailPelangganState extends ConsumerState<DetailPelanggan> {
                             child: Column(
                               children: [
                                 AppBar(
-                                  backgroundColor: MjkColor.backgroundAtas,
+                                  backgroundColor: sruColor.backgroundAtas,
                                   leading: IconButton(
                                     icon: const Icon(Icons.arrow_back),
                                     onPressed: () {
@@ -136,7 +136,7 @@ class _DetailPelangganState extends ConsumerState<DetailPelanggan> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -148,7 +148,7 @@ class _DetailPelangganState extends ConsumerState<DetailPelanggan> {
                                             hintText: model.kunjungan[0].customer,
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -171,7 +171,7 @@ class _DetailPelangganState extends ConsumerState<DetailPelanggan> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -183,7 +183,7 @@ class _DetailPelangganState extends ConsumerState<DetailPelanggan> {
                                             hintText: "${model.kunjungan[0].rencana}",
                                             contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                             hintStyle: const TextStyle(
-                                              color: MjkColor.black,
+                                              color: sruColor.black,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -206,7 +206,7 @@ class _DetailPelangganState extends ConsumerState<DetailPelanggan> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -220,7 +220,7 @@ class _DetailPelangganState extends ConsumerState<DetailPelanggan> {
                                               hintText: '${model.kunjungan[0].alamat}',
                                               contentPadding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
                                               hintStyle: const TextStyle(
-                                                color: MjkColor.black,
+                                                color: sruColor.black,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -244,7 +244,7 @@ class _DetailPelangganState extends ConsumerState<DetailPelanggan> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
-                                                color: MjkColor.lightBlack011,
+                                                color: sruColor.lightBlack011,
                                               ),
                                             ),
                                           ],
@@ -261,7 +261,7 @@ class _DetailPelangganState extends ConsumerState<DetailPelanggan> {
                                             decoration: InputDecoration(
                                               hintText: model.kunjungan[0].keterangan,
                                               hintStyle: const TextStyle(
-                                                color: MjkColor.black,
+                                                color: sruColor.black,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -444,20 +444,20 @@ class _DetailPelangganState extends ConsumerState<DetailPelanggan> {
                                   model.kunjungan[0].statuscheckin == 1 &&
                                   model.kunjungan[0].statuscheckout == 1
                               ? Colors.transparent // Tombol disembunyikan jika kedua status sudah 1
-                              : MjkColor.floatButtonSalesColor,
+                              : sruColor.floatButtonSalesColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
                           shadowColor: model.kunjungan.isNotEmpty &&
                                   model.kunjungan[0].statuscheckin == 1 &&
                                   model.kunjungan[0].statuscheckout == 1
-                              ? MjkColor.transparent // Shadow disembunyikan jika kedua status sudah 1
-                              : MjkColor.transparent,
+                              ? sruColor.transparent // Shadow disembunyikan jika kedua status sudah 1
+                              : sruColor.transparent,
                           surfaceTintColor: model.kunjungan.isNotEmpty &&
                                   model.kunjungan[0].statuscheckin == 1 &&
                                   model.kunjungan[0].statuscheckout == 1
-                              ? MjkColor.transparent
-                              : MjkColor.floatButtonSalesColor,
+                              ? sruColor.transparent
+                              : sruColor.floatButtonSalesColor,
                         ),
                         child: model.kunjungan.isNotEmpty &&
                                 model.kunjungan[0].statuscheckin == 1 &&

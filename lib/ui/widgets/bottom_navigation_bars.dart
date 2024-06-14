@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mjk_apps/ui/shared/spacings.dart';
+import 'package:sru/ui/shared/spacings.dart';
 
 class BaseBottomNavigationBar extends StatefulWidget {
   const BaseBottomNavigationBar({
